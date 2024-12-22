@@ -91,6 +91,14 @@ namespace RealEstateManagemaentSystem2024.mainForm
         private void button1_Click(object sender, EventArgs e)
         {
             userDetailsPanelMDI.Hide();
+            if (panel3.Visible)
+            {
+                panel3.Hide();
+            }
+            else
+            {
+                panel3.Show();
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -120,10 +128,11 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(userDetailsPanelMDI.Visible)
+            panel3.Hide();
+            if (userDetailsPanelMDI.Visible)
             {
                 userDetailsPanelMDI.Hide();
-            } 
+            }
             else
             {
                 userDetailsPanelMDI.Show();
@@ -165,5 +174,19 @@ namespace RealEstateManagemaentSystem2024.mainForm
             }
         }
 
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
