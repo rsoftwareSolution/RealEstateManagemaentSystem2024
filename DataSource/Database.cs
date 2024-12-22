@@ -4,18 +4,8 @@ using System.Data.SqlClient;
 
 public class Database
 {
-    // Connection string (replace with your actual credentials)
-    private readonly string connectionString;
-
-    // Static connection parameters (can be set directly)
-    private static string Server = "DESKTOP-S7NF3LU";
-    private static string DatabaseName = "real_state_db";
-    private static string Username = "root";
-    private static string Password = "root";
-
     // Static property for the connection string
-    private static string ConnectionString =>
-        $"Server={Server};Database={DatabaseName};User Id={Username};Password={Password};";
+    string connectionString = "Server=DESKTOP-S7NF3LU;Database=YOUR_DATABASE_NAME;User Id=root;Password=root;";
 
     // Method to open a connection
     private SqlConnection GetConnection()
