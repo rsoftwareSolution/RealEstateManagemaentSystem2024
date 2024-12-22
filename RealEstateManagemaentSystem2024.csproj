@@ -32,6 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,14 +47,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DataSource\Database.cs" />
+    <Compile Include="mainForm\Color.cs" />
+    <Compile Include="mainForm\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="mainForm\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterForm\BuilldingMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterForm\BuilldingMaster.Designer.cs">
+      <DependentUpon>BuilldingMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterForm\CancellationMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterForm\CancellationMaster.Designer.cs">
+      <DependentUpon>CancellationMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterForm\CustomerMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterForm\CustomerMaster.Designer.cs">
+      <DependentUpon>CustomerMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterForm\EnquiryMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterForm\EnquiryMaster.Designer.cs">
+      <DependentUpon>EnquiryMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterForm\FlatMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterForm\FlatMaster.Designer.cs">
+      <DependentUpon>FlatMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterForm\PaymentMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterForm\PaymentMaster.Designer.cs">
+      <DependentUpon>PaymentMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterForm\UserMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterForm\UserMaster.Designer.cs">
+      <DependentUpon>UserMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="mainForm\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\BuilldingMaster.resx">
+      <DependentUpon>BuilldingMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\CancellationMaster.resx">
+      <DependentUpon>CancellationMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\CustomerMaster.resx">
+      <DependentUpon>CustomerMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\EnquiryMaster.resx">
+      <DependentUpon>EnquiryMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\FlatMaster.resx">
+      <DependentUpon>FlatMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\PaymentMaster.resx">
+      <DependentUpon>PaymentMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\UserMaster.resx">
+      <DependentUpon>UserMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
