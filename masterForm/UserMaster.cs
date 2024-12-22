@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
 
 namespace RealEstateManagemaentSystem2024.masterForm
@@ -60,18 +53,18 @@ namespace RealEstateManagemaentSystem2024.masterForm
             string contact = tbContact.Text;
             string password = tbPassword.Text;
 
-
             // Define the INSERT query
-            string query = "INSERT INTO Users (user_name, user_email, user_contact, user_password) VALUES (@userName, @email, @contact, @password)";
+            string query = "INSERT INTO user (user_name, user_email, user_contact, user_password) VALUES (@userName, @userEmail, @userContact, @userPassword)";
 
             try
             {
-                db.ExecuteNonQuery(query, new SqlParameter[]
+                // Assuming db is your Database object with MySQL connection methods
+                db.ExecuteNonQuery(query, new MySqlParameter[]  // Use MySqlParameter here
                 {
-                    new SqlParameter("@userName", userName),
-                    new SqlParameter("@email", email),
-                    new SqlParameter("@contact", contact),
-                    new SqlParameter("@password", password)
+            new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = userName },
+            new MySqlParameter("@userEmail", MySqlDbType.VarChar) { Value = email },
+            new MySqlParameter("@userContact", MySqlDbType.VarChar) { Value = contact },
+            new MySqlParameter("@userPassword", MySqlDbType.VarChar) { Value = password }
                 });
 
                 MessageBox.Show("User inserted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -81,5 +74,6 @@ namespace RealEstateManagemaentSystem2024.masterForm
                 MessageBox.Show("Error inserting user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

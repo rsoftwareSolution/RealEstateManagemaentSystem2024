@@ -1,4 +1,5 @@
-﻿using RealStateManagementSystem.mainForm;
+﻿using MySql.Data.MySqlClient;
+using RealStateManagementSystem.mainForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,7 +86,7 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -124,10 +125,13 @@ namespace RealEstateManagemaentSystem2024.mainForm
         {
             try
             {
+                // Define the SELECT query
                 string query = "SELECT user_contact FROM user WHERE user_name = @Username";
-                SqlParameter[] parameters = {
-                new SqlParameter("@Username", this.loggedInUsername)
-                };
+
+                // Use MySqlParameter instead of SqlParameter
+                MySqlParameter[] parameters = {
+            new MySqlParameter("@Username", MySqlDbType.VarChar) { Value = username }
+        };
 
                 // Execute query and get results
                 DataTable result = db.ExecuteQuery(query, parameters);
@@ -136,14 +140,13 @@ namespace RealEstateManagemaentSystem2024.mainForm
                 {
                     // Display user details
                     lbContact.Text = result.Rows[0]["user_contact"].ToString();
-                    lbmailId.Text = this.loggedInUsername;
+                    lbmailId.Text = username;  // Assuming username is already passed into this method
                 }
                 else
                 {
                     // User not found
                     MessageBox.Show("User not found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             catch (Exception ex)
             {
