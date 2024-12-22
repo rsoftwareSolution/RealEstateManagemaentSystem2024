@@ -353,6 +353,7 @@ namespace RealStateManagementSystem.masterForm
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "PaymentMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaymentMaster";
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
