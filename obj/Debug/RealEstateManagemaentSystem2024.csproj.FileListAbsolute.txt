@@ -49,3 +49,4 @@ E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\System.Numerics.Vectors.xm
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.CopyComplete
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.BookingMaster.resources

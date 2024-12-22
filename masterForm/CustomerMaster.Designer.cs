@@ -40,6 +40,10 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbDate = new System.Windows.Forms.TextBox();
+            this.tbOfficeAddress = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbBirthDate = new System.Windows.Forms.TextBox();
             this.tbCustCont = new System.Windows.Forms.TextBox();
@@ -54,10 +58,6 @@ namespace RealStateManagementSystem.masterForm
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbOfficeAddress = new System.Windows.Forms.TextBox();
-            this.tbDate = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -69,6 +69,7 @@ namespace RealStateManagementSystem.masterForm
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
@@ -77,18 +78,20 @@ namespace RealStateManagementSystem.masterForm
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(451, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(481, 53);
+            this.label1.Size = new System.Drawing.Size(429, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Master";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
@@ -102,10 +105,10 @@ namespace RealStateManagementSystem.masterForm
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(33, 372);
@@ -117,10 +120,10 @@ namespace RealStateManagementSystem.masterForm
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(33, 302);
@@ -132,10 +135,10 @@ namespace RealStateManagementSystem.masterForm
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(33, 234);
@@ -147,10 +150,10 @@ namespace RealStateManagementSystem.masterForm
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Black;
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(33, 168);
@@ -162,10 +165,10 @@ namespace RealStateManagementSystem.masterForm
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Black;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(33, 104);
@@ -188,7 +191,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.tbDate);
             this.tabPage1.Controls.Add(this.tbOfficeAddress);
             this.tabPage1.Controls.Add(this.label9);
@@ -210,9 +213,47 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer Form";
             // 
+            // tbDate
+            // 
+            this.tbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDate.Location = new System.Drawing.Point(331, 412);
+            this.tbDate.Name = "tbDate";
+            this.tbDate.Size = new System.Drawing.Size(424, 30);
+            this.tbDate.TabIndex = 13;
+            // 
+            // tbOfficeAddress
+            // 
+            this.tbOfficeAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tbOfficeAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOfficeAddress.Location = new System.Drawing.Point(331, 358);
+            this.tbOfficeAddress.Name = "tbOfficeAddress";
+            this.tbOfficeAddress.Size = new System.Drawing.Size(424, 30);
+            this.tbOfficeAddress.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(255, 414);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 23);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Date :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(173, 365);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(145, 23);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Office address :";
+            // 
             // tbEmail
             // 
-            this.tbEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.Location = new System.Drawing.Point(331, 311);
             this.tbEmail.Name = "tbEmail";
@@ -221,7 +262,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbBirthDate
             // 
-            this.tbBirthDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbBirthDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbBirthDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBirthDate.Location = new System.Drawing.Point(331, 259);
             this.tbBirthDate.Name = "tbBirthDate";
@@ -230,7 +271,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbCustCont
             // 
-            this.tbCustCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbCustCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbCustCont.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustCont.Location = new System.Drawing.Point(331, 202);
             this.tbCustCont.Name = "tbCustCont";
@@ -239,7 +280,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbCustName
             // 
-            this.tbCustName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbCustName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbCustName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustName.Location = new System.Drawing.Point(331, 149);
             this.tbCustName.Name = "tbCustName";
@@ -248,7 +289,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbCustId
             // 
-            this.tbCustId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbCustId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbCustId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCustId.Location = new System.Drawing.Point(331, 95);
             this.tbCustId.Name = "tbCustId";
@@ -308,7 +349,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.textBox5);
@@ -322,7 +363,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(22, 92);
             this.dataGridView1.Name = "dataGridView1";
@@ -343,7 +384,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Location = new System.Drawing.Point(203, 23);
             this.textBox5.Multiline = true;
@@ -351,44 +392,6 @@ namespace RealStateManagementSystem.masterForm
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(528, 37);
             this.textBox5.TabIndex = 19;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(173, 365);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(145, 23);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Office address :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(255, 414);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 23);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Date :";
-            // 
-            // tbOfficeAddress
-            // 
-            this.tbOfficeAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tbOfficeAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOfficeAddress.Location = new System.Drawing.Point(331, 358);
-            this.tbOfficeAddress.Name = "tbOfficeAddress";
-            this.tbOfficeAddress.Size = new System.Drawing.Size(424, 30);
-            this.tbOfficeAddress.TabIndex = 12;
-            // 
-            // tbDate
-            // 
-            this.tbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDate.Location = new System.Drawing.Point(331, 412);
-            this.tbDate.Name = "tbDate";
-            this.tbDate.Size = new System.Drawing.Size(424, 30);
-            this.tbDate.TabIndex = 13;
             // 
             // CustomerMaster
             // 

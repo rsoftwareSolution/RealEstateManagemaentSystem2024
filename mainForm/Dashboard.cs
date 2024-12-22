@@ -17,7 +17,16 @@ namespace RealEstateManagemaentSystem2024.mainForm
     {
 
         private Database db;
-        private string loggedInUsername; // To store the username from the login form
+        private string userName;
+        private string contact;
+
+        public Dashboard(string userName, string contact)
+        {
+            InitializeComponent();
+            // Assign the passed values to the class-level variables
+            this.userName = userName;
+            this.contact = contact;
+        }
 
         public Dashboard()
         {
@@ -26,7 +35,7 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            userDetailsPanelMDI.Hide();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -79,14 +88,9 @@ namespace RealEstateManagemaentSystem2024.mainForm
             userDetailsPanelMDI.Hide();
         }
 
-        private void Dashboard_Click(object sender, EventArgs e)
-        {
-            userDetailsPanelMDI.Hide();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-
+            userDetailsPanelMDI.Hide();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -116,9 +120,16 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            userDetailsPanelMDI.Show();
-            // Fetch and display user details
-            FetchUserDetails(this.loggedInUsername);
+            if(userDetailsPanelMDI.Visible)
+            {
+                userDetailsPanelMDI.Hide();
+            } 
+            else
+            {
+                userDetailsPanelMDI.Show();
+            }
+            lbmailId.Text = userName;
+            lbContact.Text = contact;
         }
 
         private void FetchUserDetails(string username)

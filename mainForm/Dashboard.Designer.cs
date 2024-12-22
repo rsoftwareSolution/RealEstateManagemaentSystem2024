@@ -46,17 +46,17 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.userDetailsPanelMDI = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lbmailId = new System.Windows.Forms.Label();
             this.lbContact = new System.Windows.Forms.Label();
+            this.lbmailId = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.userDetailsPanelMDI.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -196,16 +196,38 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.userDetailsPanelMDI.Size = new System.Drawing.Size(271, 119);
             this.userDetailsPanelMDI.TabIndex = 1;
             // 
-            // pictureBox2
+            // lbContact
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 37);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.lbContact.AutoSize = true;
+            this.lbContact.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContact.ForeColor = System.Drawing.Color.White;
+            this.lbContact.Location = new System.Drawing.Point(63, 50);
+            this.lbContact.Name = "lbContact";
+            this.lbContact.Size = new System.Drawing.Size(61, 22);
+            this.lbContact.TabIndex = 5;
+            this.lbContact.Text = "label3";
+            // 
+            // lbmailId
+            // 
+            this.lbmailId.AutoSize = true;
+            this.lbmailId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbmailId.ForeColor = System.Drawing.Color.White;
+            this.lbmailId.Location = new System.Drawing.Point(62, 12);
+            this.lbmailId.Name = "lbmailId";
+            this.lbmailId.Size = new System.Drawing.Size(61, 22);
+            this.lbmailId.TabIndex = 4;
+            this.lbmailId.Text = "label2";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(13, 44);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(42, 37);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
             // button2
             // 
@@ -221,38 +243,16 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox3
+            // pictureBox2
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 44);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(42, 37);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // lbmailId
-            // 
-            this.lbmailId.AutoSize = true;
-            this.lbmailId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmailId.ForeColor = System.Drawing.Color.White;
-            this.lbmailId.Location = new System.Drawing.Point(59, 12);
-            this.lbmailId.Name = "lbmailId";
-            this.lbmailId.Size = new System.Drawing.Size(61, 22);
-            this.lbmailId.TabIndex = 4;
-            this.lbmailId.Text = "label2";
-            // 
-            // lbContact
-            // 
-            this.lbContact.AutoSize = true;
-            this.lbContact.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbContact.ForeColor = System.Drawing.Color.White;
-            this.lbContact.Location = new System.Drawing.Point(57, 50);
-            this.lbContact.Name = "lbContact";
-            this.lbContact.Size = new System.Drawing.Size(61, 22);
-            this.lbContact.TabIndex = 5;
-            this.lbContact.Text = "label3";
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 37);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // Dashboard
             // 
@@ -275,8 +275,8 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.contextMenuStrip1.ResumeLayout(false);
             this.userDetailsPanelMDI.ResumeLayout(false);
             this.userDetailsPanelMDI.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

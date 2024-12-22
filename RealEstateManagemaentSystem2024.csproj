@@ -113,6 +113,12 @@
     <Compile Include="mainForm\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterForm\BookingMaster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="masterForm\BookingMaster.Designer.cs">
+      <DependentUpon>BookingMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterForm\BuilldingMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterForm\BookingMaster.resx">
+      <DependentUpon>BookingMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="masterForm\BuilldingMaster.resx">
       <DependentUpon>BuilldingMaster.cs</DependentUpon>
