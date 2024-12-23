@@ -181,12 +181,25 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void button13_Click(object sender, EventArgs e)
         {
-
+            panel3.Hide();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            userDetailsPanelMDI.Hide();
+            if (panel3.Visible)
+            {
+                panel3.Hide();
+            }
+            else
+            {
+                panel3.Show();
+            }
         }
     }
 }
