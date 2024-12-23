@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Web.WebView2.WinForms;
+using MySql.Data.MySqlClient;
 using RealStateManagementSystem.mainForm;
 using System;
 using System.Collections.Generic;
@@ -31,11 +32,15 @@ namespace RealEstateManagemaentSystem2024.mainForm
         public Dashboard()
         {
             InitializeComponent();
+
+            webView21.Source = new Uri(@"E:\appu bcs\RealEstateManagemaentSystem2024\Html\BackgroundImage.html");
+            Console.WriteLine("WebView2 page loaded");
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            userDetailsPanelMDI.Hide();
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -85,20 +90,12 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            userDetailsPanelMDI.Hide();
+    
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userDetailsPanelMDI.Hide();
-            if (panel3.Visible)
-            {
-                panel3.Hide();
-            }
-            else
-            {
-                panel3.Show();
-            }
+           
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -128,51 +125,10 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            panel3.Hide();
-            if (userDetailsPanelMDI.Visible)
-            {
-                userDetailsPanelMDI.Hide();
-            }
-            else
-            {
-                userDetailsPanelMDI.Show();
-            }
-            lbmailId.Text = userName;
-            lbContact.Text = contact;
+           
         }
 
-        private void FetchUserDetails(string username)
-        {
-            try
-            {
-                // Define the SELECT query
-                string query = "SELECT user_contact FROM user WHERE user_name = @Username";
-
-                // Use MySqlParameter instead of SqlParameter
-                MySqlParameter[] parameters = {
-            new MySqlParameter("@Username", MySqlDbType.VarChar) { Value = username }
-        };
-
-                // Execute query and get results
-                DataTable result = db.ExecuteQuery(query, parameters);
-
-                if (result.Rows.Count > 0)
-                {
-                    // Display user details
-                    lbContact.Text = result.Rows[0]["user_contact"].ToString();
-                    lbmailId.Text = username;  // Assuming username is already passed into this method
-                }
-                else
-                {
-                    // User not found
-                    MessageBox.Show("User not found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         private void panel3_Paint_1(object sender, PaintEventArgs e)
         {
@@ -181,7 +137,6 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void button13_Click(object sender, EventArgs e)
         {
-            panel3.Hide();
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -191,15 +146,12 @@ namespace RealEstateManagemaentSystem2024.mainForm
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            userDetailsPanelMDI.Hide();
-            if (panel3.Visible)
-            {
-                panel3.Hide();
-            }
-            else
-            {
-                panel3.Show();
-            }
+           
+        }
+
+        private void webView21_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

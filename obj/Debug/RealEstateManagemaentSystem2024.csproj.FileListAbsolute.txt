@@ -50,3 +50,14 @@ E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\System.Runtime.CompilerSer
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.CopyComplete
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.BookingMaster.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Microsoft.Web.WebView2.Core.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Microsoft.Web.WebView2.Core.xml
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Newtonsoft.Json.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\Newtonsoft.Json.xml
