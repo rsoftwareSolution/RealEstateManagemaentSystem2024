@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RealEstateManagemaentSystem2024.mainForm;
+using RealStateManagementSystem.mainForm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,15 +10,12 @@ namespace RealEstateManagemaentSystem2024
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Dashboard());
         }
     }
 }

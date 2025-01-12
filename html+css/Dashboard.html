@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Menu with C# Integration</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Times New Roman', sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #042331;
+            transition: all .5s ease;
+        }
+
+            /* Sidebar Header - Added "Admin Dashboard" text */
+            .sidebar header {
+                font-size: 22px;
+                color: steelblue;
+                line-height: 80px;
+                text-align: left; /* Aligning text to the left */
+                padding-left: 20px; /* Add padding for left spacing */
+                background: #063146;
+                user-select: none;
+            }
+
+            .sidebar ul a {
+                display: block;
+                height: 100%;
+                width: 100%;
+                line-height: 30px;
+                font-size: 20px;
+                color: white;
+                padding-left: 40px;
+                box-sizing: border-box;
+                border-bottom: 1px solid black;
+                border-top: 1px solid rgba(255, 255, 255, .1);
+                transition: .4s;
+            }
+
+        ul li:hover a {
+            padding-left: 50px;
+        }
+
+        #check {
+            display: none;
+        }
+
+        label #btn, label #cancel {
+            position: absolute;
+            background: #042331;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        label #btn {
+            left: 40px;
+            top: 25px;
+            font-size: 35px;
+            color: white;
+            padding: 6px 12px;
+            transition: all .5s;
+        }
+
+        label #cancel {
+            z-index: 1111;
+            left: -195px;
+            top: 17px;
+            font-size: 30px;
+            color: #0a5275;
+            padding: 4px 9px;
+            transition: all .5s ease;
+        }
+
+        #check:checked ~ .sidebar {
+            left: 0;
+        }
+
+        #check:checked ~ label #btn {
+            left: 250px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #check:checked ~ label #cancel {
+            left: 195px;
+        }
+
+        section {
+            background: url('E:/appu bcs/RealEstateManagemaentSystem2024/resource/240_F_957752077_xpAbF36pz8LLyGt9aEGFySel0TeMgaRy.jpg') no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            transition: all .5s;
+            margin-left: 0;
+        }
+
+        /* When sidebar is open, change the image sliding effect */
+        #check:checked ~ section {
+            margin-left: 250px; /* Shift the section to the right when the sidebar is open */
+            transition: all .5s ease;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <!-- Replace the 3-line menu icon with your logo -->
+        <img src="file:///E:/appu%20bcs/RealEstateManagemaentSystem2024/resource/list_4460732.png" alt="Logo" id="logo" style="width: 35px; height: 35px; background-color: transparent;" />
+        
+    </label>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" onclick="openForm('CustomerMaster')">Customer Master</a></li>
+            <li><a href="#" onclick="openForm('EnquiryMaster')">Enquiry Master</a></li>
+            <li><a href="#" onclick="openForm('BuildingMaster')">Building Master</a></li>
+            <li><a href="#" onclick="openForm('FlatMaster')">Flat Master</a></li>
+            <li><a href="#" onclick="openForm('PaymentMaster')">Payment Master</a></li>
+            <li><a href="#" onclick="openForm('CancellationMaster')">Cancellation Master</a></li>
+            <li><a href="#" onclick="openForm('UserMaster')">User Master</a></li>
+            <li><a href="#" onclick="openForm('BookingInvoice')">Booking Invoice</a></li>
+            <li><a href="#" onclick="openForm('SaleInvoice')">Sale Invoice</a></li>
+            <li><a href="#" onclick="openForm('DownloadReports')">Download Reports</a></li>
+            <li><a href="#" onclick="openForm('AccountStatements')">Account Statements</a></li>
+            <li><a href="#" onclick="openForm('Settings')">Settings</a></li>
+            <li><a href="#" onclick="openForm('Exit')">Exit</a></li>
+        </ul>
+    </div>
+
+    <section></section>
+
+    <script>
+        function openForm(formName) {
+            if (window.chrome && window.chrome.webview) {
+                console.log("openForm called with formName: " + formName);
+                window.chrome.webview.postMessage({ action: 'openForm', formName: formName });
+            } else {
+                console.log('WebView2 is not available. Running in a browser environment.');
+            }
+        }
+    </script>
+</body>
+</html>
