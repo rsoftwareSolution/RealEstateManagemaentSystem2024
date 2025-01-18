@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace RealStateManagementSystem.masterForm
 {
     public partial class CustomerMaster : Form
     {
+        Database db = new Database();
+
         public CustomerMaster()
         {
             InitializeComponent();
@@ -23,6 +26,16 @@ namespace RealStateManagementSystem.masterForm
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CustomerMaster_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
 
         }

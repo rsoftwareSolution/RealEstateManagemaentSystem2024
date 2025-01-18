@@ -71,6 +71,7 @@ namespace RealStateManagementSystem.masterForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1254, 106);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -117,7 +118,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbMobileNo
             // 
-            this.tbMobileNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbMobileNo.BackColor = System.Drawing.Color.White;
             this.tbMobileNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMobileNo.Location = new System.Drawing.Point(338, 334);
             this.tbMobileNo.Name = "tbMobileNo";
@@ -126,7 +127,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbClientEmail
             // 
-            this.tbClientEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbClientEmail.BackColor = System.Drawing.Color.White;
             this.tbClientEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbClientEmail.Location = new System.Drawing.Point(338, 282);
             this.tbClientEmail.Name = "tbClientEmail";
@@ -135,7 +136,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbDate
             // 
-            this.tbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbDate.BackColor = System.Drawing.Color.White;
             this.tbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDate.Location = new System.Drawing.Point(338, 225);
             this.tbDate.Name = "tbDate";
@@ -144,7 +145,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbClientName
             // 
-            this.tbClientName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbClientName.BackColor = System.Drawing.Color.White;
             this.tbClientName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbClientName.Location = new System.Drawing.Point(338, 172);
             this.tbClientName.Name = "tbClientName";
@@ -153,7 +154,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // tbClientId
             // 
-            this.tbClientId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbClientId.BackColor = System.Drawing.Color.White;
             this.tbClientId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbClientId.Location = new System.Drawing.Point(338, 118);
             this.tbClientId.Name = "tbClientId";
@@ -248,7 +249,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Location = new System.Drawing.Point(203, 23);
             this.textBox5.Multiline = true;
@@ -275,6 +276,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
@@ -284,12 +286,14 @@ namespace RealStateManagementSystem.masterForm
             this.button1.Size = new System.Drawing.Size(175, 48);
             this.button1.TabIndex = 4;
             this.button1.Text = "EXIT";
+            this.button1.UseMnemonic = false;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
@@ -299,12 +303,14 @@ namespace RealStateManagementSystem.masterForm
             this.button3.Size = new System.Drawing.Size(175, 48);
             this.button3.TabIndex = 3;
             this.button3.Text = "DELETE";
+            this.button3.UseMnemonic = false;
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
@@ -314,12 +320,14 @@ namespace RealStateManagementSystem.masterForm
             this.button2.Size = new System.Drawing.Size(175, 48);
             this.button2.TabIndex = 2;
             this.button2.Text = "UPDATE";
+            this.button2.UseMnemonic = false;
             this.button2.UseVisualStyleBackColor = false;
             // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
@@ -329,12 +337,14 @@ namespace RealStateManagementSystem.masterForm
             this.btnEdit.Size = new System.Drawing.Size(175, 48);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseMnemonic = false;
             this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
@@ -344,6 +354,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.Size = new System.Drawing.Size(175, 48);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "SAVE";
+            this.btnSave.UseMnemonic = false;
             this.btnSave.UseVisualStyleBackColor = false;
             // 
             // EnquiryMaster

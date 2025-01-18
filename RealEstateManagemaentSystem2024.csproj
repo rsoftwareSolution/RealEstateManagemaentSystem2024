@@ -14,6 +14,22 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +51,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D6DACDDE639409274920DAC2FF28C8C4BB207CBA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RealEstateManagemaentSystem2024_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
@@ -114,97 +142,116 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSource\Database.cs" />
-    <Compile Include="mainForm\Color.cs" />
-    <Compile Include="mainForm\Dashboard.cs">
+    <Compile Include="MainForm\Color.cs" />
+    <Compile Include="MainForm\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainForm\Dashboard.Designer.cs">
+    <Compile Include="MainForm\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainForm\Login.cs">
+    <Compile Include="MainForm\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainForm\Login.Designer.cs">
+    <Compile Include="MainForm\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\BookingMaster.cs">
+    <Compile Include="Settings.cs" />
+    <Compile Include="MasterForm\BookingMaster.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="masterForm\BookingMaster.Designer.cs">
+    <Compile Include="MasterForm\BookingMaster.Designer.cs">
       <DependentUpon>BookingMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\BuilldingMaster.cs">
+    <Compile Include="MasterForm\BuildingMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterForm\BuilldingMaster.Designer.cs">
-      <DependentUpon>BuilldingMaster.cs</DependentUpon>
+    <Compile Include="MasterForm\BuildingMaster.Designer.cs">
+      <DependentUpon>BuildingMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\CancellationMaster.cs">
+    <Compile Include="MasterForm\CancellationMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterForm\CancellationMaster.Designer.cs">
+    <Compile Include="MasterForm\CancellationMaster.Designer.cs">
       <DependentUpon>CancellationMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\CustomerMaster.cs">
+    <Compile Include="MasterForm\CustomerMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterForm\CustomerMaster.Designer.cs">
+    <Compile Include="MasterForm\CustomerMaster.Designer.cs">
       <DependentUpon>CustomerMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\EnquiryMaster.cs">
+    <Compile Include="MasterForm\EnquiryMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterForm\EnquiryMaster.Designer.cs">
+    <Compile Include="MasterForm\EnquiryMaster.Designer.cs">
       <DependentUpon>EnquiryMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\FlatMaster.cs">
+    <Compile Include="MasterForm\FlatMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterForm\FlatMaster.Designer.cs">
+    <Compile Include="MasterForm\FlatMaster.Designer.cs">
       <DependentUpon>FlatMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\PaymentMaster.cs">
+    <Compile Include="MasterForm\PaymentMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterForm\PaymentMaster.Designer.cs">
+    <Compile Include="MasterForm\PaymentMaster.Designer.cs">
       <DependentUpon>PaymentMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="masterForm\UserMaster.cs">
+    <Compile Include="MasterForm\SaleInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="masterForm\UserMaster.Designer.cs">
+    <Compile Include="MasterForm\SaleInvoice.Designer.cs">
+      <DependentUpon>SaleInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\UserMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\UserMaster.Designer.cs">
       <DependentUpon>UserMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="mainForm\Dashboard.resx">
+    <Compile Include="Reports\DownloadReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DownloadReports.Designer.cs">
+      <DependentUpon>DownloadReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statements\AccountStatements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statements\AccountStatements.Designer.cs">
+      <DependentUpon>AccountStatements.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainForm\Login.resx">
+    <EmbeddedResource Include="MainForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\BookingMaster.resx">
+    <EmbeddedResource Include="MasterForm\BookingMaster.resx">
       <DependentUpon>BookingMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\BuilldingMaster.resx">
-      <DependentUpon>BuilldingMaster.cs</DependentUpon>
+    <EmbeddedResource Include="MasterForm\BuildingMaster.resx">
+      <DependentUpon>BuildingMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\CancellationMaster.resx">
+    <EmbeddedResource Include="MasterForm\CancellationMaster.resx">
       <DependentUpon>CancellationMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\CustomerMaster.resx">
+    <EmbeddedResource Include="MasterForm\CustomerMaster.resx">
       <DependentUpon>CustomerMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\EnquiryMaster.resx">
+    <EmbeddedResource Include="MasterForm\EnquiryMaster.resx">
       <DependentUpon>EnquiryMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\FlatMaster.resx">
+    <EmbeddedResource Include="MasterForm\FlatMaster.resx">
       <DependentUpon>FlatMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\PaymentMaster.resx">
+    <EmbeddedResource Include="MasterForm\PaymentMaster.resx">
       <DependentUpon>PaymentMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="masterForm\UserMaster.resx">
+    <EmbeddedResource Include="MasterForm\UserMaster.resx">
       <DependentUpon>UserMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -231,11 +278,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="reports\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Html\BackgroundImage.html" />
     <Content Include="Html\SlideMenu.html" />
+    <None Include="RealEstateManagemaentSystem2024_TemporaryKey.pfx" />
+    <None Include="Resources\btnEdit.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" />

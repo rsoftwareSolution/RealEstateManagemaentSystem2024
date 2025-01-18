@@ -1,7 +1,7 @@
 ﻿
 namespace RealStateManagementSystem.config
 {
-    partial class BuilldingMaster
+    partial class BuildingMaster
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace RealStateManagementSystem.config
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuilldingMaster));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuildingMaster));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,13 +40,9 @@ namespace RealStateManagementSystem.config
             this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tbFloorNo = new System.Windows.Forms.TextBox();
-            this.tbFlatNo = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbBuildName = new System.Windows.Forms.TextBox();
             this.tbBuildId = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,6 +62,7 @@ namespace RealStateManagementSystem.config
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
@@ -88,6 +85,7 @@ namespace RealStateManagementSystem.config
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
@@ -113,6 +111,7 @@ namespace RealStateManagementSystem.config
             this.button1.TabIndex = 4;
             this.button1.Text = "EXIT";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -129,6 +128,7 @@ namespace RealStateManagementSystem.config
             this.button3.TabIndex = 3;
             this.button3.Text = "DELETE";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -145,6 +145,7 @@ namespace RealStateManagementSystem.config
             this.button2.TabIndex = 2;
             this.button2.Text = "UPDATE";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnEdit
             // 
@@ -161,6 +162,7 @@ namespace RealStateManagementSystem.config
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -177,6 +179,7 @@ namespace RealStateManagementSystem.config
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tabControl1
             // 
@@ -192,13 +195,9 @@ namespace RealStateManagementSystem.config
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.tbFloorNo);
-            this.tabPage1.Controls.Add(this.tbFlatNo);
             this.tabPage1.Controls.Add(this.tbAddress);
             this.tabPage1.Controls.Add(this.tbBuildName);
             this.tabPage1.Controls.Add(this.tbBuildId);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
@@ -209,28 +208,9 @@ namespace RealStateManagementSystem.config
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Building Form";
             // 
-            // tbFloorNo
-            // 
-            this.tbFloorNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tbFloorNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFloorNo.Location = new System.Drawing.Point(309, 339);
-            this.tbFloorNo.Name = "tbFloorNo";
-            this.tbFloorNo.Size = new System.Drawing.Size(424, 30);
-            this.tbFloorNo.TabIndex = 9;
-            // 
-            // tbFlatNo
-            // 
-            this.tbFlatNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tbFlatNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFlatNo.Location = new System.Drawing.Point(309, 287);
-            this.tbFlatNo.Name = "tbFlatNo";
-            this.tbFlatNo.Size = new System.Drawing.Size(424, 30);
-            this.tbFlatNo.TabIndex = 8;
-            this.tbFlatNo.TextChanged += new System.EventHandler(this.tbFlatNo_TextChanged);
-            // 
             // tbAddress
             // 
-            this.tbAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbAddress.BackColor = System.Drawing.Color.White;
             this.tbAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAddress.Location = new System.Drawing.Point(309, 230);
             this.tbAddress.Name = "tbAddress";
@@ -239,7 +219,7 @@ namespace RealStateManagementSystem.config
             // 
             // tbBuildName
             // 
-            this.tbBuildName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbBuildName.BackColor = System.Drawing.Color.White;
             this.tbBuildName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBuildName.Location = new System.Drawing.Point(309, 177);
             this.tbBuildName.Name = "tbBuildName";
@@ -248,36 +228,12 @@ namespace RealStateManagementSystem.config
             // 
             // tbBuildId
             // 
-            this.tbBuildId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbBuildId.BackColor = System.Drawing.Color.White;
             this.tbBuildId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBuildId.Location = new System.Drawing.Point(309, 124);
             this.tbBuildId.Name = "tbBuildId";
             this.tbBuildId.Size = new System.Drawing.Size(424, 30);
             this.tbBuildId.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(192, 344);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 23);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Floor No :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(203, 292);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 23);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Flat No :";
             // 
             // label4
             // 
@@ -353,7 +309,7 @@ namespace RealStateManagementSystem.config
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Location = new System.Drawing.Point(191, 23);
             this.textBox5.Multiline = true;
@@ -362,21 +318,21 @@ namespace RealStateManagementSystem.config
             this.textBox5.Size = new System.Drawing.Size(528, 37);
             this.textBox5.TabIndex = 19;
             // 
-            // BuilldingMaster
+            // BuildingMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1305, 679);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "BuilldingMaster";
+            this.Name = "BuildingMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuilldingMaster";
-            this.Load += new System.EventHandler(this.BuilldingMaster_Load);
+            this.Load += new System.EventHandler(this.BuildingMaster_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -400,16 +356,12 @@ namespace RealStateManagementSystem.config
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbFlatNo;
         private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.TextBox tbBuildName;
         private System.Windows.Forms.TextBox tbBuildId;
-        private System.Windows.Forms.TextBox tbFloorNo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
