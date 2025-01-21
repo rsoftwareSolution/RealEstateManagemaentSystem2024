@@ -2,6 +2,7 @@
 using RealStateManagementSystem.mainForm;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RealEstateManagemaentSystem2024.masterForm
@@ -33,7 +34,10 @@ namespace RealEstateManagemaentSystem2024.masterForm
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
+            btnEdit.Enabled = true;
+            btnSave.Enabled = true;
+            button2.Enabled = false;
+            button3.Enabled = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -64,7 +68,7 @@ namespace RealEstateManagemaentSystem2024.masterForm
                 }
                 else
                 {
-                    MessageBox.Show("No record found for the given username.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No record found for the given username", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -78,6 +82,69 @@ namespace RealEstateManagemaentSystem2024.masterForm
         {
             tbUserID.ReadOnly = true;
             tbName.Select();
+
+            //This code represents data load into grid 
+            try
+            {
+                // Initialize your Database helper class
+                Database db = new Database();
+
+                // Define the query
+                string query = "SELECT * FROM user";
+
+                // Execute the query and get the result as a DataTable
+                DataTable dataTable = db.ExecuteQuery(query);
+                PopulateDataGridView(dataTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void PopulateDataGridView(DataTable dataTable)
+        {
+            // Clear the existing rows (but keep the headers)
+            userDataGrid.Rows.Clear();
+
+            // Loop through each row in the DataTable and add it to the DataGridView
+            foreach (DataRow row in dataTable.Rows)
+            {
+                userDataGrid.Rows.Add(
+                    row["user_id"],
+                    row["user_name"],
+                    row["user_email"],
+                    row["user_contact"],
+                    row["user_password"]
+                );
+            }
+
+        }
+
+            private void SearchByUsername(string userName)
+        {
+            try
+            {
+                // Initialize your Database helper class
+                Database db = new Database();
+
+                // Define the query to search by username
+                string query = "SELECT user_id, user_name, user_email, user_contact, user_password FROM user WHERE user_name LIKE @userName";
+
+                // Execute the query with a parameter
+                DataTable dataTable = db.ExecuteQuery(query, new MySqlParameter[]
+                {
+                    new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = $"%{userName}%" } // Supports partial search
+                });
+
+                // Bind only the data to the pre-defined columns
+                PopulateDataGridView(dataTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -207,6 +274,24 @@ namespace RealEstateManagemaentSystem2024.masterForm
             {
                 MessageBox.Show("Error deleting user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            SearchByUsername(textBox5.Text);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            btnEdit.Enabled = false;
+            btnSave.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
         }
     }
 }
