@@ -54,13 +54,13 @@ namespace RealStateManagementSystem.masterForm
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbFlatCount = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.tbRate = new System.Windows.Forms.TextBox();
             this.tbFloor = new System.Windows.Forms.TextBox();
             this.tbBuild = new System.Windows.Forms.TextBox();
             this.tbFlat = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -69,13 +69,11 @@ namespace RealStateManagementSystem.masterForm
             this.label15 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -330,57 +328,56 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(2, 110);
+            this.tabControl2.Location = new System.Drawing.Point(27, 110);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(973, 564);
+            this.tabControl2.Size = new System.Drawing.Size(948, 556);
             this.tabControl2.TabIndex = 7;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.tbFlatCount);
             this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.comboBox1);
             this.tabPage3.Controls.Add(this.tbRate);
             this.tabPage3.Controls.Add(this.tbFloor);
             this.tabPage3.Controls.Add(this.tbBuild);
             this.tabPage3.Controls.Add(this.tbFlat);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(965, 531);
+            this.tabPage3.Size = new System.Drawing.Size(940, 523);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Flat Form";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // comboBox1
+            // tbFlatCount
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Single Room",
-            "Single Hall",
-            "1 Floor",
-            "1 RK",
-            "1 BHK",
-            "2 BHK",
-            "3 BHK",
-            "4 BHK"});
-            this.comboBox1.Location = new System.Drawing.Point(314, 250);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(424, 28);
-            this.comboBox1.TabIndex = 10;
+            this.tbFlatCount.BackColor = System.Drawing.Color.White;
+            this.tbFlatCount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFlatCount.Location = new System.Drawing.Point(314, 309);
+            this.tbFlatCount.Name = "tbFlatCount";
+            this.tbFlatCount.Size = new System.Drawing.Size(424, 30);
+            this.tbFlatCount.TabIndex = 12;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(101, 311);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(194, 23);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Available Flat Count :";
             // 
             // tbRate
             // 
             this.tbRate.BackColor = System.Drawing.Color.White;
             this.tbRate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRate.Location = new System.Drawing.Point(314, 305);
+            this.tbRate.Location = new System.Drawing.Point(314, 249);
             this.tbRate.Name = "tbRate";
             this.tbRate.Size = new System.Drawing.Size(424, 30);
             this.tbRate.TabIndex = 9;
@@ -411,38 +408,26 @@ namespace RealStateManagementSystem.masterForm
             this.tbFlat.Name = "tbFlat";
             this.tbFlat.Size = new System.Drawing.Size(424, 30);
             this.tbFlat.TabIndex = 5;
-            this.tbFlat.TextChanged += new System.EventHandler(this.tbFlat_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(232, 307);
+            this.label10.Location = new System.Drawing.Point(230, 251);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 23);
             this.label10.TabIndex = 4;
             this.label10.Text = "Rate :";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(193, 251);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 23);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Flat Type :";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(229, 193);
+            this.label12.Location = new System.Drawing.Point(179, 195);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 23);
+            this.label12.Size = new System.Drawing.Size(114, 23);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Floor :";
+            this.label12.Text = "Total Floor :";
             // 
             // label13
             // 
@@ -453,7 +438,6 @@ namespace RealStateManagementSystem.masterForm
             this.label13.Size = new System.Drawing.Size(116, 23);
             this.label13.TabIndex = 1;
             this.label13.Text = "Building ID :";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -475,10 +459,9 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(965, 531);
+            this.tabPage4.Size = new System.Drawing.Size(940, 523);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Flat Details List";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // dataGridView2
             // 
@@ -511,69 +494,71 @@ namespace RealStateManagementSystem.masterForm
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(528, 37);
             this.textBox7.TabIndex = 19;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.btnExit);
+            this.panel4.Controls.Add(this.btnDelete);
+            this.panel4.Controls.Add(this.btnUpdate);
             this.panel4.Controls.Add(this.btnEdit);
             this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Location = new System.Drawing.Point(1003, 105);
+            this.panel4.Location = new System.Drawing.Point(1007, 102);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(252, 574);
+            this.panel4.Size = new System.Drawing.Size(248, 577);
             this.panel4.TabIndex = 8;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // button1
+            // btnExit
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(42, 371);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 48);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "EXIT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(42, 371);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(175, 48);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(42, 301);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 48);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(42, 301);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(175, 48);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(42, 233);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 48);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(42, 233);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(175, 48);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnEdit
             // 
@@ -608,25 +593,6 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(314, 365);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(424, 30);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(101, 368);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 23);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "Available Flat Count :";
             // 
             // FlatMaster
             // 
@@ -690,7 +656,6 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.TextBox tbBuild;
         private System.Windows.Forms.TextBox tbFlat;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -699,13 +664,12 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbFlatCount;
         private System.Windows.Forms.Label label16;
     }
 }
