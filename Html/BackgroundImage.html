@@ -50,44 +50,76 @@
             display: none;
         }
 
-        /* Adjust label styling to remove any background and prevent the white panel */
         label {
             position: absolute;
-            top: 15px;
+            top: 5px; /* Adjusted position to move up */
             left: 0;
             z-index: 1111;
-            background: transparent; /* Set background to transparent */
+            background: transparent;
+            display: flex;
+            align-items: center; /* Align the hamburger and text */
         }
 
-            label #btn, label #cancel {
-                position: absolute;
-                background: #042331;
-                border-radius: 2px;
+            label #hamburger {
+                width: 30px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 cursor: pointer;
             }
 
-            label #cancel {
-                z-index: 1111;
-                left: -195px;
-                top: -15px;
-                font-size: 15px;
-                color: red;
-                padding: 4px 9px;
-                transition: all .5s ease;
-            }
+                label #hamburger div {
+                    width: 100%;
+                    height: 4px;
+                    background-color: black;
+                    border-radius: 4px;
+                    transition: all .3s ease;
+                }
+
+        #menuText {
+            font-size: 20px; /* Increased font size for "Menu" */
+            color: black;
+            margin-left: 10px; /* Space between the hamburger and the text */
+            font-weight: bold; /* Make the text bold */
+            transition: all .5s ease;
+        }
+
+        /* Hide hamburger and text when the sidebar is open */
+        #check:checked ~ label #hamburger div:nth-child(1) {
+            transform: rotate(45deg);
+            top: 10px;
+        }
+
+        #check:checked ~ label #hamburger div:nth-child(2) {
+            opacity: 0;
+        }
+
+        #check:checked ~ label #hamburger div:nth-child(3) {
+            transform: rotate(-45deg);
+            top: -10px;
+        }
+
+        #check:checked ~ label #menuText {
+            display: none;
+        }
+
+        .copyright {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-family: 'Times New Roman';
+            font-size: 14px;
+            font-style: italic;
+            color: white;
+            text-align: right;
+            background-color: transparent;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
 
         #check:checked ~ .sidebar {
             left: 0;
-        }
-
-        #check:checked ~ label #btn {
-            left: 250px;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        #check:checked ~ label #cancel {
-            left: 195px;
         }
 
         section {
@@ -99,19 +131,28 @@
             margin-left: 0;
         }
 
-        /* When sidebar is open, change the image sliding effect */
         #check:checked ~ section {
-            margin-left: 250px; /* Shift the section to the right when the sidebar is open */
+            margin-left: 250px;
             transition: all .5s ease;
+        }
+
+        .sidebar ul {
+            margin-top: 60px; /* Ensure the sidebar content doesn't overlap the top */
         }
     </style>
 </head>
 <body>
-    <input type="checkbox" id="check">
+    <!-- Checkbox to control the sidebar (initially unchecked) -->
+    <input type="checkbox" id="check" checked="false"> <!-- Ensure it's unchecked when the page loads -->
+
     <label for="check">
-        <!-- Replace the 3-line menu icon with your logo -->
-        <img src="file:///E:/appu%20bcs/RealEstateManagemaentSystem2024/resource/list_4460732.png" alt="Logo" id="logo" style="width: 35px; height: 35px; background-color: transparent;" />
-        <span id="cancel">&#10006;</span>
+        <!-- Hamburger menu (3 lines) and "Menu" text -->
+        <div id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span id="menuText">Admin Dashboard</span>
     </label>
 
     <div class="sidebar">
@@ -132,9 +173,20 @@
         </ul>
     </div>
 
+    <div class="copyright">
+        &copy; Copyrights are reserved.<br>
+        Software developed by Apoorva and Nirmala
+    </div>
+
     <section></section>
 
     <script>
+        // This function ensures the sidebar is closed on page load by unchecking the checkbox
+        window.onload = function () {
+            document.getElementById('check').checked = false; // Ensure the checkbox is unchecked
+        };
+
+        // Function to handle form opening (integrating with C# WebView)
         function openForm(formName) {
             if (window.chrome && window.chrome.webview) {
                 console.log("openForm called with formName: " + formName);
