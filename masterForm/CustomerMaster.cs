@@ -5,19 +5,19 @@ using System.Windows.Forms;
 
 namespace RealStateManagementSystem.config
 {
-    public partial class CustomerMaster : Form
+    public partial class Customer : Form
     {
         Database db = new Database();
-        private AutoIdGenerator idGenerator = new AutoIdGenerator("CUST", 4); 
+        private AutoIdGenerator idGenerator = new AutoIdGenerator("CUST", 4);
 
-        public CustomerMaster()
+        public Customer()
         {
             InitializeComponent();
         }
 
         private void CustomerMaster_Load(object sender, EventArgs e)
         {
-
+            GenerateCustomerId(); // Automatically set the next customer ID on load
             ClearFields();
 
             try
@@ -50,34 +50,57 @@ namespace RealStateManagementSystem.config
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            string custId = idGenerator.GenerateNextId(); // Generate the next unique ID
-            string custName = tbCustName.Text.Trim();
-            string custAddress = tbCustAddress.Text.Trim();
-            string custContact = tbCustCont.Text.Trim();
-            string custBirthDate = dtpCustomerBirthDate.Text;
-            string custEmail = tbEmail.Text.Trim();
-
-            string checkQuery = "SELECT COUNT(*) FROM customer_details WHERE cust_name = @custName AND cust_email = @custEmail";
-
             try
             {
-                object result = db.ExecuteScalar(checkQuery, new MySqlParameter[]
-                {
-                    new MySqlParameter("@custName", MySqlDbType.VarChar) { Value = custName },
-                    new MySqlParameter("@custEmail", MySqlDbType.VarChar) { Value = custEmail }
-                });
+                // Initialize the AutoIdGenerator
+                AutoIdGenerator idGenerator = new AutoIdGenerator("CUST", 4);
 
-                if (Convert.ToInt32(result) > 0)
+                // Fetch the current maximum cust_id from the database
+                string maxIdQuery = "SELECT MAX(cust_id) AS maxId FROM customer_details";
+                object maxIdResult = db.ExecuteScalar(maxIdQuery);
+                int maxId = maxIdResult != DBNull.Value ? Convert.ToInt32(maxIdResult) : 0;
+
+                // Set the counter for the generator
+                idGenerator.ResetCounter(maxId);
+
+                // Generate the next customer ID
+                string nextCustomerId = idGenerator.GenerateNextId();
+
+                // Get user inputs from TextBoxes
+                string custName = tbCustName.Text.Trim();
+                string custAddress = tbCustAddress.Text.Trim();
+                string custContact = tbCustCont.Text.Trim();
+                string custBirthDate = dtpCustomerBirthDate.Text.Trim();
+                string custEmail = tbEmail.Text.Trim();
+
+                // Validate input fields
+                if (string.IsNullOrEmpty(custName) || string.IsNullOrEmpty(custAddress) || string.IsNullOrEmpty(custContact))
                 {
-                    MessageBox.Show("Customer with the same name or email already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                string saveQuery = "INSERT INTO customer_details (cust_id, cust_name, cust_address, cust_contact, cust_birth_date, cust_email) " +
-                                   "VALUES (@custId, @custName, @custAddress, @custContact, @custBirthDate, @custEmail)";
-                db.ExecuteNonQuery(saveQuery, new MySqlParameter[]
+                // Check if the customer with the same email or contact already exists
+                string checkQuery = "SELECT COUNT(*) FROM customer_details WHERE cust_email = @custEmail OR cust_contact = @custContact";
+                object existingRecord = db.ExecuteScalar(checkQuery, new MySqlParameter[]
                 {
-                    new MySqlParameter("@custId", MySqlDbType.VarChar) { Value = custId },
+                    new MySqlParameter("@custEmail", MySqlDbType.VarChar) { Value = custEmail },
+                    new MySqlParameter("@custContact", MySqlDbType.VarChar) { Value = custContact }
+                });
+
+                if (Convert.ToInt32(existingRecord) > 0)
+                {
+                    MessageBox.Show("Customer with the same email or contact already exists.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Insert the new customer record
+                string insertQuery = "INSERT INTO customer_details (cust_id, cust_name, cust_address, cust_contact, cust_birth_date, cust_email) " +
+                                     "VALUES (@custId, @custName, @custAddress, @custContact, @custBirthDate, @custEmail)";
+
+                db.ExecuteNonQuery(insertQuery, new MySqlParameter[]
+                {
+                    new MySqlParameter("@custId", MySqlDbType.VarChar) { Value = nextCustomerId },
                     new MySqlParameter("@custName", MySqlDbType.VarChar) { Value = custName },
                     new MySqlParameter("@custAddress", MySqlDbType.VarChar) { Value = custAddress },
                     new MySqlParameter("@custContact", MySqlDbType.VarChar) { Value = custContact },
@@ -86,22 +109,64 @@ namespace RealStateManagementSystem.config
                 });
 
                 MessageBox.Show("Customer details saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clear the input fields and generate the next ID
                 ClearFields();
+                GenerateCustomerId();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error saving customer: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error saving customer: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GenerateCustomerId()
+        {
+            try
+            {
+                // Query to get the maximum customer ID
+                string query = "SELECT MAX(cust_id) FROM customer_details";
+
+                // Execute the query
+                object maxIdObj = db.ExecuteScalar(query);
+
+                // Check if the result is null or DBNull
+                if (maxIdObj == null || maxIdObj == DBNull.Value || string.IsNullOrEmpty(maxIdObj.ToString()))
+                {
+                    tbCustId.Text = "CUST0001"; // Start with "CUST0001" if no record exists
+                }
+
+                // Extract the numeric part from the ID (e.g., "CUST0003" -> "0003")
+                string maxIdStr = maxIdObj.ToString();
+                if (maxIdStr.StartsWith("CUST") && int.TryParse(maxIdStr.Substring(4), out int numericPart))
+                {
+                    // Increment the numeric part
+                    int nextId = numericPart + 1;
+
+                    // Format the new ID with the prefix and leading zeros
+                    tbCustId.Text = $"CUST{nextId:D4}";
+                }
+                else
+                {
+                    throw new FormatException($"Unexpected format for cust_id: {maxIdStr}");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log or display the error message
+                MessageBox.Show($"Error generating customer ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbCustId.Text = string.Empty; // Return an empty string in case of an error
             }
         }
 
         private void ClearFields()
         {
-            tbCustId.Clear();
             tbCustName.Clear();
             tbCustAddress.Clear();
-
-            tbCustId.Text = idGenerator.GenerateNextId(); // Display the next generated ID
+            tbCustCont.Clear();
+            tbEmail.Clear();
             tbCustName.Select();
+            GenerateCustomerId();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -139,19 +204,21 @@ namespace RealStateManagementSystem.config
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string custId = tbCustId.Text;
             string custName = tbCustName.Text;
             string custAddress = tbCustAddress.Text;
             string custContact = tbCustCont.Text;
             string custBirthDate = dtpCustomerBirthDate.Text;
             string custEmail = tbEmail.Text;
 
-            string query = "UPDATE customer_details SET cust_address = @custAddress, cust_contact = @custContact, " +
-                           "cust_birth_date = @custBirthDate, cust_email = @custEmail WHERE cust_name = @custName";
+            string query = "UPDATE customer_details SET cust_name = @custName, cust_address = @custAddress, cust_contact = @custContact, " +
+                           "cust_birth_date = @custBirthDate, cust_email = @custEmail WHERE cust_id = @custId";
 
             try
             {
                 db.ExecuteNonQuery(query, new MySqlParameter[]
                 {
+                    new MySqlParameter("@custId", MySqlDbType.VarChar) { Value = custId },
                     new MySqlParameter("@custAddress", MySqlDbType.VarChar) { Value = custAddress },
                     new MySqlParameter("@custContact", MySqlDbType.VarChar) { Value = custContact },
                     new MySqlParameter("@custBirthDate", MySqlDbType.VarChar) { Value = custBirthDate },

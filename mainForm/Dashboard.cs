@@ -179,7 +179,7 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                     switch (formName)
                                     {
                                         case "CustomerMaster":
-                                            var customerMasterForm = new CustomerMaster();
+                                            var customerMasterForm = new Customer();
                                             customerMasterForm.Show();
                                             break;
 

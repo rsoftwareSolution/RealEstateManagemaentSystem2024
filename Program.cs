@@ -18,7 +18,7 @@ namespace RealEstateManagemaentSystem2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerMaster());
+            Application.Run(new Customer());
         }
     }
 }
