@@ -16,5 +16,20 @@ namespace RealEstateManagemaentSystem2024.masterForm
         {
             InitializeComponent();
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SaleInvoice_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

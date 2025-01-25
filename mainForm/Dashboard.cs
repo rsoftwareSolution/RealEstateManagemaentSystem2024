@@ -214,8 +214,8 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                             break;
 
                                         case "BookingInvoice":
-                                            var bookingInvoiceForm = new BookingMaster();
-                                            bookingInvoiceForm.Show();
+                                           // var bookingInvoiceForm = new BookingMaster();
+                                           // bookingInvoiceForm.Show();
                                             break;
 
                                         case "SaleInvoice":

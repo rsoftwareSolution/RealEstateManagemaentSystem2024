@@ -74,6 +74,8 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -337,6 +339,8 @@ namespace RealStateManagementSystem.masterForm
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.tbFlatCount);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.tbRate);
@@ -353,21 +357,22 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage3.Size = new System.Drawing.Size(940, 523);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Flat Form";
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // tbFlatCount
             // 
             this.tbFlatCount.BackColor = System.Drawing.Color.White;
             this.tbFlatCount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFlatCount.Location = new System.Drawing.Point(314, 309);
+            this.tbFlatCount.Location = new System.Drawing.Point(309, 362);
             this.tbFlatCount.Name = "tbFlatCount";
             this.tbFlatCount.Size = new System.Drawing.Size(424, 30);
-            this.tbFlatCount.TabIndex = 12;
+            this.tbFlatCount.TabIndex = 6;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(101, 311);
+            this.label16.Location = new System.Drawing.Point(96, 364);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(194, 23);
             this.label16.TabIndex = 11;
@@ -380,7 +385,7 @@ namespace RealStateManagementSystem.masterForm
             this.tbRate.Location = new System.Drawing.Point(314, 249);
             this.tbRate.Name = "tbRate";
             this.tbRate.Size = new System.Drawing.Size(424, 30);
-            this.tbRate.TabIndex = 9;
+            this.tbRate.TabIndex = 4;
             // 
             // tbFloor
             // 
@@ -389,7 +394,7 @@ namespace RealStateManagementSystem.masterForm
             this.tbFloor.Location = new System.Drawing.Point(314, 193);
             this.tbFloor.Name = "tbFloor";
             this.tbFloor.Size = new System.Drawing.Size(424, 30);
-            this.tbFloor.TabIndex = 7;
+            this.tbFloor.TabIndex = 3;
             // 
             // tbBuild
             // 
@@ -398,7 +403,7 @@ namespace RealStateManagementSystem.masterForm
             this.tbBuild.Location = new System.Drawing.Point(314, 140);
             this.tbBuild.Name = "tbBuild";
             this.tbBuild.Size = new System.Drawing.Size(424, 30);
-            this.tbBuild.TabIndex = 6;
+            this.tbBuild.TabIndex = 1;
             // 
             // tbFlat
             // 
@@ -407,17 +412,17 @@ namespace RealStateManagementSystem.masterForm
             this.tbFlat.Location = new System.Drawing.Point(314, 87);
             this.tbFlat.Name = "tbFlat";
             this.tbFlat.Size = new System.Drawing.Size(424, 30);
-            this.tbFlat.TabIndex = 5;
+            this.tbFlat.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(230, 251);
+            this.label10.Location = new System.Drawing.Point(150, 251);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 23);
+            this.label10.Size = new System.Drawing.Size(143, 23);
             this.label10.TabIndex = 4;
-            this.label10.Text = "Rate :";
+            this.label10.Text = "Per Sq.ft Rate :";
             // 
             // label12
             // 
@@ -538,7 +543,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnDelete.Location = new System.Drawing.Point(42, 301);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(175, 48);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -555,7 +560,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate.Location = new System.Drawing.Point(42, 233);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(175, 48);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -572,7 +577,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnEdit.Location = new System.Drawing.Point(42, 167);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(175, 48);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -589,10 +594,39 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.Location = new System.Drawing.Point(42, 103);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(175, 48);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(185, 310);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(110, 23);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Flat Types :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Single Room",
+            "Single Floor",
+            "Party Hall",
+            "Suit",
+            "1 RK",
+            "1 BHK",
+            "2 BHK",
+            "3 BHK",
+            "4 BHK"});
+            this.comboBox1.Location = new System.Drawing.Point(314, 309);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(424, 28);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FlatMaster
             // 
@@ -671,5 +705,7 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbFlatCount;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

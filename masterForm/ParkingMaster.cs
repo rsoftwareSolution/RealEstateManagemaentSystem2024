@@ -10,26 +10,11 @@ using System.Windows.Forms;
 
 namespace RealEstateManagemaentSystem2024.MasterForm
 {
-    public partial class BookingRegister : Form
+    public partial class ParkingMaster : Form
     {
-        public BookingRegister()
+        public ParkingMaster()
         {
             InitializeComponent();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

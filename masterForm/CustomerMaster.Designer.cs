@@ -46,7 +46,6 @@ namespace RealStateManagementSystem.config
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbCustCont = new System.Windows.Forms.TextBox();
             this.tbCustName = new System.Windows.Forms.TextBox();
-            this.tbCustId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@ namespace RealStateManagementSystem.config
             this.button2 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.tbCustId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -150,13 +150,6 @@ namespace RealStateManagementSystem.config
             resources.ApplyResources(this.tbCustName, "tbCustName");
             this.tbCustName.Name = "tbCustName";
             // 
-            // tbCustId
-            // 
-            this.tbCustId.BackColor = System.Drawing.Color.WhiteSmoke;
-            resources.ApplyResources(this.tbCustId, "tbCustId");
-            this.tbCustId.Name = "tbCustId";
-            this.tbCustId.ReadOnly = true;
-            // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
@@ -201,7 +194,7 @@ namespace RealStateManagementSystem.config
             this.customerDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
@@ -218,7 +211,7 @@ namespace RealStateManagementSystem.config
             this.BirthDate});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -231,7 +224,7 @@ namespace RealStateManagementSystem.config
             this.customerDataGrid.Name = "customerDataGrid";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -333,6 +326,13 @@ namespace RealStateManagementSystem.config
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
+            // tbCustId
+            // 
+            this.tbCustId.BackColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.tbCustId, "tbCustId");
+            this.tbCustId.Name = "tbCustId";
+            this.tbCustId.ReadOnly = true;
+            // 
             // Customer
             // 
             resources.ApplyResources(this, "$this");
@@ -348,6 +348,7 @@ namespace RealStateManagementSystem.config
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            //this.Name = "Customer";
             this.Load += new System.EventHandler(this.CustomerMaster_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -369,7 +370,6 @@ namespace RealStateManagementSystem.config
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbCustCont;
         private System.Windows.Forms.TextBox tbCustName;
-        private System.Windows.Forms.TextBox tbCustId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -393,5 +393,6 @@ namespace RealStateManagementSystem.config
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
         private System.Windows.Forms.DataGridViewTextBoxColumn BirthDate;
+        private System.Windows.Forms.TextBox tbCustId;
     }
 }

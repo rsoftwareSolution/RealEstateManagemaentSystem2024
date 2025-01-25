@@ -1,14 +1,14 @@
 ﻿
-namespace RealEstateManagemaentSystem2024.masterForm
+namespace RealEstateManagemaentSystem2024.MasterForm
 {
-    partial class BookingMaster
+    partial class BookingRegister
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -21,22 +21,23 @@ namespace RealEstateManagemaentSystem2024.masterForm
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // BookingMaster
+            // BookingRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "BookingMaster";
-            this.Size = new System.Drawing.Size(1195, 737);
+            this.ClientSize = new System.Drawing.Size(1310, 752);
+            this.Name = "BookingRegister";
+            this.Text = "BookingRegister";
             this.ResumeLayout(false);
 
         }
