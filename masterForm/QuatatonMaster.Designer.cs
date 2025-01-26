@@ -1,7 +1,7 @@
 ﻿
 namespace RealEstateManagemaentSystem2024.MasterForm
 {
-    partial class BookingRegister
+    partial class QuatatonMaster
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,13 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         {
             this.SuspendLayout();
             // 
-            // BookingRegister
+            // QuatatonMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 722);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "BookingRegister";
-            this.Text = "BookingRegister";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "QuatatonMaster";
+            this.Text = "QuatationMaster";
             this.ResumeLayout(false);
 
         }

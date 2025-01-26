@@ -231,7 +231,7 @@ namespace RealStateManagementSystem.masterForm
                 // Execute query to get customer_id
                 DataTable customerData = db.ExecuteQuery(customerQuery, new MySqlParameter[]
                 {
-            new MySqlParameter("@custContact", MySqlDbType.Int64) { Value = custContact }
+                    new MySqlParameter("@custContact", MySqlDbType.Int64) { Value = custContact }
                 });
 
                 // If no customer is found with the provided contact
@@ -250,7 +250,7 @@ namespace RealStateManagementSystem.masterForm
                 // Execute query to get bookings for this customer_id
                 DataTable bookingData = db.ExecuteQuery(bookingQuery, new MySqlParameter[]
                 {
-            new MySqlParameter("@custId", MySqlDbType.Int32) { Value = custId }
+                    new MySqlParameter("@custId", MySqlDbType.Int32) { Value = custId }
                 });
 
                 // If no bookings are found
