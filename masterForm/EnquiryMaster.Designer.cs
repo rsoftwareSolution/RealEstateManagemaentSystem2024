@@ -29,16 +29,17 @@ namespace RealStateManagementSystem.masterForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnquiryMaster));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnquiryMaster));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tbEnquirContact = new System.Windows.Forms.TextBox();
             this.tbEnquirEmail = new System.Windows.Forms.TextBox();
             this.tbEnquirName = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -74,12 +74,12 @@ namespace RealStateManagementSystem.masterForm
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.Thistle;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(27, 26);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1195, 78);
+            this.panel1.Size = new System.Drawing.Size(1353, 103);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -88,21 +88,22 @@ namespace RealStateManagementSystem.masterForm
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(451, 13);
+            this.label1.Location = new System.Drawing.Point(465, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(326, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enquiry Master";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(27, 108);
+            this.tabControl1.Location = new System.Drawing.Point(2, 108);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(940, 547);
+            this.tabControl1.Size = new System.Drawing.Size(1049, 613);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -121,64 +122,76 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(932, 514);
+            this.tabPage1.Size = new System.Drawing.Size(1041, 580);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Enquiry Form";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(338, 230);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(424, 30);
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // tbEnquirContact
             // 
             this.tbEnquirContact.BackColor = System.Drawing.Color.White;
             this.tbEnquirContact.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEnquirContact.Location = new System.Drawing.Point(338, 334);
+            this.tbEnquirContact.Multiline = true;
             this.tbEnquirContact.Name = "tbEnquirContact";
-            this.tbEnquirContact.Size = new System.Drawing.Size(424, 30);
-            this.tbEnquirContact.TabIndex = 9;
+            this.tbEnquirContact.Size = new System.Drawing.Size(424, 38);
+            this.tbEnquirContact.TabIndex = 4;
             // 
             // tbEnquirEmail
             // 
             this.tbEnquirEmail.BackColor = System.Drawing.Color.White;
             this.tbEnquirEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEnquirEmail.Location = new System.Drawing.Point(338, 282);
+            this.tbEnquirEmail.Multiline = true;
             this.tbEnquirEmail.Name = "tbEnquirEmail";
-            this.tbEnquirEmail.Size = new System.Drawing.Size(424, 30);
-            this.tbEnquirEmail.TabIndex = 8;
+            this.tbEnquirEmail.Size = new System.Drawing.Size(424, 38);
+            this.tbEnquirEmail.TabIndex = 3;
             // 
             // tbEnquirName
             // 
             this.tbEnquirName.BackColor = System.Drawing.Color.White;
             this.tbEnquirName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEnquirName.Location = new System.Drawing.Point(338, 172);
+            this.tbEnquirName.Multiline = true;
             this.tbEnquirName.Name = "tbEnquirName";
-            this.tbEnquirName.Size = new System.Drawing.Size(424, 30);
-            this.tbEnquirName.TabIndex = 6;
+            this.tbEnquirName.Size = new System.Drawing.Size(424, 38);
+            this.tbEnquirName.TabIndex = 1;
             // 
             // tbEnquiryId
             // 
             this.tbEnquiryId.BackColor = System.Drawing.Color.White;
             this.tbEnquiryId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEnquiryId.Location = new System.Drawing.Point(338, 118);
+            this.tbEnquiryId.Multiline = true;
             this.tbEnquiryId.Name = "tbEnquiryId";
-            this.tbEnquiryId.Size = new System.Drawing.Size(424, 30);
-            this.tbEnquiryId.TabIndex = 5;
+            this.tbEnquiryId.Size = new System.Drawing.Size(424, 38);
+            this.tbEnquiryId.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(156, 336);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(172, 339);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(155, 23);
+            this.label7.Size = new System.Drawing.Size(144, 22);
             this.label7.TabIndex = 4;
             this.label7.Text = "Enquir Contact  :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(175, 282);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(191, 285);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 23);
+            this.label5.Size = new System.Drawing.Size(131, 22);
             this.label5.TabIndex = 3;
             this.label5.Text = " Enquir Email :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -186,30 +199,30 @@ namespace RealStateManagementSystem.masterForm
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(177, 227);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(193, 230);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 23);
+            this.label4.Size = new System.Drawing.Size(125, 22);
             this.label4.TabIndex = 2;
             this.label4.Text = "Enquiry Date :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(184, 174);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(200, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 23);
+            this.label3.Size = new System.Drawing.Size(120, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "Enquir Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(197, 125);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(213, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 23);
+            this.label2.Size = new System.Drawing.Size(108, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Enquiry ID :";
             // 
@@ -223,7 +236,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(962, 533);
+            this.tabPage2.Size = new System.Drawing.Size(932, 514);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Enquiry Details List";
             // 
@@ -344,16 +357,15 @@ namespace RealStateManagementSystem.masterForm
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackColor = System.Drawing.Color.Thistle;
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Location = new System.Drawing.Point(1000, 104);
+            this.panel2.Location = new System.Drawing.Point(1084, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(222, 547);
+            this.panel2.Size = new System.Drawing.Size(271, 617);
             this.panel2.TabIndex = 5;
             // 
             // btnExit
@@ -368,7 +380,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnExit.Location = new System.Drawing.Point(39, 372);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(155, 48);
-            this.btnExit.TabIndex = 4;
+            this.btnExit.TabIndex = 9;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseMnemonic = false;
             this.btnExit.UseVisualStyleBackColor = false;
@@ -386,7 +398,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnDelete.Location = new System.Drawing.Point(39, 302);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(155, 48);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseMnemonic = false;
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -404,7 +416,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate.Location = new System.Drawing.Point(39, 234);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(155, 48);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseMnemonic = false;
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -422,7 +434,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnEdit.Location = new System.Drawing.Point(39, 168);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(155, 48);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseMnemonic = false;
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -440,28 +452,23 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.Location = new System.Drawing.Point(39, 104);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(155, 48);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseMnemonic = false;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(338, 223);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(424, 28);
-            this.dateTimePicker1.TabIndex = 10;
-            // 
             // EnquiryMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 679);
+            this.ClientSize = new System.Drawing.Size(1356, 722);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EnquiryMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EnquiryMaster";
             this.Load += new System.EventHandler(this.EnquiryMaster_Load);
             this.panel1.ResumeLayout(false);

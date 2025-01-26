@@ -154,7 +154,7 @@
     <value>3, 1</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1246, 89</value>
+    <value>1350, 89</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -517,7 +517,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1243, 488</value>
+    <value>1347, 488</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -628,7 +628,7 @@
     <value>4</value>
   </data>
   <data name="customerDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1202, 405</value>
+    <value>1306, 405</value>
   </data>
   <data name="customerDataGrid.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -709,7 +709,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1243, 488</value>
+    <value>1347, 488</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -736,7 +736,7 @@
     <value>2, 92</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1251, 521</value>
+    <value>1355, 521</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -783,7 +783,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>884, 619</value>
+    <value>929, 619</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -831,7 +831,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>703, 619</value>
+    <value>748, 619</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -880,7 +880,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>522, 619</value>
+    <value>567, 619</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -950,7 +950,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 619</value>
+    <value>386, 619</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -998,7 +998,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 619</value>
+    <value>205, 619</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -1034,7 +1034,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1252, 679</value>
+    <value>1356, 722</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

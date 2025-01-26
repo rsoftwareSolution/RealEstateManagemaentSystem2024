@@ -54,6 +54,8 @@ namespace RealStateManagementSystem.masterForm
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tbFlatCount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tbRate = new System.Windows.Forms.TextBox();
@@ -74,8 +76,6 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -133,13 +133,12 @@ namespace RealStateManagementSystem.masterForm
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackColor = System.Drawing.Color.LightCyan;
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(2, -1);
+            this.panel3.Location = new System.Drawing.Point(2, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1253, 105);
+            this.panel3.Size = new System.Drawing.Size(1354, 89);
             this.panel3.TabIndex = 5;
             // 
             // tabControl1
@@ -317,9 +316,9 @@ namespace RealStateManagementSystem.masterForm
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Book Antiqua", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(466, 24);
+            this.label3.Location = new System.Drawing.Point(497, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(259, 53);
             this.label3.TabIndex = 0;
@@ -330,10 +329,10 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(27, 110);
+            this.tabControl2.Location = new System.Drawing.Point(2, 95);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(948, 556);
+            this.tabControl2.Size = new System.Drawing.Size(1036, 627);
             this.tabControl2.TabIndex = 7;
             // 
             // tabPage3
@@ -354,103 +353,138 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(940, 523);
+            this.tabPage3.Size = new System.Drawing.Size(1028, 594);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Flat Form";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Single Room",
+            "Single Floor",
+            "Party Hall",
+            "Suit",
+            "1 RK",
+            "1 BHK",
+            "2 BHK",
+            "3 BHK",
+            "4 BHK"});
+            this.comboBox1.Location = new System.Drawing.Point(303, 307);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(424, 30);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(187, 309);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 22);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Flat Types :";
+            // 
             // tbFlatCount
             // 
             this.tbFlatCount.BackColor = System.Drawing.Color.White;
-            this.tbFlatCount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFlatCount.Location = new System.Drawing.Point(309, 362);
+            this.tbFlatCount.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFlatCount.Location = new System.Drawing.Point(303, 361);
+            this.tbFlatCount.Multiline = true;
             this.tbFlatCount.Name = "tbFlatCount";
-            this.tbFlatCount.Size = new System.Drawing.Size(424, 30);
-            this.tbFlatCount.TabIndex = 6;
+            this.tbFlatCount.Size = new System.Drawing.Size(424, 39);
+            this.tbFlatCount.TabIndex = 5;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(96, 364);
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(105, 363);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 23);
+            this.label16.Size = new System.Drawing.Size(186, 22);
             this.label16.TabIndex = 11;
             this.label16.Text = "Available Flat Count :";
             // 
             // tbRate
             // 
             this.tbRate.BackColor = System.Drawing.Color.White;
-            this.tbRate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRate.Location = new System.Drawing.Point(314, 249);
+            this.tbRate.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRate.Location = new System.Drawing.Point(303, 249);
+            this.tbRate.Multiline = true;
             this.tbRate.Name = "tbRate";
-            this.tbRate.Size = new System.Drawing.Size(424, 30);
-            this.tbRate.TabIndex = 4;
+            this.tbRate.Size = new System.Drawing.Size(424, 39);
+            this.tbRate.TabIndex = 3;
             // 
             // tbFloor
             // 
             this.tbFloor.BackColor = System.Drawing.Color.White;
-            this.tbFloor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFloor.Location = new System.Drawing.Point(314, 193);
+            this.tbFloor.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFloor.Location = new System.Drawing.Point(303, 193);
+            this.tbFloor.Multiline = true;
             this.tbFloor.Name = "tbFloor";
-            this.tbFloor.Size = new System.Drawing.Size(424, 30);
-            this.tbFloor.TabIndex = 3;
+            this.tbFloor.Size = new System.Drawing.Size(424, 39);
+            this.tbFloor.TabIndex = 2;
             // 
             // tbBuild
             // 
             this.tbBuild.BackColor = System.Drawing.Color.White;
-            this.tbBuild.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuild.Location = new System.Drawing.Point(314, 140);
+            this.tbBuild.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuild.Location = new System.Drawing.Point(303, 133);
+            this.tbBuild.Multiline = true;
             this.tbBuild.Name = "tbBuild";
-            this.tbBuild.Size = new System.Drawing.Size(424, 30);
+            this.tbBuild.Size = new System.Drawing.Size(424, 39);
             this.tbBuild.TabIndex = 1;
             // 
             // tbFlat
             // 
             this.tbFlat.BackColor = System.Drawing.Color.White;
-            this.tbFlat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFlat.Location = new System.Drawing.Point(314, 87);
+            this.tbFlat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFlat.Location = new System.Drawing.Point(303, 78);
+            this.tbFlat.Multiline = true;
             this.tbFlat.Name = "tbFlat";
-            this.tbFlat.Size = new System.Drawing.Size(424, 30);
+            this.tbFlat.Size = new System.Drawing.Size(424, 39);
             this.tbFlat.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(150, 251);
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(160, 251);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(143, 23);
+            this.label10.Size = new System.Drawing.Size(131, 22);
             this.label10.TabIndex = 4;
             this.label10.Text = "Per Sq.ft Rate :";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(179, 195);
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(180, 195);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(114, 23);
+            this.label12.Size = new System.Drawing.Size(111, 22);
             this.label12.TabIndex = 2;
             this.label12.Text = "Total Floor :";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(179, 140);
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(177, 140);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(116, 23);
+            this.label13.Size = new System.Drawing.Size(114, 22);
             this.label13.TabIndex = 1;
             this.label13.Text = "Building ID :";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(214, 88);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 23);
+            this.label14.Size = new System.Drawing.Size(77, 22);
             this.label14.TabIndex = 0;
             this.label14.Text = "Flat ID :";
             // 
@@ -464,7 +498,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(940, 523);
+            this.tabPage4.Size = new System.Drawing.Size(1003, 579);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Flat Details List";
             // 
@@ -503,31 +537,31 @@ namespace RealStateManagementSystem.masterForm
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackColor = System.Drawing.Color.LightCyan;
             this.panel4.Controls.Add(this.btnExit);
             this.panel4.Controls.Add(this.btnDelete);
             this.panel4.Controls.Add(this.btnUpdate);
             this.panel4.Controls.Add(this.btnEdit);
             this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Location = new System.Drawing.Point(1007, 102);
+            this.panel4.Location = new System.Drawing.Point(1075, 88);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(248, 577);
+            this.panel4.Size = new System.Drawing.Size(281, 634);
             this.panel4.TabIndex = 8;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(42, 371);
+            this.btnExit.Location = new System.Drawing.Point(63, 368);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(175, 48);
-            this.btnExit.TabIndex = 4;
+            this.btnExit.TabIndex = 10;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = false;
             // 
@@ -536,14 +570,14 @@ namespace RealStateManagementSystem.masterForm
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(42, 301);
+            this.btnDelete.Location = new System.Drawing.Point(63, 298);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(175, 48);
-            this.btnDelete.TabIndex = 10;
+            this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -553,14 +587,14 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(42, 233);
+            this.btnUpdate.Location = new System.Drawing.Point(63, 230);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(175, 48);
-            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -570,14 +604,14 @@ namespace RealStateManagementSystem.masterForm
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(42, 167);
+            this.btnEdit.Location = new System.Drawing.Point(63, 164);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(175, 48);
-            this.btnEdit.TabIndex = 8;
+            this.btnEdit.TabIndex = 7;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -587,52 +621,23 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(42, 103);
+            this.btnSave.Location = new System.Drawing.Point(63, 100);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(175, 48);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(185, 310);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 23);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Flat Types :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Single Room",
-            "Single Floor",
-            "Party Hall",
-            "Suit",
-            "1 RK",
-            "1 BHK",
-            "2 BHK",
-            "3 BHK",
-            "4 BHK"});
-            this.comboBox1.Location = new System.Drawing.Point(314, 309);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(424, 28);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FlatMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1254, 679);
+            this.ClientSize = new System.Drawing.Size(1356, 722);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panel3);

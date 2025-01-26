@@ -46,6 +46,7 @@ namespace RealStateManagementSystem.config
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbCustCont = new System.Windows.Forms.TextBox();
             this.tbCustName = new System.Windows.Forms.TextBox();
+            this.tbCustId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@ namespace RealStateManagementSystem.config
             this.button2 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tbCustId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -78,6 +78,7 @@ namespace RealStateManagementSystem.config
             // 
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Name = "panel1";
             // 
@@ -149,6 +150,13 @@ namespace RealStateManagementSystem.config
             this.tbCustName.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tbCustName, "tbCustName");
             this.tbCustName.Name = "tbCustName";
+            // 
+            // tbCustId
+            // 
+            this.tbCustId.BackColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.tbCustId, "tbCustId");
+            this.tbCustId.Name = "tbCustId";
+            this.tbCustId.ReadOnly = true;
             // 
             // label7
             // 
@@ -326,13 +334,6 @@ namespace RealStateManagementSystem.config
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
-            // tbCustId
-            // 
-            this.tbCustId.BackColor = System.Drawing.Color.WhiteSmoke;
-            resources.ApplyResources(this.tbCustId, "tbCustId");
-            this.tbCustId.Name = "tbCustId";
-            this.tbCustId.ReadOnly = true;
-            // 
             // Customer
             // 
             resources.ApplyResources(this, "$this");
@@ -348,7 +349,7 @@ namespace RealStateManagementSystem.config
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "Customer";
+            this.Name = "Customer";
             this.Load += new System.EventHandler(this.CustomerMaster_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
