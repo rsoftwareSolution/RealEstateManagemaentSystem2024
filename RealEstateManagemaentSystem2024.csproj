@@ -210,12 +210,19 @@
   <ItemGroup>
     <Compile Include="Config\AutoIdGenerator.cs" />
     <Compile Include="DataSource\Database.cs" />
+    <Compile Include="Helper\BookingSelectionPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper\BookingSelectionPopup.Designer.cs">
+      <DependentUpon>BookingSelectionPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\OldPasswordPopup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Helper\OldPasswordPopup.Designer.cs">
       <DependentUpon>OldPasswordPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config\PincodeAPI.cs" />
     <Compile Include="MainForm\Color.cs" />
     <Compile Include="MainForm\Dashboard.cs">
       <SubType>Form</SubType>
@@ -304,6 +311,9 @@
     <Compile Include="Statements\AccountStatements.Designer.cs">
       <DependentUpon>AccountStatements.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Helper\BookingSelectionPopup.resx">
+      <DependentUpon>BookingSelectionPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Helper\OldPasswordPopup.resx">
       <DependentUpon>OldPasswordPopup.cs</DependentUpon>
     </EmbeddedResource>

@@ -142,3 +142,4 @@ E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.BookingRegister.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.SaleInvoice.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.ParkingMaster.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Helper.BookingSelectionPopup.resources

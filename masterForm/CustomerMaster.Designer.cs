@@ -349,7 +349,7 @@ namespace RealStateManagementSystem.config
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Customer";
+            //this.Name = "Customer";
             this.Load += new System.EventHandler(this.CustomerMaster_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

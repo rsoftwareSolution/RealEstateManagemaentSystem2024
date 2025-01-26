@@ -30,21 +30,21 @@ namespace RealStateManagementSystem.masterForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancellationMaster));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtpCancelDate = new System.Windows.Forms.DateTimePicker();
-            this.tbOfficeAddress = new System.Windows.Forms.TextBox();
+            this.tbRefund = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.tbBirthDate = new System.Windows.Forms.TextBox();
-            this.tbBookingId = new System.Windows.Forms.TextBox();
+            this.tbTotalPaid = new System.Windows.Forms.TextBox();
+            this.tbTotalAmount = new System.Windows.Forms.TextBox();
+            this.tbBookingCustContact = new System.Windows.Forms.TextBox();
             this.tbCancelId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,26 +52,26 @@ namespace RealStateManagementSystem.masterForm
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buildingDataGrid = new System.Windows.Forms.DataGridView();
+            this.cancelationDataGrid = new System.Windows.Forms.DataGridView();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BuildingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Refund = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.Refund = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buildingDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cancelationDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,10 +79,11 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, -1);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1354, 106);
+            this.panel1.Size = new System.Drawing.Size(1354, 105);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -101,21 +102,21 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(27, 108);
+            this.tabControl1.Location = new System.Drawing.Point(29, 108);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1035, 590);
+            this.tabControl1.Size = new System.Drawing.Size(1033, 590);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.dtpCancelDate);
-            this.tabPage1.Controls.Add(this.tbOfficeAddress);
+            this.tabPage1.Controls.Add(this.tbRefund);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.tbEmail);
-            this.tabPage1.Controls.Add(this.tbBirthDate);
-            this.tabPage1.Controls.Add(this.tbBookingId);
+            this.tabPage1.Controls.Add(this.tbTotalPaid);
+            this.tabPage1.Controls.Add(this.tbTotalAmount);
+            this.tabPage1.Controls.Add(this.tbBookingCustContact);
             this.tabPage1.Controls.Add(this.tbCancelId);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label5);
@@ -125,10 +126,11 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1027, 557);
+            this.tabPage1.Size = new System.Drawing.Size(1025, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cancellation Form";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            this.tabPage1.DoubleClick += new System.EventHandler(this.tabPage1_DoubleClick);
             // 
             // dtpCancelDate
             // 
@@ -138,15 +140,15 @@ namespace RealStateManagementSystem.masterForm
             this.dtpCancelDate.Size = new System.Drawing.Size(424, 30);
             this.dtpCancelDate.TabIndex = 2;
             // 
-            // tbOfficeAddress
+            // tbRefund
             // 
-            this.tbOfficeAddress.BackColor = System.Drawing.Color.White;
-            this.tbOfficeAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOfficeAddress.Location = new System.Drawing.Point(325, 344);
-            this.tbOfficeAddress.Multiline = true;
-            this.tbOfficeAddress.Name = "tbOfficeAddress";
-            this.tbOfficeAddress.Size = new System.Drawing.Size(424, 37);
-            this.tbOfficeAddress.TabIndex = 6;
+            this.tbRefund.BackColor = System.Drawing.Color.White;
+            this.tbRefund.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRefund.Location = new System.Drawing.Point(325, 344);
+            this.tbRefund.Multiline = true;
+            this.tbRefund.Name = "tbRefund";
+            this.tbRefund.Size = new System.Drawing.Size(424, 37);
+            this.tbRefund.TabIndex = 6;
             // 
             // label8
             // 
@@ -158,35 +160,36 @@ namespace RealStateManagementSystem.masterForm
             this.label8.TabIndex = 10;
             this.label8.Text = "Refund :";
             // 
-            // tbEmail
+            // tbTotalPaid
             // 
-            this.tbEmail.BackColor = System.Drawing.Color.White;
-            this.tbEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(325, 292);
-            this.tbEmail.Multiline = true;
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(424, 37);
-            this.tbEmail.TabIndex = 5;
+            this.tbTotalPaid.BackColor = System.Drawing.Color.White;
+            this.tbTotalPaid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalPaid.Location = new System.Drawing.Point(325, 292);
+            this.tbTotalPaid.Multiline = true;
+            this.tbTotalPaid.Name = "tbTotalPaid";
+            this.tbTotalPaid.Size = new System.Drawing.Size(424, 37);
+            this.tbTotalPaid.TabIndex = 5;
             // 
-            // tbBirthDate
+            // tbTotalAmount
             // 
-            this.tbBirthDate.BackColor = System.Drawing.Color.White;
-            this.tbBirthDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBirthDate.Location = new System.Drawing.Point(325, 240);
-            this.tbBirthDate.Multiline = true;
-            this.tbBirthDate.Name = "tbBirthDate";
-            this.tbBirthDate.Size = new System.Drawing.Size(424, 37);
-            this.tbBirthDate.TabIndex = 4;
+            this.tbTotalAmount.BackColor = System.Drawing.Color.White;
+            this.tbTotalAmount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalAmount.Location = new System.Drawing.Point(325, 240);
+            this.tbTotalAmount.Multiline = true;
+            this.tbTotalAmount.Name = "tbTotalAmount";
+            this.tbTotalAmount.Size = new System.Drawing.Size(424, 37);
+            this.tbTotalAmount.TabIndex = 4;
             // 
-            // tbBookingId
+            // tbBookingCustContact
             // 
-            this.tbBookingId.BackColor = System.Drawing.Color.White;
-            this.tbBookingId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBookingId.Location = new System.Drawing.Point(325, 134);
-            this.tbBookingId.Multiline = true;
-            this.tbBookingId.Name = "tbBookingId";
-            this.tbBookingId.Size = new System.Drawing.Size(424, 37);
-            this.tbBookingId.TabIndex = 2;
+            this.tbBookingCustContact.BackColor = System.Drawing.Color.White;
+            this.tbBookingCustContact.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBookingCustContact.Location = new System.Drawing.Point(325, 134);
+            this.tbBookingCustContact.Multiline = true;
+            this.tbBookingCustContact.Name = "tbBookingCustContact";
+            this.tbBookingCustContact.Size = new System.Drawing.Size(424, 37);
+            this.tbBookingCustContact.TabIndex = 2;
+            this.tbBookingCustContact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbBookingCustContact_KeyDown);
             // 
             // tbCancelId
             // 
@@ -195,6 +198,7 @@ namespace RealStateManagementSystem.masterForm
             this.tbCancelId.Location = new System.Drawing.Point(325, 80);
             this.tbCancelId.Multiline = true;
             this.tbCancelId.Name = "tbCancelId";
+            this.tbCancelId.ReadOnly = true;
             this.tbCancelId.Size = new System.Drawing.Size(424, 37);
             this.tbCancelId.TabIndex = 1;
             // 
@@ -234,11 +238,11 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(207, 139);
+            this.label3.Location = new System.Drawing.Point(87, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 22);
+            this.label3.Size = new System.Drawing.Size(232, 22);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Booking ID :";
+            this.label3.Text = "Booking Customer Contact :";
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // label2
@@ -254,9 +258,9 @@ namespace RealStateManagementSystem.masterForm
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.buildingDataGrid);
-            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.cancelationDataGrid);
             this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -266,68 +270,93 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage2.Text = "Cancellation Details List";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // buildingDataGrid
+            // cancelationDataGrid
             // 
-            this.buildingDataGrid.AllowUserToDeleteRows = false;
-            this.buildingDataGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.buildingDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.buildingDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cancelationDataGrid.AllowUserToDeleteRows = false;
+            this.cancelationDataGrid.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.cancelationDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.cancelationDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buildingDataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.buildingDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.buildingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.buildingDataGrid.ColumnHeadersHeight = 36;
-            this.buildingDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.buildingDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.BuildingName,
-            this.Email,
-            this.Status,
-            this.Refund,
-            this.Paid});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.buildingDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.buildingDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.buildingDataGrid.EnableHeadersVisualStyles = false;
-            this.buildingDataGrid.GridColor = System.Drawing.Color.Black;
-            this.buildingDataGrid.ImeMode = System.Windows.Forms.ImeMode.Alpha;
-            this.buildingDataGrid.Location = new System.Drawing.Point(13, 91);
-            this.buildingDataGrid.MultiSelect = false;
-            this.buildingDataGrid.Name = "buildingDataGrid";
-            this.buildingDataGrid.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.buildingDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.buildingDataGrid.RowHeadersWidth = 4;
-            this.buildingDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buildingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.buildingDataGrid.RowTemplate.Height = 24;
-            this.buildingDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.buildingDataGrid.Size = new System.Drawing.Size(994, 456);
-            this.buildingDataGrid.TabIndex = 25;
+            this.cancelationDataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.cancelationDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.NullValue = null;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cancelationDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.cancelationDataGrid.ColumnHeadersHeight = 36;
+            this.cancelationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.cancelationDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Email});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cancelationDataGrid.DefaultCellStyle = dataGridViewCellStyle18;
+            this.cancelationDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.cancelationDataGrid.EnableHeadersVisualStyles = false;
+            this.cancelationDataGrid.GridColor = System.Drawing.Color.Black;
+            this.cancelationDataGrid.ImeMode = System.Windows.Forms.ImeMode.Alpha;
+            this.cancelationDataGrid.Location = new System.Drawing.Point(13, 91);
+            this.cancelationDataGrid.MultiSelect = false;
+            this.cancelationDataGrid.Name = "cancelationDataGrid";
+            this.cancelationDataGrid.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cancelationDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.cancelationDataGrid.RowHeadersWidth = 4;
+            this.cancelationDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelationDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.cancelationDataGrid.RowTemplate.Height = 24;
+            this.cancelationDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.cancelationDataGrid.Size = new System.Drawing.Size(994, 456);
+            this.cancelationDataGrid.TabIndex = 25;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Cancellation Date";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 220;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Location = new System.Drawing.Point(231, 23);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(528, 37);
+            this.textBox5.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(17, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(208, 27);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Cancellation Name :";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // ID
             // 
@@ -345,72 +374,53 @@ namespace RealStateManagementSystem.masterForm
             this.BuildingName.ReadOnly = true;
             this.BuildingName.Width = 150;
             // 
-            // Email
+            // btnSave
             // 
-            this.Email.HeaderText = "Cancellation Date";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 220;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(55, 93);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(175, 48);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Status
+            // btnEdit
             // 
-            this.Status.HeaderText = "Total Amount";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 190;
-            // 
-            // Refund
-            // 
-            this.Refund.HeaderText = "Total Paid";
-            this.Refund.MinimumWidth = 6;
-            this.Refund.Name = "Refund";
-            this.Refund.ReadOnly = true;
-            this.Refund.Width = 150;
-            // 
-            // Paid
-            // 
-            this.Paid.HeaderText = "Total Refund";
-            this.Paid.MinimumWidth = 6;
-            this.Paid.Name = "Paid";
-            this.Paid.ReadOnly = true;
-            this.Paid.Width = 120;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 27);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Cancellation Name :";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(231, 23);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(528, 37);
-            this.textBox5.TabIndex = 19;
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Black;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(55, 157);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(175, 48);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Location = new System.Drawing.Point(1094, 103);
+            this.panel2.Location = new System.Drawing.Point(1094, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 595);
+            this.panel2.Size = new System.Drawing.Size(261, 590);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -445,6 +455,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -461,38 +472,31 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnEdit
+            // Refund
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(55, 157);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(175, 48);
-            this.btnEdit.TabIndex = 8;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.Refund.HeaderText = "Total Paid";
+            this.Refund.MinimumWidth = 6;
+            this.Refund.Name = "Refund";
+            this.Refund.ReadOnly = true;
+            this.Refund.Width = 150;
             // 
-            // btnSave
+            // Paid
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(55, 93);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(175, 48);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.Paid.HeaderText = "Total Refund";
+            this.Paid.MinimumWidth = 6;
+            this.Paid.Name = "Paid";
+            this.Paid.ReadOnly = true;
+            this.Paid.Width = 120;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Total Amount";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 190;
             // 
             // CancellationMaster
             // 
@@ -512,7 +516,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buildingDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cancelationDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -524,11 +528,12 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox tbOfficeAddress;
+        private System.Windows.Forms.DateTimePicker dtpCancelDate;
+        private System.Windows.Forms.TextBox tbRefund;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox tbBirthDate;
-        private System.Windows.Forms.TextBox tbBookingId;
+        private System.Windows.Forms.TextBox tbTotalPaid;
+        private System.Windows.Forms.TextBox tbTotalAmount;
+        private System.Windows.Forms.TextBox tbBookingCustContact;
         private System.Windows.Forms.TextBox tbCancelId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -536,21 +541,20 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.DataGridView cancelationDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BuildingName;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSave;
-        public System.Windows.Forms.DataGridView buildingDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BuildingName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Refund;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paid;
-        private System.Windows.Forms.DateTimePicker dtpCancelDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

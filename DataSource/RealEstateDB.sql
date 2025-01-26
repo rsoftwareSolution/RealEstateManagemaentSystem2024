@@ -26,10 +26,13 @@ primary key(user_id));
 
 -- Building table create query
 create table building_details(
-build_id int auto_increment,
-build_name varchar(125),
-build_address varchar(125),
+building_id int auto_increment,
+building_or_project_name varchar(125),
+building_address varchar(125),
 primary key(build_id));
+
+select * from building_details;
+drop table building_details;
 
 -- Flat table create query
 create table flat_details (
@@ -47,7 +50,7 @@ select * from flat_details;
 -- Cancellation table details select query
 create table cancellation_details ( 
 cancel_id int auto_increment,
-booking_id int,
+booking_cust_contact long,
 cancel_date varchar(10),
 total_amount double,
 total_paid double,
@@ -56,6 +59,8 @@ primary key(cancel_id));
 
 -- Cancellation table details select query
 select * from cancellation_details;
+
+drop table cancellation_details;
 
 -- Payment table details select query
 create table payment_details (
