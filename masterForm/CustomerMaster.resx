@@ -783,7 +783,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>929, 619</value>
+    <value>929, 644</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -831,7 +831,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 619</value>
+    <value>748, 644</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -880,7 +880,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 619</value>
+    <value>567, 644</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -950,7 +950,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 619</value>
+    <value>386, 644</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -998,7 +998,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 619</value>
+    <value>205, 644</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
@@ -1079,7 +1079,7 @@
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Customer</value>
+    <value>CustomerMaster</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

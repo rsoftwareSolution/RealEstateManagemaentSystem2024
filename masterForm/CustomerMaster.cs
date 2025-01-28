@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace RealStateManagementSystem.config
 {
-    public partial class Customer : Form
+    public partial class CustomerMaster : Form
     {
         Database db = new Database();
         private AutoIdGenerator idGenerator = new AutoIdGenerator("CUST", 4);
 
-        public Customer()
+        public CustomerMaster()
         {
             InitializeComponent();
         }

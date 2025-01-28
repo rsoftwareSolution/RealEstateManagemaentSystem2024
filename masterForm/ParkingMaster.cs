@@ -16,5 +16,15 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         {
             InitializeComponent();
         }
+
+        private void ParkingMaster_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

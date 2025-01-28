@@ -39,6 +39,8 @@ namespace RealStateManagementSystem.masterForm
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tbTotalAmount = new System.Windows.Forms.TextBox();
             this.tbAmountPaid = new System.Windows.Forms.TextBox();
             this.tbBookId = new System.Windows.Forms.TextBox();
@@ -50,6 +52,13 @@ namespace RealStateManagementSystem.masterForm
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.paymentDataGrid = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BuildingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Refund = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,21 +67,12 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.paymentDataGrid = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BuildingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Refund = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataGrid)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,6 +132,26 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Payment Form";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(365, 156);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(424, 40);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(193, 160);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(155, 22);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Transaction Date :";
             // 
             // tbTotalAmount
             // 
@@ -249,6 +269,117 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Payment Details List";
             // 
+            // paymentDataGrid
+            // 
+            this.paymentDataGrid.AllowUserToDeleteRows = false;
+            this.paymentDataGrid.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.paymentDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.paymentDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.paymentDataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.paymentDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.paymentDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.paymentDataGrid.ColumnHeadersHeight = 36;
+            this.paymentDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.paymentDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.BuildingName,
+            this.Email,
+            this.Status,
+            this.Refund,
+            this.Paid});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.paymentDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.paymentDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.paymentDataGrid.EnableHeadersVisualStyles = false;
+            this.paymentDataGrid.GridColor = System.Drawing.Color.Black;
+            this.paymentDataGrid.ImeMode = System.Windows.Forms.ImeMode.Alpha;
+            this.paymentDataGrid.Location = new System.Drawing.Point(20, 97);
+            this.paymentDataGrid.MultiSelect = false;
+            this.paymentDataGrid.Name = "paymentDataGrid";
+            this.paymentDataGrid.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.paymentDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.paymentDataGrid.RowHeadersWidth = 4;
+            this.paymentDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.paymentDataGrid.RowTemplate.Height = 24;
+            this.paymentDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.paymentDataGrid.Size = new System.Drawing.Size(994, 456);
+            this.paymentDataGrid.TabIndex = 26;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 80;
+            // 
+            // BuildingName
+            // 
+            this.BuildingName.HeaderText = "Booking ID";
+            this.BuildingName.MinimumWidth = 6;
+            this.BuildingName.Name = "BuildingName";
+            this.BuildingName.ReadOnly = true;
+            this.BuildingName.Width = 150;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Cancellation Date";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 220;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Total Amount";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 190;
+            // 
+            // Refund
+            // 
+            this.Refund.HeaderText = "Total Paid";
+            this.Refund.MinimumWidth = 6;
+            this.Refund.Name = "Refund";
+            this.Refund.ReadOnly = true;
+            this.Refund.Width = 150;
+            // 
+            // Paid
+            // 
+            this.Paid.HeaderText = "Total Refund";
+            this.Paid.MinimumWidth = 6;
+            this.Paid.Name = "Paid";
+            this.Paid.ReadOnly = true;
+            this.Paid.Width = 120;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -365,137 +496,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // paymentDataGrid
-            // 
-            this.paymentDataGrid.AllowUserToDeleteRows = false;
-            this.paymentDataGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.paymentDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.paymentDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.paymentDataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.paymentDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.paymentDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.paymentDataGrid.ColumnHeadersHeight = 36;
-            this.paymentDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.paymentDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.BuildingName,
-            this.Email,
-            this.Status,
-            this.Refund,
-            this.Paid});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.paymentDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.paymentDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.paymentDataGrid.EnableHeadersVisualStyles = false;
-            this.paymentDataGrid.GridColor = System.Drawing.Color.Black;
-            this.paymentDataGrid.ImeMode = System.Windows.Forms.ImeMode.Alpha;
-            this.paymentDataGrid.Location = new System.Drawing.Point(20, 97);
-            this.paymentDataGrid.MultiSelect = false;
-            this.paymentDataGrid.Name = "paymentDataGrid";
-            this.paymentDataGrid.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.paymentDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.paymentDataGrid.RowHeadersWidth = 4;
-            this.paymentDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.paymentDataGrid.RowTemplate.Height = 24;
-            this.paymentDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.paymentDataGrid.Size = new System.Drawing.Size(994, 456);
-            this.paymentDataGrid.TabIndex = 26;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 80;
-            // 
-            // BuildingName
-            // 
-            this.BuildingName.HeaderText = "Booking ID";
-            this.BuildingName.MinimumWidth = 6;
-            this.BuildingName.Name = "BuildingName";
-            this.BuildingName.ReadOnly = true;
-            this.BuildingName.Width = 150;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Cancellation Date";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 220;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Total Amount";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 190;
-            // 
-            // Refund
-            // 
-            this.Refund.HeaderText = "Total Paid";
-            this.Refund.MinimumWidth = 6;
-            this.Refund.Name = "Refund";
-            this.Refund.ReadOnly = true;
-            this.Refund.Width = 150;
-            // 
-            // Paid
-            // 
-            this.Paid.HeaderText = "Total Refund";
-            this.Paid.MinimumWidth = 6;
-            this.Paid.Name = "Paid";
-            this.Paid.ReadOnly = true;
-            this.Paid.Width = 120;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(365, 156);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(424, 40);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(193, 160);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 22);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Transaction Date :";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // PaymentMaster
             // 
@@ -516,8 +517,8 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataGrid)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

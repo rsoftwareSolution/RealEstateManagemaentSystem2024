@@ -51,5 +51,10 @@ namespace RealStateManagementSystem.masterForm
         {
             paymentDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 11, FontStyle.Regular);
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -60,5 +60,10 @@ namespace RealStateManagementSystem.config
         {
 
         }
+
+        private void BuildingMaster_Load(object sender, EventArgs e)
+        {
+
+        }
     }
  }
