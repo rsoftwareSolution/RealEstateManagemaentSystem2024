@@ -762,14 +762,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealEstateManagemaentSystem2024.exe" size="716800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealEstateManagemaentSystem2024.exe" size="735232">
       <assemblyIdentity name="RealEstateManagemaentSystem2024" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>a5sRgs4qgc+iHqWuCJx4F61dpRXbFFIxkdtxaa3CD0w=</dsig:DigestValue>
+        <dsig:DigestValue>g/ywXhtt05cYP5SA3MlyEBjdJRPdwKcU6tezQS/SeIs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -237,11 +237,11 @@
     <Compile Include="MainForm\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterForm\QuatatonMaster.cs">
+    <Compile Include="MasterForm\QuatationMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterForm\QuatatonMaster.Designer.cs">
-      <DependentUpon>QuatatonMaster.cs</DependentUpon>
+    <Compile Include="MasterForm\QuatationMaster.Designer.cs">
+      <DependentUpon>QuatationMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Registers\BookingRegister.cs">
       <SubType>Form</SubType>
@@ -330,8 +330,8 @@
     <EmbeddedResource Include="MainForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterForm\QuatatonMaster.resx">
-      <DependentUpon>QuatatonMaster.cs</DependentUpon>
+    <EmbeddedResource Include="MasterForm\QuatationMaster.resx">
+      <DependentUpon>QuatationMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registers\BookingRegister.resx">
       <DependentUpon>BookingRegister.cs</DependentUpon>

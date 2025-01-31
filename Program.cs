@@ -19,7 +19,7 @@ namespace RealEstateManagemaentSystem2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookingRegister());
+            Application.Run( new Dashboard());
         }
     }
 }

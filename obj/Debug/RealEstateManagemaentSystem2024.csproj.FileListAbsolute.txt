@@ -142,5 +142,5 @@ E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSyste
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.SaleInvoice.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.ParkingMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Helper.BookingSelectionPopup.resources
-E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.QuatatonMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.config.CustomerMaster.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.QuatationMaster.resources

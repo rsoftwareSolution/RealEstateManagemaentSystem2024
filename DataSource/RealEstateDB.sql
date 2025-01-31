@@ -10,6 +10,9 @@ cust_birth_date nvarchar(30),
 cust_email varchar(50),
 primary key(cust_id));
 
+
+Alter Table customer_details modify cust_id nvarchar(50);
+
 -- User table details select query
 select * from user;
 
@@ -25,11 +28,15 @@ user_password varchar(50),
 primary key(user_id));
 
 -- Building table create query
+
 create table building_details(
 building_id int auto_increment,
 building_or_project_name varchar(125),
-building_address varchar(125),
-primary key(build_id));
+building_location_pincode varchar(125),
+building_state varchar(125),
+building_district varchar(125),
+building_village varchar(125),
+primary key(building_id));
 
 select * from building_details;
 drop table building_details;
@@ -46,6 +53,14 @@ primary key(flat_id));
 -- Flat table details select query
 select * from flat_details;
 
+Alter Table flat_details add column flat_type_id long;
+
+create table flat_type_details (
+flat_type_id long not null,
+flat_type_name varchar(50));
+
+
+select * from flat_type_details;
 
 -- Cancellation table details select query
 create table cancellation_details ( 
@@ -85,6 +100,26 @@ primary key(enquir_id));
 
 -- Enquiry table details select query
 select * from enquiry_details;
+
+create table quatation_details (
+quatation_id int auto_increment,
+quatation_date varchar(10),
+discription varchar(125),
+customer_contact varchar(50),
+building_name varchar(125),
+flat_type_name varchar(50),
+price_per_sq_ft double,
+base_price double,
+additionl_charges double,
+discount double,
+total_amount double,
+down_payment double,
+Payment_mode varchar(15),
+primary key(quatation_id));
+
+--  quatation table details select query
+select * from quatation_details;
+
 
 
 

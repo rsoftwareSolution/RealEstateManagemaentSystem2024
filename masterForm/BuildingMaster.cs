@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RealStateManagementSystem.config
@@ -19,6 +20,37 @@ namespace RealStateManagementSystem.config
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async void tbPinCode_TabIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tbPinCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void tbPinCode_Enter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void BuildingMaster_Load(object sender, EventArgs e)
+        {
+            // Assuming 'dataGridView1' is your DataGridView control
+            buildingDataGrid.Font = new Font("Times New Roman", 11, FontStyle.Regular); // Set font name, size, and style
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private async void tbPinCode_Leave(object sender, EventArgs e)
         {
             string pincode = tbPinCode.Text;  // Assuming you have a TextBox for the pincode
 
@@ -44,26 +76,6 @@ namespace RealStateManagementSystem.config
             tbTaluka.Text = location.village;    // Assuming you have a TextBox for the village
 
             MessageBox.Show("Location details fetched successfully.");
-        }
-
-        private async void tbPinCode_TabIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tbPinCode_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbPinCode_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BuildingMaster_Load(object sender, EventArgs e)
-        {
-
         }
     }
  }

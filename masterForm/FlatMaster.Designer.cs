@@ -29,12 +29,13 @@ namespace RealStateManagementSystem.masterForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlatMaster));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.tbFlatType = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tbBookAdvance = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@ namespace RealStateManagementSystem.masterForm
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tbFlatCount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -67,7 +67,13 @@ namespace RealStateManagementSystem.masterForm
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.FlatDataGrid = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -76,9 +82,10 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.tbFlatType.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,7 +93,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FlatDataGrid)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,15 +138,15 @@ namespace RealStateManagementSystem.masterForm
             this.label2.TabIndex = 0;
             this.label2.Text = "Booking Master";
             // 
-            // panel3
+            // tbFlatType
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightCyan;
-            this.panel3.Controls.Add(this.tabControl1);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(2, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1354, 89);
-            this.panel3.TabIndex = 5;
+            this.tbFlatType.BackColor = System.Drawing.Color.LightCyan;
+            this.tbFlatType.Controls.Add(this.tabControl1);
+            this.tbFlatType.Controls.Add(this.label3);
+            this.tbFlatType.Location = new System.Drawing.Point(2, 0);
+            this.tbFlatType.Name = "tbFlatType";
+            this.tbFlatType.Size = new System.Drawing.Size(1354, 89);
+            this.tbFlatType.TabIndex = 5;
             // 
             // tabControl1
             // 
@@ -329,16 +336,16 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(2, 95);
+            this.tabControl2.Location = new System.Drawing.Point(26, 95);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1036, 627);
+            this.tabControl2.Size = new System.Drawing.Size(1007, 582);
             this.tabControl2.TabIndex = 7;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.textBox1);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.tbFlatCount);
             this.tabPage3.Controls.Add(this.label16);
@@ -353,30 +360,10 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1028, 594);
+            this.tabPage3.Size = new System.Drawing.Size(999, 549);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Flat Form";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Single Room",
-            "Single Floor",
-            "Party Hall",
-            "Suit",
-            "1 RK",
-            "1 BHK",
-            "2 BHK",
-            "3 BHK",
-            "4 BHK"});
-            this.comboBox1.Location = new System.Drawing.Point(303, 307);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(424, 30);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -472,11 +459,11 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(177, 140);
+            this.label13.Location = new System.Drawing.Point(151, 140);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(114, 22);
+            this.label13.Size = new System.Drawing.Size(140, 22);
             this.label13.TabIndex = 1;
-            this.label13.Text = "Building ID :";
+            this.label13.Text = "Building Name :";
             // 
             // label14
             // 
@@ -491,27 +478,85 @@ namespace RealStateManagementSystem.masterForm
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.White;
-            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Controls.Add(this.FlatDataGrid);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.textBox7);
             this.tabPage4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1028, 594);
+            this.tabPage4.Size = new System.Drawing.Size(1020, 549);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Flat Details List";
             // 
-            // dataGridView2
+            // FlatDataGrid
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(22, 92);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(922, 433);
-            this.dataGridView2.TabIndex = 21;
+            this.FlatDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.FlatDataGrid.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FlatDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.FlatDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FlatDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.FlatDataGrid.Location = new System.Drawing.Point(37, 96);
+            this.FlatDataGrid.Name = "FlatDataGrid";
+            this.FlatDataGrid.RowHeadersWidth = 51;
+            this.FlatDataGrid.RowTemplate.Height = 24;
+            this.FlatDataGrid.Size = new System.Drawing.Size(922, 433);
+            this.FlatDataGrid.TabIndex = 21;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Flat ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 106;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Building ID";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 147;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Total Floor";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 143;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Per Sqr.ft Rate";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 177;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Flat Type";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 127;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Available Flat Count";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 173;
             // 
             // label15
             // 
@@ -543,9 +588,9 @@ namespace RealStateManagementSystem.masterForm
             this.panel4.Controls.Add(this.btnUpdate);
             this.panel4.Controls.Add(this.btnEdit);
             this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Location = new System.Drawing.Point(1075, 88);
+            this.panel4.Location = new System.Drawing.Point(1065, 85);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(281, 634);
+            this.panel4.Size = new System.Drawing.Size(255, 585);
             this.panel4.TabIndex = 8;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -558,12 +603,13 @@ namespace RealStateManagementSystem.masterForm
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(63, 368);
+            this.btnExit.Location = new System.Drawing.Point(33, 368);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(175, 48);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDelete
             // 
@@ -574,7 +620,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(63, 298);
+            this.btnDelete.Location = new System.Drawing.Point(33, 298);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(175, 48);
             this.btnDelete.TabIndex = 9;
@@ -591,7 +637,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(63, 230);
+            this.btnUpdate.Location = new System.Drawing.Point(33, 230);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(175, 48);
             this.btnUpdate.TabIndex = 8;
@@ -608,7 +654,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(63, 164);
+            this.btnEdit.Location = new System.Drawing.Point(33, 164);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(175, 48);
             this.btnEdit.TabIndex = 7;
@@ -625,7 +671,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(63, 100);
+            this.btnSave.Location = new System.Drawing.Point(33, 100);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(175, 48);
             this.btnSave.TabIndex = 6;
@@ -633,15 +679,26 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(303, 302);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(424, 39);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "+";
+            // 
             // FlatMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 722);
+            this.ClientSize = new System.Drawing.Size(1321, 702);
             this.ControlBox = false;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.tabControl2);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.tbFlatType);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FlatMaster";
@@ -650,7 +707,7 @@ namespace RealStateManagementSystem.masterForm
             this.Load += new System.EventHandler(this.FlatMaster_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.tbFlatType.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -662,7 +719,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FlatDataGrid)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -673,7 +730,7 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel tbFlatType;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -702,7 +759,7 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView FlatDataGrid;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel4;
@@ -714,6 +771,12 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.TextBox tbFlatCount;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

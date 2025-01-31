@@ -51,11 +51,6 @@ namespace RealStateManagementSystem.masterForm
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.enquiryDataGrid = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EnquireName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -64,6 +59,11 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnquireName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -90,7 +90,7 @@ namespace RealStateManagementSystem.masterForm
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(465, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 53);
+            this.label1.Size = new System.Drawing.Size(402, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enquiry Master";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -103,7 +103,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl1.Location = new System.Drawing.Point(2, 108);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1049, 613);
+            this.tabControl1.Size = new System.Drawing.Size(1031, 582);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -122,7 +122,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1041, 580);
+            this.tabPage1.Size = new System.Drawing.Size(1023, 549);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Enquiry Form";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -236,7 +236,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(932, 514);
+            this.tabPage2.Size = new System.Drawing.Size(1023, 549);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Enquiry Details List";
             // 
@@ -251,7 +251,7 @@ namespace RealStateManagementSystem.masterForm
             this.enquiryDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.enquiryDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Thistle;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.NullValue = null;
@@ -264,9 +264,9 @@ namespace RealStateManagementSystem.masterForm
             this.enquiryDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.EnquireName,
+            this.Column1,
             this.Email,
-            this.Contact,
-            this.Password});
+            this.Contact});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,43 +296,8 @@ namespace RealStateManagementSystem.masterForm
             this.enquiryDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.enquiryDataGrid.RowTemplate.Height = 24;
             this.enquiryDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.enquiryDataGrid.Size = new System.Drawing.Size(909, 433);
+            this.enquiryDataGrid.Size = new System.Drawing.Size(978, 402);
             this.enquiryDataGrid.TabIndex = 22;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 80;
-            // 
-            // EnquireName
-            // 
-            this.EnquireName.HeaderText = "Enquire Name";
-            this.EnquireName.MinimumWidth = 6;
-            this.EnquireName.Name = "EnquireName";
-            this.EnquireName.Width = 290;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Enquiry Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 160;
-            // 
-            // Contact
-            // 
-            this.Contact.HeaderText = "Enquire Contact";
-            this.Contact.MinimumWidth = 6;
-            this.Contact.Name = "Contact";
-            this.Contact.Width = 120;
-            // 
-            // Password
-            // 
-            this.Password.HeaderText = "Enquiry Date";
-            this.Password.MinimumWidth = 6;
-            this.Password.Name = "Password";
-            this.Password.Width = 110;
             // 
             // label6
             // 
@@ -363,9 +328,9 @@ namespace RealStateManagementSystem.masterForm
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Location = new System.Drawing.Point(1084, 104);
+            this.panel2.Location = new System.Drawing.Point(1062, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 617);
+            this.panel2.Size = new System.Drawing.Size(258, 582);
             this.panel2.TabIndex = 5;
             // 
             // btnExit
@@ -377,9 +342,9 @@ namespace RealStateManagementSystem.masterForm
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(39, 372);
+            this.btnExit.Location = new System.Drawing.Point(33, 372);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(155, 48);
+            this.btnExit.Size = new System.Drawing.Size(193, 48);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseMnemonic = false;
@@ -395,9 +360,9 @@ namespace RealStateManagementSystem.masterForm
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(39, 302);
+            this.btnDelete.Location = new System.Drawing.Point(33, 302);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(155, 48);
+            this.btnDelete.Size = new System.Drawing.Size(193, 48);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseMnemonic = false;
@@ -413,9 +378,9 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(39, 234);
+            this.btnUpdate.Location = new System.Drawing.Point(33, 234);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(155, 48);
+            this.btnUpdate.Size = new System.Drawing.Size(193, 48);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseMnemonic = false;
@@ -431,9 +396,9 @@ namespace RealStateManagementSystem.masterForm
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(39, 168);
+            this.btnEdit.Location = new System.Drawing.Point(33, 168);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(155, 48);
+            this.btnEdit.Size = new System.Drawing.Size(193, 48);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseMnemonic = false;
@@ -449,20 +414,56 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(39, 104);
+            this.btnSave.Location = new System.Drawing.Point(33, 104);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(155, 48);
+            this.btnSave.Size = new System.Drawing.Size(193, 48);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseMnemonic = false;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // EnquireName
+            // 
+            this.EnquireName.HeaderText = "Enquire Name";
+            this.EnquireName.MinimumWidth = 6;
+            this.EnquireName.Name = "EnquireName";
+            this.EnquireName.Width = 280;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Enquiry Date";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = " Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 200;
+            // 
+            // Contact
+            // 
+            this.Contact.HeaderText = "Contact";
+            this.Contact.MinimumWidth = 6;
+            this.Contact.Name = "Contact";
+            this.Contact.Width = 200;
+            // 
             // EnquiryMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 722);
+            this.ClientSize = new System.Drawing.Size(1321, 702);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
@@ -508,11 +509,11 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.DataGridView enquiryDataGrid;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnquireName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

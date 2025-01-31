@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RealStateManagementSystem.config
@@ -17,6 +18,8 @@ namespace RealStateManagementSystem.config
 
         private void CustomerMaster_Load(object sender, EventArgs e)
         {
+            customerDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 11, FontStyle.Regular);
+
             GenerateCustomerId(); // Automatically set the next customer ID on load
             ClearFields();
 
@@ -52,21 +55,9 @@ namespace RealStateManagementSystem.config
         {
             try
             {
-                // Initialize the AutoIdGenerator
-                AutoIdGenerator idGenerator = new AutoIdGenerator("CUST", 4);
 
-                // Fetch the current maximum cust_id from the database
-                string maxIdQuery = "SELECT MAX(cust_id) AS maxId FROM customer_details";
-                object maxIdResult = db.ExecuteScalar(maxIdQuery);
-                int maxId = maxIdResult != DBNull.Value ? Convert.ToInt32(maxIdResult) : 0;
-
-                // Set the counter for the generator
-                idGenerator.ResetCounter(maxId);
-
-                // Generate the next customer ID
-                string nextCustomerId = idGenerator.GenerateNextId();
-
-                // Get user inputs from TextBoxes
+                // Get user inputs from TextBoxes 
+                string custId = tbCustId.Text.Trim();
                 string custName = tbCustName.Text.Trim();
                 string custAddress = tbCustAddress.Text.Trim();
                 string custContact = tbCustCont.Text.Trim();
@@ -100,7 +91,7 @@ namespace RealStateManagementSystem.config
 
                 db.ExecuteNonQuery(insertQuery, new MySqlParameter[]
                 {
-                    new MySqlParameter("@custId", MySqlDbType.VarChar) { Value = nextCustomerId },
+                    new MySqlParameter("@custId", MySqlDbType.VarChar) { Value = custId },
                     new MySqlParameter("@custName", MySqlDbType.VarChar) { Value = custName },
                     new MySqlParameter("@custAddress", MySqlDbType.VarChar) { Value = custAddress },
                     new MySqlParameter("@custContact", MySqlDbType.VarChar) { Value = custContact },
@@ -294,6 +285,11 @@ namespace RealStateManagementSystem.config
             {
                 MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,7 +29,6 @@ namespace RealStateManagementSystem.masterForm
             string rate = tbRate.Text.Trim();
             string availableflatscount = tbFlatCount.Text.Trim();
             
-            // Query to check if user_name or user_email already exists
             string checkQuery = "SELECT COUNT(*) FROM Flat_details WHERE total_floor = @totalfloor , rate = @rate OR available_flats_count = @availableflatscount";
 
             try
@@ -49,7 +48,7 @@ namespace RealStateManagementSystem.masterForm
                     return; // Exit the method without saving
                 }
 
-                // Query to save the new user
+                // Query to save the new Flat
                 string saveQuery = "INSERT INTO flat_details (building_id, total_floor, rate, available_flats_count) VALUES (@buildingId, @totalFloor, @rate, @availableFlatsCount)";
 
 
@@ -81,7 +80,10 @@ namespace RealStateManagementSystem.masterForm
 
         private void FlatMaster_Load(object sender, EventArgs e)
         {
-
+            {
+                // Assuming 'dataGridView1' is your DataGridView control
+                FlatDataGrid.Font = new Font("Times New Roman", 11, FontStyle.Regular); // Set font name, size, and style
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -214,6 +216,11 @@ namespace RealStateManagementSystem.masterForm
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

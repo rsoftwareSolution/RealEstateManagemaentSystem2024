@@ -107,7 +107,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl1.Location = new System.Drawing.Point(2, 107);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1043, 614);
+            this.tabControl1.Size = new System.Drawing.Size(1031, 582);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -128,7 +128,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1035, 581);
+            this.tabPage1.Size = new System.Drawing.Size(1023, 549);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Payment Form";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -265,7 +265,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1035, 581);
+            this.tabPage2.Size = new System.Drawing.Size(1023, 549);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Payment Details List";
             // 
@@ -329,7 +329,7 @@ namespace RealStateManagementSystem.masterForm
             this.paymentDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.paymentDataGrid.RowTemplate.Height = 24;
             this.paymentDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.paymentDataGrid.Size = new System.Drawing.Size(994, 456);
+            this.paymentDataGrid.Size = new System.Drawing.Size(982, 424);
             this.paymentDataGrid.TabIndex = 26;
             // 
             // ID
@@ -412,9 +412,9 @@ namespace RealStateManagementSystem.masterForm
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Location = new System.Drawing.Point(1078, 100);
+            this.panel2.Location = new System.Drawing.Point(1064, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(277, 621);
+            this.panel2.Size = new System.Drawing.Size(257, 585);
             this.panel2.TabIndex = 6;
             // 
             // btnExit
@@ -426,7 +426,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(57, 367);
+            this.btnExit.Location = new System.Drawing.Point(35, 367);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(175, 48);
             this.btnExit.TabIndex = 10;
@@ -442,7 +442,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(57, 297);
+            this.btnDelete.Location = new System.Drawing.Point(35, 297);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(175, 48);
             this.btnDelete.TabIndex = 9;
@@ -458,7 +458,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(57, 229);
+            this.btnUpdate.Location = new System.Drawing.Point(35, 229);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(175, 48);
             this.btnUpdate.TabIndex = 8;
@@ -474,7 +474,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(57, 163);
+            this.btnEdit.Location = new System.Drawing.Point(35, 163);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(175, 48);
             this.btnEdit.TabIndex = 7;
@@ -490,7 +490,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(57, 99);
+            this.btnSave.Location = new System.Drawing.Point(35, 99);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(175, 48);
             this.btnSave.TabIndex = 6;
@@ -503,7 +503,7 @@ namespace RealStateManagementSystem.masterForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1356, 722);
+            this.ClientSize = new System.Drawing.Size(1321, 702);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
