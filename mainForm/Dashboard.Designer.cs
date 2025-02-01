@@ -48,7 +48,6 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.webView21.Size = new System.Drawing.Size(1402, 704);
             this.webView21.TabIndex = 5;
             this.webView21.ZoomFactor = 1D;
-            this.webView21.Click += new System.EventHandler(this.webView21_Click);
             // 
             // pictureBox1
             // 
@@ -60,7 +59,6 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.pictureBox1.Size = new System.Drawing.Size(57, 58);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
@@ -71,7 +69,6 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1402, 61);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Dashboard
             // 
