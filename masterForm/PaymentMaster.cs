@@ -46,5 +46,15 @@ namespace RealStateManagementSystem.masterForm
         {
 
         }
+
+        private void PaymentMaster_Load(object sender, EventArgs e)
+        {
+            paymentDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 11, FontStyle.Regular);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
