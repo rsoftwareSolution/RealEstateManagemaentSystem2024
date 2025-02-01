@@ -19,26 +19,6 @@ namespace RealStateManagementSystem.config
             InitializeComponent();
         }
 
-        private async void btnSave_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private async void tbPinCode_TabIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tbPinCode_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void tbPinCode_Enter(object sender, EventArgs e)
-        {
-           
-        }
-
         private void BuildingMaster_Load(object sender, EventArgs e)
         {
             // Assuming 'dataGridView1' is your DataGridView control
@@ -76,6 +56,11 @@ namespace RealStateManagementSystem.config
             tbTaluka.Text = location.village;    // Assuming you have a TextBox for the village
 
             MessageBox.Show("Location details fetched successfully.");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
  }
