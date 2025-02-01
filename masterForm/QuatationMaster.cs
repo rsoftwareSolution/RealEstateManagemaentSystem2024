@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -77,8 +79,65 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             }
         }
 
+        private void SetupAutoCompleteForTextBox()
+        {
+            try
+            {
+                // Query to fetch all flat descriptions
+                string query = "SELECT flat_desc FROM flat_type_description";
+
+                // Assuming db.ExecuteQuery runs the SQL and returns a DataTable
+                DataTable dt = db.ExecuteQuery(query);
+
+                // If DataTable is empty
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No descriptions found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Create a list to hold the flat descriptions
+                List<string> descriptions = new List<string>();
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    descriptions.Add(row["flat_desc"].ToString()); // Add descriptions to the list
+                }
+
+                // Create a custom AutoCompleteStringCollection
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+
+                // Clear any existing data in the collection before adding new data
+                autoCompleteCollection.Clear();
+
+                // Add all descriptions to the AutoComplete collection
+                autoCompleteCollection.AddRange(descriptions.ToArray());
+
+                // Print the data in the AutoComplete collection for debugging
+                Console.WriteLine("Auto-complete collection data:");
+                foreach (var item in autoCompleteCollection)
+                {
+                    Console.WriteLine(item);  // Check if data is correctly added
+                }
+
+                // Setup AutoComplete properties for the TextBox
+                tbDescription.AutoCompleteMode = AutoCompleteMode.SuggestAppend; // Suggest and append
+                tbDescription.AutoCompleteSource = AutoCompleteSource.CustomSource; // Custom source for suggestions
+                tbDescription.AutoCompleteCustomSource = autoCompleteCollection; // Set the custom source
+
+                Console.WriteLine("Auto-complete setup complete.");
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                MessageBox.Show($"Error setting up auto-complete: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void QuatationMaster_Load(object sender, EventArgs e)
         {
+
+            SetupAutoCompleteForTextBox();
 
             LoadQuotationChart();
 
@@ -246,6 +305,10 @@ namespace RealEstateManagemaentSystem2024.MasterForm
                 MessageBox.Show("Quotation details saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearFields();
                 GenerateQuotationId();
+                if (cbPrint.Checked == true)
+                {
+
+                }
             }
             catch (Exception ex)
             {
@@ -386,14 +449,145 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             }
         }
 
-        private void quotationPieChart_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string quotationId = tbQuatationId.Text.Trim();
 
+                if (string.IsNullOrEmpty(quotationId))
+                {
+                    MessageBox.Show("Please select a quotation to delete.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this quotation?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    string deleteQuery = "DELETE FROM quatation_details WHERE quatation_id = @quotationId";
+
+                    db.ExecuteNonQuery(deleteQuery, new MySqlParameter[] {
+                        new MySqlParameter("@quotationId", MySqlDbType.VarChar) { Value = quotationId }
+                    });
+
+                    MessageBox.Show("Quotation deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields(); // Clear form fields
+                    GenerateQuotationId(); // Generate new ID for next entry
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting quotation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string customerContact = tbCustCont.Text.Trim();
 
+                if (string.IsNullOrEmpty(customerContact))
+                {
+                    MessageBox.Show("Please enter a customer contact number to search.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // SQL SELECT query to fetch quotation based on customer contact
+                string selectQuery = "SELECT * FROM quatation_details WHERE customer_contact = @customerContact";
+
+                // Fetch data from the database
+                DataTable dt = db.ExecuteQuery(selectQuery, new MySqlParameter("@customerContact", MySqlDbType.VarChar) { Value = customerContact });
+
+                if (dt.Rows.Count > 0)
+                {
+                    // Assuming we are showing the data in a DataGridView
+                    quotationDataGrid.DataSource = dt;
+
+                    // Optionally, populate the form fields with the first result (if needed)
+                    DataRow row = dt.Rows[0];
+                    tbQuatationId.Text = row["quatation_id"].ToString();
+                    dtpDate.Text = row["quatation_date"].ToString();
+                    tbDescription.Text = row["discription"].ToString();
+                    tbBuildName.Text = row["building_name"].ToString();
+                    tbFlatType.Text = row["flat_type_name"].ToString();
+                    tbPricePerSqFt.Text = row["price_per_sq_ft"].ToString();
+                    tbBasePrice.Text = row["base_price"].ToString();
+                    tbAdditionalCharges.Text = row["additionl_charges"].ToString();
+                    tbDiscount.Text = row["discount"].ToString();
+                    tbTotalAmount.Text = row["total_amount"].ToString();
+                    tbDownPayment.Text = row["down_payment"].ToString();
+                    // You can set Payment mode as well if needed
+                }
+                else
+                {
+                    MessageBox.Show("No quotation found for the given customer contact.", "No Data Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching quotation by customer contact: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string quotationId = tbQuatationId.Text.Trim();
+                string quotationDate = dtpDate.Text.Trim();
+                string description = tbDescription.Text.Trim();
+                string customerContact = tbCustCont.Text.Trim();
+                string buildingName = tbBuildName.Text.Trim();
+                string flatTypeName = tbFlatType.Text.Trim();
+                double pricePerSqFt = Convert.ToDouble(tbPricePerSqFt.Text.Trim());
+                double basePrice = Convert.ToDouble(tbBasePrice.Text.Trim());
+                double additionalCharges = Convert.ToDouble(tbAdditionalCharges.Text.Trim());
+                double discount = Convert.ToDouble(tbDiscount.Text.Trim());
+                double totalAmount = Convert.ToDouble(tbTotalAmount.Text.Trim());
+                double downPayment = Convert.ToDouble(tbDownPayment.Text.Trim());
+                string paymentMode = GetSelectedPaymentMode();
+
+                if (string.IsNullOrEmpty(paymentMode))
+                {
+                    MessageBox.Show("Please select a payment mode.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Update query for an existing quotation
+                string updateQuery = "UPDATE quatation_details SET quatation_date = @quotationDate, discription = @description, customer_contact = @customerContact, building_name = @buildingName, flat_type_name = @flatTypeName, " +
+                                     "price_per_sq_ft = @pricePerSqFt, base_price = @basePrice, additionl_charges = @additionalCharges, discount = @discount, total_amount = @totalAmount, " +
+                                     "down_payment = @downPayment, Payment_mode = @paymentMode WHERE quatation_id = @quotationId";
+
+                db.ExecuteNonQuery(updateQuery, new MySqlParameter[] {
+                    new MySqlParameter("@quotationId", MySqlDbType.VarChar) { Value = quotationId },
+                    new MySqlParameter("@quotationDate", MySqlDbType.VarChar) { Value = quotationDate },
+                    new MySqlParameter("@description", MySqlDbType.VarChar) { Value = description },
+                    new MySqlParameter("@customerContact", MySqlDbType.VarChar) { Value = customerContact },
+                    new MySqlParameter("@buildingName", MySqlDbType.VarChar) { Value = buildingName },
+                    new MySqlParameter("@flatTypeName", MySqlDbType.VarChar) { Value = flatTypeName },
+                    new MySqlParameter("@pricePerSqFt", MySqlDbType.Double) { Value = pricePerSqFt },
+                    new MySqlParameter("@basePrice", MySqlDbType.Double) { Value = basePrice },
+                    new MySqlParameter("@additionalCharges", MySqlDbType.Double) { Value = additionalCharges },
+                    new MySqlParameter("@discount", MySqlDbType.Double) { Value = discount },
+                    new MySqlParameter("@totalAmount", MySqlDbType.Double) { Value = totalAmount },
+                    new MySqlParameter("@downPayment", MySqlDbType.Double) { Value = downPayment },
+                    new MySqlParameter("@paymentMode", MySqlDbType.VarChar) { Value = paymentMode }
+            });
+
+                MessageBox.Show("Quotation details updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearFields();
+                GenerateQuotationId();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating quotation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbDescription_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

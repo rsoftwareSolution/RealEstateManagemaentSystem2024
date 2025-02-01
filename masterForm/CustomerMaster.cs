@@ -16,9 +16,45 @@ namespace RealStateManagementSystem.config
             InitializeComponent();
         }
 
+        private void InitializeCustomerGrid()
+        {
+            // Clear existing columns to avoid duplication
+            customerDataGrid.Columns.Clear();
+
+            // Disable auto column generation
+            customerDataGrid.AutoGenerateColumns = false;
+
+            // Set DataGridView Header Height
+            customerDataGrid.ColumnHeadersHeight = 35;
+            customerDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            // Set DataGridView row height
+            customerDataGrid.RowTemplate.Height = 30; // Adjust row height for better visibility
+
+            // Define columns with custom widths
+            customerDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerID", HeaderText = "ID", DataPropertyName = "cust_id", Width = 100 });
+            customerDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerName", HeaderText = "Name", DataPropertyName = "cust_name", Width = 170 });
+            customerDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerAddress", HeaderText = "Address", DataPropertyName = "cust_address", Width = 200 });
+            customerDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerContact", HeaderText = "Contact", DataPropertyName = "cust_contact", Width = 140 });
+            customerDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerBirthDate", HeaderText = "Birth Date", DataPropertyName = "cust_birth_date", Width = 100 });
+            customerDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerEmail", HeaderText = "Email", DataPropertyName = "cust_email", Width = 210 });
+
+            // Ensure column headers are displayed properly
+            customerDataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+
         private void CustomerMaster_Load(object sender, EventArgs e)
         {
+            // Set DataGridView header styles
+            customerDataGrid.EnableHeadersVisualStyles = false;
+            customerDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray;
+            customerDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             customerDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 11, FontStyle.Regular);
+            customerDataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Ensure columns are defined
+            InitializeCustomerGrid();
 
             GenerateCustomerId(); // Automatically set the next customer ID on load
             ClearFields();
@@ -37,8 +73,13 @@ namespace RealStateManagementSystem.config
 
         private void PopulateDataGridView(DataTable dataTable)
         {
+            // Sort data based on Customer ID (Assuming cust_id is a string, change to integer if needed)
+            dataTable.DefaultView.Sort = "cust_id ASC"; // Use DESC for descending order
+            DataTable sortedTable = dataTable.DefaultView.ToTable();
+
             customerDataGrid.Rows.Clear();
-            foreach (DataRow row in dataTable.Rows)
+
+            foreach (DataRow row in sortedTable.Rows)
             {
                 customerDataGrid.Rows.Add(
                     row["cust_id"],
@@ -115,38 +156,31 @@ namespace RealStateManagementSystem.config
         {
             try
             {
-                // Query to get the maximum customer ID
-                string query = "SELECT MAX(cust_id) FROM customer_details";
+                // Corrected query for MySQL
+                string query = @"SELECT cust_id FROM customer_details WHERE cust_id LIKE 'CUST%' ORDER BY CONVERT(SUBSTRING(cust_id, 5, CHAR_LENGTH(cust_id) - 4), UNSIGNED) DESC LIMIT 1";
 
                 // Execute the query
                 object maxIdObj = db.ExecuteScalar(query);
 
-                // Check if the result is null or DBNull
-                if (maxIdObj == null || maxIdObj == DBNull.Value || string.IsNullOrEmpty(maxIdObj.ToString()))
+                int nextId = 1; // Default if no record exists
+
+                if (maxIdObj != null && maxIdObj != DBNull.Value)
                 {
-                    tbCustId.Text = "CUST0001"; // Start with "CUST0001" if no record exists
+                    string lastId = maxIdObj.ToString();  // Example: "CUST0021"
+
+                    if (lastId.StartsWith("CUST") && int.TryParse(lastId.Substring(4), out int numericPart))
+                    {
+                        nextId = numericPart + 1; // Increment ID
+                    }
                 }
 
-                // Extract the numeric part from the ID (e.g., "CUST0003" -> "0003")
-                string maxIdStr = maxIdObj.ToString();
-                if (maxIdStr.StartsWith("CUST") && int.TryParse(maxIdStr.Substring(4), out int numericPart))
-                {
-                    // Increment the numeric part
-                    int nextId = numericPart + 1;
-
-                    // Format the new ID with the prefix and leading zeros
-                    tbCustId.Text = $"CUST{nextId:D4}";
-                }
-                else
-                {
-                    throw new FormatException($"Unexpected format for cust_id: {maxIdStr}");
-                }
+                // Generate new ID with zero padding (CUST0001, CUST0002, ...)
+                tbCustId.Text = $"CUST{nextId:D4}";
             }
             catch (Exception ex)
             {
-                // Log or display the error message
                 MessageBox.Show($"Error generating customer ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbCustId.Text = string.Empty; // Return an empty string in case of an error
+                tbCustId.Text = string.Empty;  // Reset textbox on error
             }
         }
 
