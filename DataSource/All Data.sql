@@ -1,6 +1,28 @@
 --- All data Insert Query
 use real_state_db;
 
+INSERT INTO customer_details (cust_id, cust_name, cust_address, cust_contact, cust_birth_date, cust_email) 
+VALUES
+('CUST001', 'Aarav Sharma', '123 MG Road, Bangalore, Karnataka', 9876543210, '1990-05-15', 'aarav.sharma@example.com'),
+('CUST002', 'Ishita Gupta', '456 Lajpat Nagar, Delhi', 9876543211, '1985-07-22', 'ishita.gupta@example.com'),
+('CUST003', 'Rohit Kumar', '789 Janakpuri, Mumbai, Maharashtra', 9876543212, '1980-03-10', 'rohit.kumar@example.com'),
+('CUST004', 'Neha Reddy', '321 Banjara Hills, Hyderabad, Telangana', 9876543213, '1992-11-30', 'neha.reddy@example.com'),
+('CUST005', 'Vikram Verma', '654 Indira Nagar, Lucknow, Uttar Pradesh', 9876543214, '1988-12-05', 'vikram.verma@example.com'),
+('CUST006', 'Priya Patel', '987 Navrangpura, Ahmedabad, Gujarat', 9876543215, '1994-02-20', 'priya.patel@example.com'),
+('CUST007', 'Arjun Mehta', '654 Anna Nagar, Chennai, Tamil Nadu', 9876543216, '1982-09-14', 'arjun.mehta@example.com'),
+('CUST008', 'Sanya Singh', '123 HSR Layout, Bangalore, Karnataka', 9876543217, '1996-04-25', 'sanya.singh@example.com'),
+('CUST009', 'Amit Jain', '432 Bandra West, Mumbai, Maharashtra', 9876543218, '1987-06-10', 'amit.jain@example.com'),
+('CUST010', 'Pooja Agarwal', '876 Nehru Place, Delhi', 9876543219, '1991-01-12', 'pooja.agarwal@example.com'),
+('CUST011', 'Siddharth Nair', '321 Vasant Vihar, Delhi', 9876543220, '1993-08-17', 'siddharth.nair@example.com'),
+('CUST012', 'Kritika Joshi', '987 Dadar West, Mumbai, Maharashtra', 9876543221, '1989-11-25', 'kritika.joshi@example.com'),
+('CUST013', 'Rajesh Bansal', '654 Kukatpally, Hyderabad, Telangana', 9876543222, '1995-01-03', 'rajesh.bansal@example.com'),
+('CUST014', 'Ritika Kapoor', '876 Kothrud, Pune, Maharashtra', 9876543223, '1983-10-09', 'ritika.kapoor@example.com'),
+('CUST015', 'Karan Singh', '123 Malad East, Mumbai, Maharashtra', 9876543224, '1990-04-17', 'karan.singh@example.com'),
+('CUST016', 'Divya Rao', '654 Koramangala, Bangalore, Karnataka', 9876543225, '1986-02-14', 'divya.rao@example.com'),
+('CUST017', 'Manish Sharma', '987 Pusa Road, Delhi', 9876543226, '1992-07-29', 'manish.sharma@example.com'),
+('CUST018', 'Simran Kaur', '321 Kharar, Punjab', 9876543227, '1994-10-22', 'simran.kaur@example.com'),
+('CUST019', 'Vishal Yadav', '432 Karol Bagh, Delhi', 9876543228, '1984-12-01', 'vishal.yadav@example.com'),
+('CUST020', 'Ananya Verma', '876 Salt Lake City, Kolkata, West Bengal', 9876543229, '1981-05-13', 'ananya.verma@example.com');
 
 -- Insert records into building_details table
 INSERT INTO building_details (building_id, building_or_project_name, building_location_pincode, building_state, building_district, building_village)
@@ -48,3 +70,26 @@ VALUES
 ('FLA0018', 'FTY0002', 'BUG0007', 9, 7200000, 3),
 ('FLA0019', 'FTY0003', 'BUG0008', 18, 11000000, 2),
 ('FLA0020', 'FTY0004', 'BUG0008', 18, 14000000, 1);
+
+INSERT INTO flat_type_description (flat_desc_id, flat_desc) VALUES
+('FD0001', 'Luxury 2BHK with Lake View'),
+('FD0002', 'Affordable 1BHK near Metro'),
+('FD0003', 'Spacious 3BHK with Terrace'),
+('FD0004', 'Budget Studio Apartment'),
+('FD0005', 'Premium 4BHK Penthouse'),
+('FD0006', 'Luxury 3BHK with Pool Access'),
+('FD0007', 'Compact 1BHK in Gated Community'),
+('FD0008', '3BHK with Garden Space'),
+('FD0009', 'Affordable 2BHK near IT Park'),
+('FD0010', 'Studio Apartment with Balcony'),
+('FD0011', 'Modern 2BHK with Smart Home Features'),
+('FD0012', 'Cozy 1BHK with Open Kitchen'),
+('FD0013', 'Elegant 4BHK with Designer Interiors'),
+('FD0014', 'Studio with Prime Location'),
+('FD0015', '2BHK in a Peaceful Residential Area'),
+('FD0016', 'Luxury 3BHK with City View'),
+('FD0017', 'Compact 2BHK with Parking Space'),
+('FD0018', 'High-End 1BHK with Luxury Amenities'),
+('FD0019', '3BHK Duplex with Private Garden'),
+('FD0020', 'Affordable Studio in Central Area');
+

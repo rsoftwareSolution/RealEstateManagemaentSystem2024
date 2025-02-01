@@ -138,9 +138,9 @@ E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\th\CrystalDecisions.Crysta
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\tr\CrystalDecisions.CrystalReports.Engine.resources.dll
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\zh-CHS\CrystalDecisions.CrystalReports.Engine.resources.dll
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\zh-CHT\CrystalDecisions.CrystalReports.Engine.resources.dll
-E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.BookingRegister.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.SaleInvoice.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.ParkingMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Helper.BookingSelectionPopup.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.config.CustomerMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.QuatationMaster.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Registers.BookingRegister.resources

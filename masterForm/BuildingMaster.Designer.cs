@@ -61,12 +61,6 @@ namespace RealStateManagementSystem.config
             this.buildingDataGrid = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BuildingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -77,14 +71,13 @@ namespace RealStateManagementSystem.config
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1318, 106);
+            this.panel1.Size = new System.Drawing.Size(1318, 83);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -100,8 +93,7 @@ namespace RealStateManagementSystem.config
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnExit);
@@ -109,9 +101,9 @@ namespace RealStateManagementSystem.config
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Location = new System.Drawing.Point(1064, 106);
+            this.panel2.Location = new System.Drawing.Point(1064, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 585);
+            this.panel2.Size = new System.Drawing.Size(254, 571);
             this.panel2.TabIndex = 1;
             // 
             // btnExit
@@ -201,10 +193,10 @@ namespace RealStateManagementSystem.config
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 113);
+            this.tabControl1.Location = new System.Drawing.Point(0, 86);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1031, 582);
+            this.tabControl1.Size = new System.Drawing.Size(1031, 570);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -225,7 +217,7 @@ namespace RealStateManagementSystem.config
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1023, 549);
+            this.tabPage1.Size = new System.Drawing.Size(1023, 537);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Building Form";
             // 
@@ -375,7 +367,7 @@ namespace RealStateManagementSystem.config
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1023, 549);
+            this.tabPage2.Size = new System.Drawing.Size(1023, 537);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Building Details List";
             // 
@@ -400,13 +392,6 @@ namespace RealStateManagementSystem.config
             this.buildingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.buildingDataGrid.ColumnHeadersHeight = 36;
             this.buildingDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.buildingDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.BuildingName,
-            this.Email,
-            this.Column1,
-            this.Column2,
-            this.Column3});
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -437,16 +422,16 @@ namespace RealStateManagementSystem.config
             this.buildingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.buildingDataGrid.RowTemplate.Height = 24;
             this.buildingDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.buildingDataGrid.Size = new System.Drawing.Size(990, 438);
+            this.buildingDataGrid.Size = new System.Drawing.Size(990, 426);
             this.buildingDataGrid.TabIndex = 23;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 25);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(36, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(168, 27);
+            this.label6.Size = new System.Drawing.Size(128, 21);
             this.label6.TabIndex = 20;
             this.label6.Text = "Building Name :";
             // 
@@ -454,66 +439,17 @@ namespace RealStateManagementSystem.config
             // 
             this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(191, 23);
-            this.textBox5.Multiline = true;
+            this.textBox5.Location = new System.Drawing.Point(170, 23);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(528, 37);
+            this.textBox5.Size = new System.Drawing.Size(528, 34);
             this.textBox5.TabIndex = 19;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 60;
-            // 
-            // BuildingName
-            // 
-            this.BuildingName.HeaderText = " Building Name";
-            this.BuildingName.MinimumWidth = 6;
-            this.BuildingName.Name = "BuildingName";
-            this.BuildingName.ReadOnly = true;
-            this.BuildingName.Width = 200;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = " Location";
-            this.Email.MinimumWidth = 10;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 150;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "State";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 90;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Dist";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 90;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Village";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
             // 
             // BuildingMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1321, 702);
+            this.ClientSize = new System.Drawing.Size(1320, 656);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel2);
@@ -523,7 +459,6 @@ namespace RealStateManagementSystem.config
             this.MinimizeBox = false;
             this.Name = "BuildingMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BuilldingMaster";
             this.Load += new System.EventHandler(this.BuildingMaster_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -565,11 +500,5 @@ namespace RealStateManagementSystem.config
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbState;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BuildingName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
