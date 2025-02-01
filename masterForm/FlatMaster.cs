@@ -78,11 +78,61 @@ namespace RealStateManagementSystem.masterForm
             tbFloor.Select();
         }
 
+        private void LoadFlatTypeComboBox()
+        {
+            string query = "SELECT flat_type_name FROM flat_type_details";
+            DataTable dt = db.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                cbFlatType.Items.Clear(); // Clear existing items
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    cbFlatType.Items.Add(row["flat_type_name"].ToString());
+                }
+            }
+        }
+
         private void FlatMaster_Load(object sender, EventArgs e)
         {
+            LoadFlatTypeComboBox();
+            flatDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            flatDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            flatDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 11, FontStyle.Regular);
+
+            try
             {
-                // Assuming 'dataGridView1' is your DataGridView control
-                FlatDataGrid.Font = new Font("Times New Roman", 11, FontStyle.Regular); // Set font name, size, and style
+                string query = "SELECT * FROM flat_details";
+                DataTable dataTable = db.ExecuteQuery(query);
+                PopulateDataGridView(dataTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PopulateDataGridView(DataTable dataTable)
+        {
+            flatDataGrid.Rows.Clear();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                flatDataGrid.Rows.Add(
+                    row["flat_id"],
+                    row["quatation_date"],
+                    row["discription"],
+                    row["customer_contact"],
+                    row["building_name"],
+                    row["flat_type_name"],
+                    row["price_per_sq_ft"],
+                    row["base_price"],
+                    row["additionl_charges"],
+                    row["discount"],
+                    row["total_amount"],
+                    row["down_payment"],
+                    row["Payment_mode"]
+                );
             }
         }
 
@@ -140,15 +190,11 @@ namespace RealStateManagementSystem.masterForm
                 // Execute the UPDATE query using ExecuteNonQuery
                 db.ExecuteNonQuery(query, new MySqlParameter[]
                 {
-
-                new MySqlParameter("@totalfloor", MySqlDbType.VarChar) { Value = total_floor },
-            new MySqlParameter("@rate", MySqlDbType.VarChar) { Value = rate },
-            new MySqlParameter("@available_flats_count", MySqlDbType.VarChar) { Value = available_flats_count },
+                    new MySqlParameter("@totalfloor", MySqlDbType.VarChar) { Value = total_floor },
+                    new MySqlParameter("@rate", MySqlDbType.VarChar) { Value = rate },
+                    new MySqlParameter("@available_flats_count", MySqlDbType.VarChar) { Value = available_flats_count },
           
                 });
-
-
-
 
                 MessageBox.Show("Record updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clr_text();
@@ -198,29 +244,14 @@ namespace RealStateManagementSystem.masterForm
             }
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
     }
 }

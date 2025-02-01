@@ -30,6 +30,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuatationMaster));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,31 +44,33 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cbCard = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbOnline = new System.Windows.Forms.CheckBox();
+            this.cbCash = new System.Windows.Forms.CheckBox();
+            this.tbDownPayment = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbTotalAmount = new System.Windows.Forms.TextBox();
+            this.tbDiscount = new System.Windows.Forms.TextBox();
+            this.tbBasePrice = new System.Windows.Forms.TextBox();
+            this.tbAdditionalCharges = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbBuildName = new System.Windows.Forms.TextBox();
+            this.tbFlatType = new System.Windows.Forms.TextBox();
+            this.tbPricePerSqFt = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.tbCustId = new System.Windows.Forms.TextBox();
+            this.tbCustName = new System.Windows.Forms.TextBox();
+            this.tbCustCont = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dtp2 = new System.Windows.Forms.DateTimePicker();
-            this.textbox15 = new System.Windows.Forms.TextBox();
+            this.tbDescription = new System.Windows.Forms.TextBox();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.tbQuatationId = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbSearchQuotation = new System.Windows.Forms.TextBox();
+            this.quotationDataGrid = new System.Windows.Forms.DataGridView();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.quotationPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -76,19 +81,21 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quotationDataGrid)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quotationPieChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Thistle;
+            this.panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 64);
+            this.panel1.Size = new System.Drawing.Size(1340, 64);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -96,9 +103,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(229, 8);
+            this.label1.Location = new System.Drawing.Point(516, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(314, 46);
             this.label1.TabIndex = 0;
@@ -106,7 +113,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Thistle;
+            this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.button1);
@@ -117,7 +124,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(1, 581);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(795, 75);
+            this.panel2.Size = new System.Drawing.Size(1342, 75);
             this.panel2.TabIndex = 5;
             // 
             // button1
@@ -130,12 +137,13 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(628, 14);
+            this.button1.Location = new System.Drawing.Point(898, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 48);
             this.button1.TabIndex = 115;
             this.button1.Text = "EXIT";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button3
             // 
@@ -147,7 +155,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(474, 14);
+            this.button3.Location = new System.Drawing.Point(744, 14);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 48);
             this.button3.TabIndex = 114;
@@ -164,7 +172,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(320, 14);
+            this.button2.Location = new System.Drawing.Point(590, 14);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 48);
             this.button2.TabIndex = 113;
@@ -181,12 +189,13 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEdit.Location = new System.Drawing.Point(166, 14);
+            this.btnEdit.Location = new System.Drawing.Point(436, 14);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(148, 48);
             this.btnEdit.TabIndex = 112;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -198,7 +207,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSave.Location = new System.Drawing.Point(12, 14);
+            this.btnSave.Location = new System.Drawing.Point(282, 14);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(148, 48);
             this.btnSave.TabIndex = 111;
@@ -214,12 +223,13 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tabControl1.Location = new System.Drawing.Point(0, 64);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(796, 515);
+            this.tabControl1.Size = new System.Drawing.Size(1341, 515);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
@@ -228,17 +238,17 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(788, 482);
+            this.tabPage1.Size = new System.Drawing.Size(1333, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Quatation";
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.checkBox3);
+            this.groupBox5.Controls.Add(this.cbCard);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.checkBox2);
-            this.groupBox5.Controls.Add(this.checkBox1);
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.cbOnline);
+            this.groupBox5.Controls.Add(this.cbCash);
+            this.groupBox5.Controls.Add(this.tbDownPayment);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(8, 378);
             this.groupBox5.Name = "groupBox5";
@@ -247,15 +257,15 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Payment Term";
             // 
-            // checkBox3
+            // cbCard
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(506, 38);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(89, 25);
-            this.checkBox3.TabIndex = 17;
-            this.checkBox3.Text = "Cheque";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbCard.AutoSize = true;
+            this.cbCard.Location = new System.Drawing.Point(506, 38);
+            this.cbCard.Name = "cbCard";
+            this.cbCard.Size = new System.Drawing.Size(69, 25);
+            this.cbCard.TabIndex = 17;
+            this.cbCard.Text = "Card";
+            this.cbCard.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -266,44 +276,44 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.label2.TabIndex = 16;
             this.label2.Text = "Payment Mode :";
             // 
-            // checkBox2
+            // cbOnline
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(377, 37);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(123, 25);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "Net Banking";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbOnline.AutoSize = true;
+            this.cbOnline.Location = new System.Drawing.Point(377, 37);
+            this.cbOnline.Name = "cbOnline";
+            this.cbOnline.Size = new System.Drawing.Size(123, 25);
+            this.cbOnline.TabIndex = 15;
+            this.cbOnline.Text = "Net Banking";
+            this.cbOnline.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbCash
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(301, 37);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 25);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "Cash";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbCash.AutoSize = true;
+            this.cbCash.Location = new System.Drawing.Point(301, 37);
+            this.cbCash.Name = "cbCash";
+            this.cbCash.Size = new System.Drawing.Size(70, 25);
+            this.cbCash.TabIndex = 14;
+            this.cbCash.Text = "Cash";
+            this.cbCash.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbDownPayment
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 37);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 27);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Down Payment";
+            this.tbDownPayment.BackColor = System.Drawing.SystemColors.Control;
+            this.tbDownPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDownPayment.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDownPayment.Location = new System.Drawing.Point(12, 37);
+            this.tbDownPayment.Multiline = true;
+            this.tbDownPayment.Name = "tbDownPayment";
+            this.tbDownPayment.Size = new System.Drawing.Size(137, 27);
+            this.tbDownPayment.TabIndex = 13;
+            this.tbDownPayment.Text = "Down Payment";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox6);
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.textBox10);
+            this.groupBox4.Controls.Add(this.tbTotalAmount);
+            this.groupBox4.Controls.Add(this.tbDiscount);
+            this.groupBox4.Controls.Add(this.tbBasePrice);
+            this.groupBox4.Controls.Add(this.tbAdditionalCharges);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(8, 290);
             this.groupBox4.Name = "groupBox4";
@@ -312,59 +322,59 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Quatation Breakdown";
             // 
-            // textBox5
+            // tbTotalAmount
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(550, 37);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(216, 27);
-            this.textBox5.TabIndex = 12;
-            this.textBox5.Text = "Total Amount";
+            this.tbTotalAmount.BackColor = System.Drawing.SystemColors.Control;
+            this.tbTotalAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTotalAmount.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalAmount.Location = new System.Drawing.Point(550, 37);
+            this.tbTotalAmount.Multiline = true;
+            this.tbTotalAmount.Name = "tbTotalAmount";
+            this.tbTotalAmount.Size = new System.Drawing.Size(216, 27);
+            this.tbTotalAmount.TabIndex = 12;
+            this.tbTotalAmount.Text = "Total Amount";
             // 
-            // textBox6
+            // tbDiscount
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(347, 37);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(197, 27);
-            this.textBox6.TabIndex = 11;
-            this.textBox6.Text = "Discount";
+            this.tbDiscount.BackColor = System.Drawing.SystemColors.Control;
+            this.tbDiscount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDiscount.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDiscount.Location = new System.Drawing.Point(347, 37);
+            this.tbDiscount.Multiline = true;
+            this.tbDiscount.Name = "tbDiscount";
+            this.tbDiscount.Size = new System.Drawing.Size(197, 27);
+            this.tbDiscount.TabIndex = 11;
+            this.tbDiscount.Text = "Discount";
             // 
-            // textBox7
+            // tbBasePrice
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(12, 37);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(120, 27);
-            this.textBox7.TabIndex = 9;
-            this.textBox7.Text = "Base Price";
+            this.tbBasePrice.BackColor = System.Drawing.SystemColors.Control;
+            this.tbBasePrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBasePrice.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBasePrice.Location = new System.Drawing.Point(12, 37);
+            this.tbBasePrice.Multiline = true;
+            this.tbBasePrice.Name = "tbBasePrice";
+            this.tbBasePrice.Size = new System.Drawing.Size(120, 27);
+            this.tbBasePrice.TabIndex = 9;
+            this.tbBasePrice.Text = "Base Price";
             // 
-            // textBox10
+            // tbAdditionalCharges
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(138, 37);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(203, 27);
-            this.textBox10.TabIndex = 10;
-            this.textBox10.Text = "Additional Charges";
+            this.tbAdditionalCharges.BackColor = System.Drawing.SystemColors.Control;
+            this.tbAdditionalCharges.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbAdditionalCharges.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAdditionalCharges.Location = new System.Drawing.Point(138, 37);
+            this.tbAdditionalCharges.Multiline = true;
+            this.tbAdditionalCharges.Name = "tbAdditionalCharges";
+            this.tbAdditionalCharges.Size = new System.Drawing.Size(203, 27);
+            this.tbAdditionalCharges.TabIndex = 10;
+            this.tbAdditionalCharges.Text = "Additional Charges";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.tbBuildName);
+            this.groupBox3.Controls.Add(this.tbFlatType);
+            this.groupBox3.Controls.Add(this.tbPricePerSqFt);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(8, 199);
             this.groupBox3.Name = "groupBox3";
@@ -373,47 +383,47 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Property Details";
             // 
-            // textBox3
+            // tbBuildName
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(12, 34);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(329, 27);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.Text = "Building Name";
+            this.tbBuildName.BackColor = System.Drawing.SystemColors.Control;
+            this.tbBuildName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBuildName.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuildName.Location = new System.Drawing.Point(12, 34);
+            this.tbBuildName.Multiline = true;
+            this.tbBuildName.Name = "tbBuildName";
+            this.tbBuildName.Size = new System.Drawing.Size(329, 27);
+            this.tbBuildName.TabIndex = 6;
+            this.tbBuildName.Text = "Building Name";
             // 
-            // textBox8
+            // tbFlatType
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(347, 34);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(197, 27);
-            this.textBox8.TabIndex = 7;
-            this.textBox8.Text = "Flat Number";
+            this.tbFlatType.BackColor = System.Drawing.SystemColors.Control;
+            this.tbFlatType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFlatType.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFlatType.Location = new System.Drawing.Point(347, 34);
+            this.tbFlatType.Multiline = true;
+            this.tbFlatType.Name = "tbFlatType";
+            this.tbFlatType.Size = new System.Drawing.Size(197, 27);
+            this.tbFlatType.TabIndex = 7;
+            this.tbFlatType.Text = "Flat Type";
             // 
-            // textBox9
+            // tbPricePerSqFt
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(550, 34);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(216, 27);
-            this.textBox9.TabIndex = 8;
-            this.textBox9.Text = "price Per Sq.ft";
+            this.tbPricePerSqFt.BackColor = System.Drawing.SystemColors.Control;
+            this.tbPricePerSqFt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPricePerSqFt.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPricePerSqFt.Location = new System.Drawing.Point(550, 34);
+            this.tbPricePerSqFt.Multiline = true;
+            this.tbPricePerSqFt.Name = "tbPricePerSqFt";
+            this.tbPricePerSqFt.Size = new System.Drawing.Size(216, 27);
+            this.tbPricePerSqFt.TabIndex = 8;
+            this.tbPricePerSqFt.Text = "Price Per Sq.ft";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox16);
-            this.groupBox2.Controls.Add(this.textBox17);
+            this.groupBox2.Controls.Add(this.tbCustId);
+            this.groupBox2.Controls.Add(this.tbCustName);
+            this.groupBox2.Controls.Add(this.tbCustCont);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 108);
             this.groupBox2.Name = "groupBox2";
@@ -422,47 +432,51 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Details";
             // 
-            // textBox14
+            // tbCustId
             // 
-            this.textBox14.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(12, 38);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(120, 27);
-            this.textBox14.TabIndex = 3;
-            this.textBox14.Text = "Customer ID ";
+            this.tbCustId.BackColor = System.Drawing.Color.Silver;
+            this.tbCustId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCustId.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustId.Location = new System.Drawing.Point(12, 38);
+            this.tbCustId.Multiline = true;
+            this.tbCustId.Name = "tbCustId";
+            this.tbCustId.ReadOnly = true;
+            this.tbCustId.Size = new System.Drawing.Size(120, 27);
+            this.tbCustId.TabIndex = 3;
+            this.tbCustId.TabStop = false;
+            this.tbCustId.Text = "Customer ID ";
             // 
-            // textBox16
+            // tbCustName
             // 
-            this.textBox16.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox16.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(138, 38);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(406, 27);
-            this.textBox16.TabIndex = 4;
-            this.textBox16.Text = "Customer Name";
+            this.tbCustName.BackColor = System.Drawing.Color.Silver;
+            this.tbCustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCustName.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustName.Location = new System.Drawing.Point(138, 38);
+            this.tbCustName.Multiline = true;
+            this.tbCustName.Name = "tbCustName";
+            this.tbCustName.ReadOnly = true;
+            this.tbCustName.Size = new System.Drawing.Size(406, 27);
+            this.tbCustName.TabIndex = 4;
+            this.tbCustName.TabStop = false;
+            this.tbCustName.Text = "Customer Name";
             // 
-            // textBox17
+            // tbCustCont
             // 
-            this.textBox17.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox17.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(550, 38);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(216, 27);
-            this.textBox17.TabIndex = 5;
-            this.textBox17.Text = "Customer Contact";
+            this.tbCustCont.BackColor = System.Drawing.SystemColors.Control;
+            this.tbCustCont.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCustCont.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustCont.Location = new System.Drawing.Point(550, 38);
+            this.tbCustCont.Multiline = true;
+            this.tbCustCont.Name = "tbCustCont";
+            this.tbCustCont.Size = new System.Drawing.Size(216, 27);
+            this.tbCustCont.TabIndex = 5;
+            this.tbCustCont.Text = "Customer Contact";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.dtp2);
-            this.groupBox1.Controls.Add(this.textbox15);
+            this.groupBox1.Controls.Add(this.tbDescription);
+            this.groupBox1.Controls.Add(this.dtpDate);
+            this.groupBox1.Controls.Add(this.tbQuatationId);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(8, 17);
             this.groupBox1.Name = "groupBox1";
@@ -471,86 +485,123 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quatation Details";
             // 
-            // textBox4
+            // tbDescription
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(347, 37);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(419, 27);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.Text = "Discription";
+            this.tbDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.tbDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDescription.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescription.Location = new System.Drawing.Point(347, 37);
+            this.tbDescription.Multiline = true;
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.Size = new System.Drawing.Size(419, 27);
+            this.tbDescription.TabIndex = 2;
+            this.tbDescription.Text = "Discription";
             // 
-            // dtp2
+            // dtpDate
             // 
-            this.dtp2.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dtp2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp2.Location = new System.Drawing.Point(138, 37);
-            this.dtp2.Name = "dtp2";
-            this.dtp2.Size = new System.Drawing.Size(203, 28);
-            this.dtp2.TabIndex = 1;
+            this.dtpDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dtpDate.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Location = new System.Drawing.Point(138, 37);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(203, 28);
+            this.dtpDate.TabIndex = 1;
             // 
-            // textbox15
+            // tbQuatationId
             // 
-            this.textbox15.BackColor = System.Drawing.SystemColors.Control;
-            this.textbox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbox15.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox15.Location = new System.Drawing.Point(12, 38);
-            this.textbox15.Multiline = true;
-            this.textbox15.Name = "textbox15";
-            this.textbox15.Size = new System.Drawing.Size(120, 27);
-            this.textbox15.TabIndex = 0;
-            this.textbox15.Text = "Quatation ID";
+            this.tbQuatationId.BackColor = System.Drawing.Color.Silver;
+            this.tbQuatationId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbQuatationId.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbQuatationId.Location = new System.Drawing.Point(12, 38);
+            this.tbQuatationId.Multiline = true;
+            this.tbQuatationId.Name = "tbQuatationId";
+            this.tbQuatationId.ReadOnly = true;
+            this.tbQuatationId.Size = new System.Drawing.Size(120, 27);
+            this.tbQuatationId.TabIndex = 0;
+            this.tbQuatationId.TabStop = false;
+            this.tbQuatationId.Text = "Quatation ID";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.tbSearchQuotation);
+            this.tabPage2.Controls.Add(this.quotationDataGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(788, 482);
+            this.tabPage2.Size = new System.Drawing.Size(1333, 482);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quatation List";
             // 
-            // textBox2
+            // tbSearchQuotation
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(10, 11);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(764, 33);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Search here";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbSearchQuotation.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tbSearchQuotation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSearchQuotation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearchQuotation.Location = new System.Drawing.Point(10, 11);
+            this.tbSearchQuotation.Multiline = true;
+            this.tbSearchQuotation.Name = "tbSearchQuotation";
+            this.tbSearchQuotation.Size = new System.Drawing.Size(1312, 33);
+            this.tbSearchQuotation.TabIndex = 1;
+            this.tbSearchQuotation.Text = "Search here";
+            this.tbSearchQuotation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbSearchQuotation.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
-            // dataGridView1
+            // quotationDataGrid
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.LavenderBlush;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 420);
-            this.dataGridView1.TabIndex = 0;
+            this.quotationDataGrid.BackgroundColor = System.Drawing.Color.LavenderBlush;
+            this.quotationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.quotationDataGrid.Location = new System.Drawing.Point(10, 56);
+            this.quotationDataGrid.Name = "quotationDataGrid";
+            this.quotationDataGrid.RowHeadersWidth = 4;
+            this.quotationDataGrid.RowTemplate.Height = 24;
+            this.quotationDataGrid.Size = new System.Drawing.Size(1312, 420);
+            this.quotationDataGrid.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.quotationPieChart);
+            this.groupBox6.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(797, 17);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(530, 446);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Available flat and count";
+            // 
+            // quotationPieChart
+            // 
+            this.quotationPieChart.BorderlineColor = System.Drawing.Color.LavenderBlush;
+            chartArea4.Name = "ChartArea1";
+            this.quotationPieChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.quotationPieChart.Legends.Add(legend4);
+            this.quotationPieChart.Location = new System.Drawing.Point(22, 38);
+            this.quotationPieChart.Name = "quotationPieChart";
+            this.quotationPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Quatation";
+            series4.YValuesPerPoint = 2;
+            this.quotationPieChart.Series.Add(series4);
+            this.quotationPieChart.Size = new System.Drawing.Size(494, 390);
+            this.quotationPieChart.SuppressExceptions = true;
+            this.quotationPieChart.TabIndex = 11;
+            this.quotationPieChart.TabStop = false;
+            this.quotationPieChart.Text = "chart1";
             // 
             // QuatationMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(797, 656);
+            this.ClientSize = new System.Drawing.Size(1343, 656);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "QuatationMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuatationMaster";
             this.Load += new System.EventHandler(this.QuatationMaster_Load);
             this.panel1.ResumeLayout(false);
@@ -569,7 +620,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quotationDataGrid)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.quotationPieChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -587,30 +640,32 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox cbCard;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox cbOnline;
+        private System.Windows.Forms.CheckBox cbCash;
+        private System.Windows.Forms.TextBox tbDownPayment;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbTotalAmount;
+        private System.Windows.Forms.TextBox tbDiscount;
+        private System.Windows.Forms.TextBox tbBasePrice;
+        private System.Windows.Forms.TextBox tbAdditionalCharges;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbBuildName;
+        private System.Windows.Forms.TextBox tbFlatType;
+        private System.Windows.Forms.TextBox tbPricePerSqFt;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox tbCustId;
+        private System.Windows.Forms.TextBox tbCustName;
+        private System.Windows.Forms.TextBox tbCustCont;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dtp2;
-        private System.Windows.Forms.TextBox textbox15;
+        private System.Windows.Forms.TextBox tbDescription;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.TextBox tbQuatationId;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox tbSearchQuotation;
+        private System.Windows.Forms.DataGridView quotationDataGrid;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataVisualization.Charting.Chart quotationPieChart;
     }
 }

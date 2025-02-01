@@ -67,7 +67,7 @@ namespace RealStateManagementSystem.masterForm
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.FlatDataGrid = new System.Windows.Forms.DataGridView();
+            this.flatDataGrid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +82,7 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbFlatType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tbFlatType.SuspendLayout();
@@ -93,7 +93,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FlatDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatDataGrid)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -345,7 +345,7 @@ namespace RealStateManagementSystem.masterForm
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.cbFlatType);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.tbFlatCount);
             this.tabPage3.Controls.Add(this.label16);
@@ -378,18 +378,19 @@ namespace RealStateManagementSystem.masterForm
             // tbFlatCount
             // 
             this.tbFlatCount.BackColor = System.Drawing.Color.White;
+            this.tbFlatCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFlatCount.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFlatCount.Location = new System.Drawing.Point(303, 361);
+            this.tbFlatCount.Location = new System.Drawing.Point(300, 355);
             this.tbFlatCount.Multiline = true;
             this.tbFlatCount.Name = "tbFlatCount";
-            this.tbFlatCount.Size = new System.Drawing.Size(424, 39);
+            this.tbFlatCount.Size = new System.Drawing.Size(424, 30);
             this.tbFlatCount.TabIndex = 5;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(105, 363);
+            this.label16.Location = new System.Drawing.Point(105, 356);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(186, 22);
             this.label16.TabIndex = 11;
@@ -398,48 +399,52 @@ namespace RealStateManagementSystem.masterForm
             // tbRate
             // 
             this.tbRate.BackColor = System.Drawing.Color.White;
+            this.tbRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbRate.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRate.Location = new System.Drawing.Point(303, 249);
+            this.tbRate.Location = new System.Drawing.Point(300, 253);
             this.tbRate.Multiline = true;
             this.tbRate.Name = "tbRate";
-            this.tbRate.Size = new System.Drawing.Size(424, 39);
+            this.tbRate.Size = new System.Drawing.Size(424, 30);
             this.tbRate.TabIndex = 3;
             // 
             // tbFloor
             // 
             this.tbFloor.BackColor = System.Drawing.Color.White;
+            this.tbFloor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFloor.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFloor.Location = new System.Drawing.Point(303, 193);
+            this.tbFloor.Location = new System.Drawing.Point(300, 198);
             this.tbFloor.Multiline = true;
             this.tbFloor.Name = "tbFloor";
-            this.tbFloor.Size = new System.Drawing.Size(424, 39);
+            this.tbFloor.Size = new System.Drawing.Size(424, 30);
             this.tbFloor.TabIndex = 2;
             // 
             // tbBuild
             // 
             this.tbBuild.BackColor = System.Drawing.Color.White;
+            this.tbBuild.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBuild.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuild.Location = new System.Drawing.Point(303, 133);
+            this.tbBuild.Location = new System.Drawing.Point(300, 141);
             this.tbBuild.Multiline = true;
             this.tbBuild.Name = "tbBuild";
-            this.tbBuild.Size = new System.Drawing.Size(424, 39);
+            this.tbBuild.Size = new System.Drawing.Size(424, 30);
             this.tbBuild.TabIndex = 1;
             // 
             // tbFlat
             // 
             this.tbFlat.BackColor = System.Drawing.Color.White;
+            this.tbFlat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFlat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFlat.Location = new System.Drawing.Point(303, 78);
+            this.tbFlat.Location = new System.Drawing.Point(300, 86);
             this.tbFlat.Multiline = true;
             this.tbFlat.Name = "tbFlat";
-            this.tbFlat.Size = new System.Drawing.Size(424, 39);
+            this.tbFlat.Size = new System.Drawing.Size(424, 30);
             this.tbFlat.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(160, 251);
+            this.label10.Location = new System.Drawing.Point(160, 255);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(131, 22);
             this.label10.TabIndex = 4;
@@ -449,7 +454,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(180, 195);
+            this.label12.Location = new System.Drawing.Point(180, 199);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 22);
             this.label12.TabIndex = 2;
@@ -459,7 +464,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(151, 140);
+            this.label13.Location = new System.Drawing.Point(151, 143);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(140, 22);
             this.label13.TabIndex = 1;
@@ -469,7 +474,7 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(214, 88);
+            this.label14.Location = new System.Drawing.Point(214, 87);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 22);
             this.label14.TabIndex = 0;
@@ -478,21 +483,21 @@ namespace RealStateManagementSystem.masterForm
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.White;
-            this.tabPage4.Controls.Add(this.FlatDataGrid);
+            this.tabPage4.Controls.Add(this.flatDataGrid);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.textBox7);
             this.tabPage4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1020, 549);
+            this.tabPage4.Size = new System.Drawing.Size(999, 549);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Flat Details List";
             // 
-            // FlatDataGrid
+            // flatDataGrid
             // 
-            this.FlatDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.FlatDataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.flatDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.flatDataGrid.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -500,21 +505,21 @@ namespace RealStateManagementSystem.masterForm
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FlatDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.FlatDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FlatDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.flatDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.flatDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flatDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5,
             this.Column6});
-            this.FlatDataGrid.Location = new System.Drawing.Point(37, 96);
-            this.FlatDataGrid.Name = "FlatDataGrid";
-            this.FlatDataGrid.RowHeadersWidth = 51;
-            this.FlatDataGrid.RowTemplate.Height = 24;
-            this.FlatDataGrid.Size = new System.Drawing.Size(922, 433);
-            this.FlatDataGrid.TabIndex = 21;
+            this.flatDataGrid.Location = new System.Drawing.Point(37, 96);
+            this.flatDataGrid.Name = "flatDataGrid";
+            this.flatDataGrid.RowHeadersWidth = 4;
+            this.flatDataGrid.RowTemplate.Height = 24;
+            this.flatDataGrid.Size = new System.Drawing.Size(922, 433);
+            this.flatDataGrid.TabIndex = 21;
             // 
             // Column1
             // 
@@ -578,7 +583,6 @@ namespace RealStateManagementSystem.masterForm
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(528, 37);
             this.textBox7.TabIndex = 19;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // panel4
             // 
@@ -592,7 +596,6 @@ namespace RealStateManagementSystem.masterForm
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(255, 585);
             this.panel4.TabIndex = 8;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // btnExit
             // 
@@ -679,16 +682,14 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox1
+            // cbFlatType
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(303, 302);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(424, 39);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "+";
+            this.cbFlatType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFlatType.FormattingEnabled = true;
+            this.cbFlatType.Location = new System.Drawing.Point(300, 306);
+            this.cbFlatType.Name = "cbFlatType";
+            this.cbFlatType.Size = new System.Drawing.Size(424, 30);
+            this.cbFlatType.TabIndex = 4;
             // 
             // FlatMaster
             // 
@@ -719,7 +720,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FlatDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatDataGrid)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -759,7 +760,7 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView FlatDataGrid;
+        private System.Windows.Forms.DataGridView flatDataGrid;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel4;
@@ -777,6 +778,6 @@ namespace RealStateManagementSystem.masterForm
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbFlatType;
     }
 }

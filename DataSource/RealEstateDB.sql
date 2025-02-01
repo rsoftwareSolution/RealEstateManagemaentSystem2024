@@ -38,6 +38,8 @@ building_district varchar(125),
 building_village varchar(125),
 primary key(building_id));
 
+Alter Table building_details modify building_id nvarchar(50);
+
 select * from building_details;
 drop table building_details;
 
@@ -50,6 +52,10 @@ rate double,
 available_flats_count int,
 primary key(flat_id));
 
+Alter Table flat_details modify building_id nvarchar(50);
+
+Alter Table flat_details modify flat_id nvarchar(50);
+
 -- Flat table details select query
 select * from flat_details;
 
@@ -59,6 +65,7 @@ create table flat_type_details (
 flat_type_id long not null,
 flat_type_name varchar(50));
 
+Alter Table flat_type_details modify flat_type_id nvarchar(50);
 
 select * from flat_type_details;
 
@@ -102,7 +109,7 @@ primary key(enquir_id));
 select * from enquiry_details;
 
 create table quatation_details (
-quatation_id int auto_increment,
+quatation_id nvarchar(50),
 quatation_date varchar(10),
 discription varchar(125),
 customer_contact varchar(50),
@@ -120,7 +127,26 @@ primary key(quatation_id));
 --  quatation table details select query
 select * from quatation_details;
 
+truncate table quatation_details;
+alter table quatation_details modify column quatation_id nvarchar(50);
 
+SELECT flat_type_name, COUNT(*) as count FROM quatation_details GROUP BY flat_type_name;
+
+create VIEW vw_flat_details AS
+SELECT 
+    f.flat_id,
+    ft.flat_type_name,
+    b.building_or_project_name,
+    b.building_location_pincode,
+    b.building_state,
+    b.building_district,
+    b.building_village,
+    f.total_floor,
+    f.rate,
+    f.available_flats_count
+FROM flat_details f
+JOIN flat_type_details ft ON f.flat_type_id = ft.flat_type_id
+JOIN building_details b ON f.building_id = b.building_id;
 
 
 
