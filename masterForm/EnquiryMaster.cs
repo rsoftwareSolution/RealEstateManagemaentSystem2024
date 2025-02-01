@@ -46,7 +46,10 @@ namespace RealStateManagementSystem.masterForm
 
         private void EnquiryMaster_Load(object sender, EventArgs e)
         {
-            tbEnquirName.Select();
+            // Assuming 'dataGridView1' is your DataGridView control
+            enquiryDataGrid.Font = new Font("Times New Roman", 11, FontStyle.Regular); // Set font name, size, and style
+      
+          tbEnquirName.Select();
 
             //This code represents data load into grid 
             try
@@ -299,6 +302,11 @@ namespace RealStateManagementSystem.masterForm
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

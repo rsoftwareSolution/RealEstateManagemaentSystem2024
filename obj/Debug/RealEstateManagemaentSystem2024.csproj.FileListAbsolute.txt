@@ -1,10 +1,8 @@
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.AssemblyReference.cache
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.mainForm.Dashboard.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.mainForm.Login.resources
-E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.BookingMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.config.BuildingMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.CancellationMaster.resources
-E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.CustomerMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.EnquiryMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.FlatMaster.resources
 E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.PaymentMaster.resources
@@ -140,3 +138,9 @@ E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\th\CrystalDecisions.Crysta
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\tr\CrystalDecisions.CrystalReports.Engine.resources.dll
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\zh-CHS\CrystalDecisions.CrystalReports.Engine.resources.dll
 E:\appu bcs\RealEstateManagemaentSystem2024\bin\Debug\zh-CHT\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.BookingRegister.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.SaleInvoice.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.ParkingMaster.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Helper.BookingSelectionPopup.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.config.CustomerMaster.resources
+E:\appu bcs\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.QuatationMaster.resources

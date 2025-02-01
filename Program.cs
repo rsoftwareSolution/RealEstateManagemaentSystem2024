@@ -1,5 +1,6 @@
 ﻿using RealEstateManagemaentSystem2024.mainForm;
 using RealEstateManagemaentSystem2024.masterForm;
+using RealEstateManagemaentSystem2024.MasterForm;
 using RealStateManagementSystem.config;
 using RealStateManagementSystem.mainForm;
 using RealStateManagementSystem.masterForm;
@@ -18,7 +19,7 @@ namespace RealEstateManagemaentSystem2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EnquiryMaster());
+            Application.Run( new Dashboard());
         }
     }
 }

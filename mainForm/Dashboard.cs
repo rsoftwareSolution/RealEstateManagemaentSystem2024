@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using RealEstateManagemaentSystem2024.masterForm;
+using RealEstateManagemaentSystem2024.MasterForm;
 using RealEstateManagemaentSystem2024.reports;
 using RealEstateManagemaentSystem2024.Statements;
 using RealStateManagementSystem.config;
@@ -213,14 +214,19 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                             userMasterForm.Show();
                                             break;
 
-                                        case "BookingInvoice":
-                                            var bookingInvoiceForm = new BookingMaster();
-                                            bookingInvoiceForm.Show();
+                                        case "QuatationMaster":
+                                            var quatationMasterForm = new QuatationMaster();
+                                            quatationMasterForm.Show();
                                             break;
 
                                         case "SaleInvoice":
                                             var saleInvoiceForm = new SaleInvoice();
                                             saleInvoiceForm.Show();
+                                            break;
+
+                                        case "BookingRegister":
+                                            var bookingRegisterForm = new BookingRegister();
+                                            bookingRegisterForm.Show();
                                             break;
 
                                         case "DownloadReports":
