@@ -504,12 +504,12 @@ namespace RealStateManagementSystem.masterForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1321, 702);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "PaymentMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PaymentMaster";
             this.Load += new System.EventHandler(this.PaymentMaster_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

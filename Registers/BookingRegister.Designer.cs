@@ -198,12 +198,12 @@ namespace RealEstateManagemaentSystem2024.Registers
             // Label1
             // 
             this.Label1.BackColor = System.Drawing.Color.Transparent;
-            this.Label1.Font = new System.Drawing.Font("Book Antiqua", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.ForeColor = System.Drawing.Color.White;
-            this.Label1.Location = new System.Drawing.Point(542, 3);
+            this.Label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Italic);
+            this.Label1.ForeColor = System.Drawing.Color.Black;
+            this.Label1.Location = new System.Drawing.Point(542, 4);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(266, 43);
+            this.Label1.Size = new System.Drawing.Size(335, 43);
             this.Label1.TabIndex = 1;
             this.Label1.Text = "Booking Register";
             // 
@@ -243,10 +243,10 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(198, 17);
+            this.comboBox1.Location = new System.Drawing.Point(139, 17);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 27);
+            this.comboBox1.Size = new System.Drawing.Size(251, 27);
             this.comboBox1.TabIndex = 8;
             // 
             // label10
@@ -256,9 +256,9 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.label10.Location = new System.Drawing.Point(18, 20);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(176, 19);
+            this.label10.Size = new System.Drawing.Size(113, 19);
             this.label10.TabIndex = 206;
-            this.label10.Text = "Building/Project Name :";
+            this.label10.Text = "Project Name :";
             // 
             // bookingPieChart
             // 
@@ -765,10 +765,10 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbCustContact.BackColor = System.Drawing.Color.Honeydew;
             this.tbCustContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCustContact.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustContact.Location = new System.Drawing.Point(932, 11);
+            this.tbCustContact.Location = new System.Drawing.Point(943, 11);
             this.tbCustContact.Margin = new System.Windows.Forms.Padding(4);
             this.tbCustContact.Name = "tbCustContact";
-            this.tbCustContact.Size = new System.Drawing.Size(384, 27);
+            this.tbCustContact.Size = new System.Drawing.Size(373, 27);
             this.tbCustContact.TabIndex = 6;
             this.tbCustContact.TabStop = false;
             // 
@@ -795,10 +795,10 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.txtCustName.BackColor = System.Drawing.Color.Honeydew;
             this.txtCustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustName.Location = new System.Drawing.Point(933, 48);
+            this.txtCustName.Location = new System.Drawing.Point(944, 48);
             this.txtCustName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustName.Name = "txtCustName";
-            this.txtCustName.Size = new System.Drawing.Size(383, 27);
+            this.txtCustName.Size = new System.Drawing.Size(372, 27);
             this.txtCustName.TabIndex = 7;
             this.txtCustName.TabStop = false;
             this.txtCustName.TextChanged += new System.EventHandler(this.txtCustName_TextChanged);
