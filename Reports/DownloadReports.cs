@@ -16,5 +16,10 @@ namespace RealEstateManagemaentSystem2024.reports
         {
             InitializeComponent();
         }
+
+        private void DownloadReports_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

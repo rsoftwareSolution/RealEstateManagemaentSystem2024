@@ -291,14 +291,6 @@ namespace RealStateManagementSystem.masterForm
             SearchByEnquirName(textBox5.Text);
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-            btnEdit.Enabled = false;
-            btnSave.Enabled = false;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -51,6 +51,11 @@ namespace RealStateManagementSystem.masterForm
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.enquiryDataGrid = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnquireName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -59,11 +64,6 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EnquireName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -299,6 +299,41 @@ namespace RealStateManagementSystem.masterForm
             this.enquiryDataGrid.Size = new System.Drawing.Size(978, 402);
             this.enquiryDataGrid.TabIndex = 22;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // EnquireName
+            // 
+            this.EnquireName.HeaderText = "Enquire Name";
+            this.EnquireName.MinimumWidth = 6;
+            this.EnquireName.Name = "EnquireName";
+            this.EnquireName.Width = 280;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Email";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Contact";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 200;
+            // 
+            // Contact
+            // 
+            this.Contact.HeaderText = "Date";
+            this.Contact.MinimumWidth = 6;
+            this.Contact.Name = "Contact";
+            this.Contact.Width = 200;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -423,41 +458,6 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // EnquireName
-            // 
-            this.EnquireName.HeaderText = "Enquire Name";
-            this.EnquireName.MinimumWidth = 6;
-            this.EnquireName.Name = "EnquireName";
-            this.EnquireName.Width = 280;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Enquiry Date";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = " Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 200;
-            // 
-            // Contact
-            // 
-            this.Contact.HeaderText = "Contact";
-            this.Contact.MinimumWidth = 6;
-            this.Contact.Name = "Contact";
-            this.Contact.Width = 200;
-            // 
             // EnquiryMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -467,10 +467,8 @@ namespace RealStateManagementSystem.masterForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EnquiryMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EnquiryMaster";
             this.Load += new System.EventHandler(this.EnquiryMaster_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

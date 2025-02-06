@@ -31,6 +31,7 @@ namespace RealEstateManagemaentSystem2024.reports
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,15 +58,27 @@ namespace RealEstateManagemaentSystem2024.reports
             this.label1.TabIndex = 0;
             this.label1.Text = "Transaction Report";
             // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 96);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1313, 571);
+            this.crystalReportViewer1.TabIndex = 3;
+            // 
             // DownloadReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1305, 679);
+            this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DownloadReports";
             this.Text = "DownloadReports";
+            this.Load += new System.EventHandler(this.DownloadReports_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -75,5 +88,6 @@ namespace RealEstateManagemaentSystem2024.reports
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

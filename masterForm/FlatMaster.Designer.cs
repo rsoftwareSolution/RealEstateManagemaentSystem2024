@@ -55,6 +55,7 @@ namespace RealStateManagementSystem.masterForm
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cbFlatType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tbFlatCount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -82,7 +83,6 @@ namespace RealStateManagementSystem.masterForm
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbFlatType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tbFlatType.SuspendLayout();
@@ -364,6 +364,15 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Flat Form";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // cbFlatType
+            // 
+            this.cbFlatType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFlatType.FormattingEnabled = true;
+            this.cbFlatType.Location = new System.Drawing.Point(300, 306);
+            this.cbFlatType.Name = "cbFlatType";
+            this.cbFlatType.Size = new System.Drawing.Size(424, 30);
+            this.cbFlatType.TabIndex = 4;
             // 
             // label11
             // 
@@ -682,15 +691,6 @@ namespace RealStateManagementSystem.masterForm
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // cbFlatType
-            // 
-            this.cbFlatType.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFlatType.FormattingEnabled = true;
-            this.cbFlatType.Location = new System.Drawing.Point(300, 306);
-            this.cbFlatType.Name = "cbFlatType";
-            this.cbFlatType.Size = new System.Drawing.Size(424, 30);
-            this.cbFlatType.TabIndex = 4;
-            // 
             // FlatMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -701,10 +701,8 @@ namespace RealStateManagementSystem.masterForm
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tbFlatType);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FlatMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FlatMaster";
             this.Load += new System.EventHandler(this.FlatMaster_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
