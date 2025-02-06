@@ -302,12 +302,6 @@
     <Compile Include="MasterForm\FlatMaster.Designer.cs">
       <DependentUpon>FlatMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterForm\PaymentMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MasterForm\PaymentMaster.Designer.cs">
-      <DependentUpon>PaymentMaster.cs</DependentUpon>
-    </Compile>
     <Compile Include="MasterForm\SaleInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,9 +391,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\ParkingMaster.resx">
       <DependentUpon>ParkingMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MasterForm\PaymentMaster.resx">
-      <DependentUpon>PaymentMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\SaleInvoice.resx">
       <DependentUpon>SaleInvoice.cs</DependentUpon>

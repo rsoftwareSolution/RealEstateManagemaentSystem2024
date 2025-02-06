@@ -89,11 +89,6 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                             flatMasterForm.Show();
                                             break;
 
-                                        case "PaymentMaster":
-                                            var paymentMasterForm = new PaymentMaster();
-                                            paymentMasterForm.Show();
-                                            break;
-
                                         case "CancellationMaster":
                                             var cancellationMasterForm = new CancellationMaster();
                                             cancellationMasterForm.Show();

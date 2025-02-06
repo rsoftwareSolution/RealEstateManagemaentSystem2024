@@ -29,20 +29,20 @@ namespace RealEstateManagemaentSystem2024.Registers
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingRegister));
             this.gbParkingAllotment = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.tbCharges = new System.Windows.Forms.TextBox();
+            this.tbParkingCharges = new System.Windows.Forms.TextBox();
             this.cbVehicle = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbProjectName = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.bookingPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbCustNameSearch = new System.Windows.Forms.TextBox();
@@ -67,9 +67,9 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
-            this.txtGrandTotal = new System.Windows.Forms.TextBox();
+            this.tbGrandTotal = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.txtRoundOff = new System.Windows.Forms.TextBox();
+            this.tbRoundOff = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.tbRemainingAmount = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -82,12 +82,12 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbCustContact = new System.Windows.Forms.TextBox();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
-            this.txtCustName = new System.Windows.Forms.TextBox();
+            this.tbCustName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbPaymentType = new System.Windows.Forms.ComboBox();
             this.tbDownPayment = new System.Windows.Forms.TextBox();
-            this.tbQuatationNo = new System.Windows.Forms.TextBox();
+            this.tbQuotationNumber = new System.Windows.Forms.TextBox();
             this.tbBookingId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -110,7 +110,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // gbParkingAllotment
             // 
             this.gbParkingAllotment.Controls.Add(this.label16);
-            this.gbParkingAllotment.Controls.Add(this.tbCharges);
+            this.gbParkingAllotment.Controls.Add(this.tbParkingCharges);
             this.gbParkingAllotment.Controls.Add(this.cbVehicle);
             this.gbParkingAllotment.Controls.Add(this.label5);
             this.gbParkingAllotment.Location = new System.Drawing.Point(18, 55);
@@ -131,18 +131,18 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.label16.TabIndex = 205;
             this.label16.Text = "Charges :";
             // 
-            // tbCharges
+            // tbParkingCharges
             // 
-            this.tbCharges.BackColor = System.Drawing.SystemColors.Control;
-            this.tbCharges.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCharges.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCharges.Location = new System.Drawing.Point(425, 33);
-            this.tbCharges.Margin = new System.Windows.Forms.Padding(4);
-            this.tbCharges.Name = "tbCharges";
-            this.tbCharges.Size = new System.Drawing.Size(219, 27);
-            this.tbCharges.TabIndex = 11;
-            this.tbCharges.TabStop = false;
-            this.tbCharges.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbParkingCharges.BackColor = System.Drawing.SystemColors.Control;
+            this.tbParkingCharges.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbParkingCharges.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbParkingCharges.Location = new System.Drawing.Point(425, 33);
+            this.tbParkingCharges.Margin = new System.Windows.Forms.Padding(4);
+            this.tbParkingCharges.Name = "tbParkingCharges";
+            this.tbParkingCharges.Size = new System.Drawing.Size(219, 27);
+            this.tbParkingCharges.TabIndex = 11;
+            this.tbParkingCharges.TabStop = false;
+            this.tbParkingCharges.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbVehicle
             // 
@@ -177,7 +177,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 78);
+            this.label3.Location = new System.Drawing.Point(4, 76);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 19);
@@ -200,7 +200,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.Label1.BackColor = System.Drawing.Color.Transparent;
             this.Label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Italic);
             this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(542, 4);
+            this.Label1.Location = new System.Drawing.Point(551, -1);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(335, 43);
@@ -211,7 +211,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbProjectName);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.bookingPieChart);
             this.panel2.Controls.Add(this.tbCustNameSearch);
@@ -239,15 +239,15 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel2.TabIndex = 7;
             this.panel2.TabStop = true;
             // 
-            // comboBox1
+            // cbProjectName
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 17);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 27);
-            this.comboBox1.TabIndex = 8;
+            this.cbProjectName.BackColor = System.Drawing.SystemColors.Control;
+            this.cbProjectName.FormattingEnabled = true;
+            this.cbProjectName.Location = new System.Drawing.Point(139, 17);
+            this.cbProjectName.Margin = new System.Windows.Forms.Padding(4);
+            this.cbProjectName.Name = "cbProjectName";
+            this.cbProjectName.Size = new System.Drawing.Size(251, 27);
+            this.cbProjectName.TabIndex = 8;
             // 
             // label10
             // 
@@ -264,19 +264,19 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.bookingPieChart.BorderlineColor = System.Drawing.Color.Black;
             this.bookingPieChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.Name = "ChartArea1";
-            this.bookingPieChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.bookingPieChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.bookingPieChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.bookingPieChart.Legends.Add(legend1);
             this.bookingPieChart.Location = new System.Drawing.Point(707, 14);
             this.bookingPieChart.Name = "bookingPieChart";
             this.bookingPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.YValuesPerPoint = 2;
-            this.bookingPieChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.bookingPieChart.Series.Add(series1);
             this.bookingPieChart.Size = new System.Drawing.Size(609, 253);
             this.bookingPieChart.TabIndex = 0;
             this.bookingPieChart.Text = "chart1";
@@ -373,12 +373,13 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // tbSubTotal
             // 
-            this.tbSubTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.tbSubTotal.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSubTotal.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSubTotal.Location = new System.Drawing.Point(348, 167);
             this.tbSubTotal.Margin = new System.Windows.Forms.Padding(4);
             this.tbSubTotal.Name = "tbSubTotal";
+            this.tbSubTotal.ReadOnly = true;
             this.tbSubTotal.Size = new System.Drawing.Size(152, 27);
             this.tbSubTotal.TabIndex = 198;
             this.tbSubTotal.TabStop = false;
@@ -386,13 +387,14 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // tbSGST
             // 
-            this.tbSGST.BackColor = System.Drawing.SystemColors.Control;
+            this.tbSGST.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbSGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSGST.ForeColor = System.Drawing.Color.DarkGray;
             this.tbSGST.Location = new System.Drawing.Point(238, 167);
             this.tbSGST.Margin = new System.Windows.Forms.Padding(4);
             this.tbSGST.Name = "tbSGST";
+            this.tbSGST.ReadOnly = true;
             this.tbSGST.Size = new System.Drawing.Size(102, 27);
             this.tbSGST.TabIndex = 196;
             this.tbSGST.TabStop = false;
@@ -400,13 +402,14 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // tbCGST
             // 
-            this.tbCGST.BackColor = System.Drawing.SystemColors.Control;
+            this.tbCGST.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbCGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCGST.ForeColor = System.Drawing.Color.DarkGray;
             this.tbCGST.Location = new System.Drawing.Point(128, 167);
             this.tbCGST.Margin = new System.Windows.Forms.Padding(4);
             this.tbCGST.Name = "tbCGST";
+            this.tbCGST.ReadOnly = true;
             this.tbCGST.Size = new System.Drawing.Size(102, 27);
             this.tbCGST.TabIndex = 194;
             this.tbCGST.TabStop = false;
@@ -427,12 +430,13 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // tbTotalAmount
             // 
-            this.tbTotalAmount.BackColor = System.Drawing.SystemColors.Control;
+            this.tbTotalAmount.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbTotalAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTotalAmount.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotalAmount.Location = new System.Drawing.Point(508, 167);
             this.tbTotalAmount.Margin = new System.Windows.Forms.Padding(4);
             this.tbTotalAmount.Name = "tbTotalAmount";
+            this.tbTotalAmount.ReadOnly = true;
             this.tbTotalAmount.Size = new System.Drawing.Size(178, 27);
             this.tbTotalAmount.TabIndex = 185;
             this.tbTotalAmount.TabStop = false;
@@ -440,13 +444,14 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // tbIGST
             // 
-            this.tbIGST.BackColor = System.Drawing.SystemColors.Control;
+            this.tbIGST.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbIGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbIGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIGST.ForeColor = System.Drawing.Color.DarkGray;
             this.tbIGST.Location = new System.Drawing.Point(18, 167);
             this.tbIGST.Margin = new System.Windows.Forms.Padding(4);
             this.tbIGST.Name = "tbIGST";
+            this.tbIGST.ReadOnly = true;
             this.tbIGST.Size = new System.Drawing.Size(102, 27);
             this.tbIGST.TabIndex = 111;
             this.tbIGST.TabStop = false;
@@ -461,6 +466,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(195, 27);
             this.cmbProduct.TabIndex = 9;
+            this.cmbProduct.Text = "None";
             // 
             // label12
             // 
@@ -483,9 +489,9 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel3.Controls.Add(this.btn_Delete);
             this.panel3.Controls.Add(this.btn_Save);
             this.panel3.Controls.Add(this.btn_Update);
-            this.panel3.Controls.Add(this.txtGrandTotal);
+            this.panel3.Controls.Add(this.tbGrandTotal);
             this.panel3.Controls.Add(this.label23);
-            this.panel3.Controls.Add(this.txtRoundOff);
+            this.panel3.Controls.Add(this.tbRoundOff);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Controls.Add(this.tbRemainingAmount);
             this.panel3.Controls.Add(this.label21);
@@ -503,7 +509,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel3.Size = new System.Drawing.Size(1341, 72);
             this.panel3.TabIndex = 3;
             this.panel3.TabStop = true;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox3
             // 
@@ -561,6 +566,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "DELETE";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Save
             // 
@@ -577,6 +583,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Save.TabIndex = 16;
             this.btn_Save.Text = "SAVE";
             this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Update
             // 
@@ -594,17 +601,19 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Update.TabStop = false;
             this.btn_Update.Text = "UPDATE";
             this.btn_Update.UseVisualStyleBackColor = false;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
-            // txtGrandTotal
+            // tbGrandTotal
             // 
-            this.txtGrandTotal.BackColor = System.Drawing.Color.Honeydew;
-            this.txtGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGrandTotal.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrandTotal.Location = new System.Drawing.Point(1173, 38);
-            this.txtGrandTotal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGrandTotal.Name = "txtGrandTotal";
-            this.txtGrandTotal.Size = new System.Drawing.Size(157, 27);
-            this.txtGrandTotal.TabIndex = 20;
+            this.tbGrandTotal.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tbGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbGrandTotal.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGrandTotal.Location = new System.Drawing.Point(1173, 38);
+            this.tbGrandTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.tbGrandTotal.Name = "tbGrandTotal";
+            this.tbGrandTotal.ReadOnly = true;
+            this.tbGrandTotal.Size = new System.Drawing.Size(157, 27);
+            this.tbGrandTotal.TabIndex = 20;
             // 
             // label23
             // 
@@ -617,16 +626,17 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.label23.TabIndex = 27;
             this.label23.Text = "Grand Total :";
             // 
-            // txtRoundOff
+            // tbRoundOff
             // 
-            this.txtRoundOff.BackColor = System.Drawing.Color.Honeydew;
-            this.txtRoundOff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRoundOff.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoundOff.Location = new System.Drawing.Point(1173, 5);
-            this.txtRoundOff.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRoundOff.Name = "txtRoundOff";
-            this.txtRoundOff.Size = new System.Drawing.Size(157, 27);
-            this.txtRoundOff.TabIndex = 19;
+            this.tbRoundOff.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tbRoundOff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbRoundOff.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRoundOff.Location = new System.Drawing.Point(1173, 5);
+            this.tbRoundOff.Margin = new System.Windows.Forms.Padding(4);
+            this.tbRoundOff.Name = "tbRoundOff";
+            this.tbRoundOff.ReadOnly = true;
+            this.tbRoundOff.Size = new System.Drawing.Size(157, 27);
+            this.tbRoundOff.TabIndex = 19;
             // 
             // label22
             // 
@@ -641,12 +651,13 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // tbRemainingAmount
             // 
-            this.tbRemainingAmount.BackColor = System.Drawing.Color.Honeydew;
+            this.tbRemainingAmount.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbRemainingAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbRemainingAmount.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRemainingAmount.Location = new System.Drawing.Point(915, 38);
             this.tbRemainingAmount.Margin = new System.Windows.Forms.Padding(4);
             this.tbRemainingAmount.Name = "tbRemainingAmount";
+            this.tbRemainingAmount.ReadOnly = true;
             this.tbRemainingAmount.Size = new System.Drawing.Size(145, 27);
             this.tbRemainingAmount.TabIndex = 18;
             // 
@@ -738,12 +749,12 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.tbCustContact);
             this.panel1.Controls.Add(this.dtpBookingDate);
-            this.panel1.Controls.Add(this.txtCustName);
+            this.panel1.Controls.Add(this.tbCustName);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.cbPaymentType);
             this.panel1.Controls.Add(this.tbDownPayment);
-            this.panel1.Controls.Add(this.tbQuatationNo);
+            this.panel1.Controls.Add(this.tbQuotationNumber);
             this.panel1.Controls.Add(this.tbBookingId);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -771,37 +782,37 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbCustContact.Size = new System.Drawing.Size(373, 27);
             this.tbCustContact.TabIndex = 6;
             this.tbCustContact.TabStop = false;
+            this.tbCustContact.TextChanged += new System.EventHandler(this.tbCustContact_TextChanged);
             // 
             // dtpBookingDate
             // 
             this.dtpBookingDate.AllowDrop = true;
-            this.dtpBookingDate.CalendarMonthBackground = System.Drawing.Color.Thistle;
+            this.dtpBookingDate.CalendarMonthBackground = System.Drawing.Color.GhostWhite;
             this.dtpBookingDate.CalendarTitleForeColor = System.Drawing.Color.Black;
             this.dtpBookingDate.CalendarTrailingForeColor = System.Drawing.Color.Black;
             this.dtpBookingDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpBookingDate.CustomFormat = "dd/MM/yyyy";
             this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBookingDate.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.dtpBookingDate.Location = new System.Drawing.Point(128, 42);
+            this.dtpBookingDate.Location = new System.Drawing.Point(128, 41);
             this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBookingDate.Name = "dtpBookingDate";
+            this.dtpBookingDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpBookingDate.RightToLeftLayout = true;
-            this.dtpBookingDate.ShowUpDown = true;
             this.dtpBookingDate.Size = new System.Drawing.Size(170, 27);
             this.dtpBookingDate.TabIndex = 2;
             // 
-            // txtCustName
+            // tbCustName
             // 
-            this.txtCustName.BackColor = System.Drawing.Color.Honeydew;
-            this.txtCustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCustName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustName.Location = new System.Drawing.Point(944, 48);
-            this.txtCustName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCustName.Name = "txtCustName";
-            this.txtCustName.Size = new System.Drawing.Size(372, 27);
-            this.txtCustName.TabIndex = 7;
-            this.txtCustName.TabStop = false;
-            this.txtCustName.TextChanged += new System.EventHandler(this.txtCustName_TextChanged);
+            this.tbCustName.BackColor = System.Drawing.Color.Honeydew;
+            this.tbCustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCustName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustName.Location = new System.Drawing.Point(944, 48);
+            this.tbCustName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCustName.Name = "tbCustName";
+            this.tbCustName.Size = new System.Drawing.Size(372, 27);
+            this.tbCustName.TabIndex = 7;
+            this.tbCustName.TabStop = false;
             // 
             // label9
             // 
@@ -832,7 +843,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             "Card",
             "Cash",
             "Net Banking"});
-            this.cbPaymentType.Location = new System.Drawing.Point(128, 77);
+            this.cbPaymentType.Location = new System.Drawing.Point(128, 75);
             this.cbPaymentType.Margin = new System.Windows.Forms.Padding(4);
             this.cbPaymentType.Name = "cbPaymentType";
             this.cbPaymentType.Size = new System.Drawing.Size(170, 27);
@@ -851,16 +862,16 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbDownPayment.Size = new System.Drawing.Size(186, 27);
             this.tbDownPayment.TabIndex = 5;
             // 
-            // tbQuatationNo
+            // tbQuotationNumber
             // 
-            this.tbQuatationNo.BackColor = System.Drawing.Color.Honeydew;
-            this.tbQuatationNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbQuatationNo.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbQuatationNo.Location = new System.Drawing.Point(443, 9);
-            this.tbQuatationNo.Margin = new System.Windows.Forms.Padding(4);
-            this.tbQuatationNo.Name = "tbQuatationNo";
-            this.tbQuatationNo.Size = new System.Drawing.Size(186, 27);
-            this.tbQuatationNo.TabIndex = 4;
+            this.tbQuotationNumber.BackColor = System.Drawing.Color.Honeydew;
+            this.tbQuotationNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbQuotationNumber.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbQuotationNumber.Location = new System.Drawing.Point(443, 9);
+            this.tbQuotationNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.tbQuotationNumber.Name = "tbQuotationNumber";
+            this.tbQuotationNumber.Size = new System.Drawing.Size(186, 27);
+            this.tbQuotationNumber.TabIndex = 4;
             // 
             // tbBookingId
             // 
@@ -885,12 +896,12 @@ namespace RealEstateManagemaentSystem2024.Registers
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 12);
+            this.label6.Location = new System.Drawing.Point(318, 12);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 19);
+            this.label6.Size = new System.Drawing.Size(111, 19);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Quatation No :";
+            this.label6.Text = "Quotation No :";
             // 
             // pictureBox1
             // 
@@ -907,7 +918,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 45);
+            this.label4.Location = new System.Drawing.Point(5, 44);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 19);
@@ -961,14 +972,14 @@ namespace RealEstateManagemaentSystem2024.Registers
 
         private System.Windows.Forms.GroupBox gbParkingAllotment;
         private System.Windows.Forms.Label label16;
-        internal System.Windows.Forms.TextBox tbCharges;
+        internal System.Windows.Forms.TextBox tbParkingCharges;
         private System.Windows.Forms.ComboBox cbVehicle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         internal System.Windows.Forms.Label Label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbProjectName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataVisualization.Charting.Chart bookingPieChart;
         internal System.Windows.Forms.TextBox tbCustNameSearch;
@@ -993,9 +1004,9 @@ namespace RealEstateManagemaentSystem2024.Registers
         internal System.Windows.Forms.Button btn_Delete;
         internal System.Windows.Forms.Button btn_Save;
         internal System.Windows.Forms.Button btn_Update;
-        private System.Windows.Forms.TextBox txtGrandTotal;
+        private System.Windows.Forms.TextBox tbGrandTotal;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtRoundOff;
+        private System.Windows.Forms.TextBox tbRoundOff;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox tbRemainingAmount;
         private System.Windows.Forms.Label label21;
@@ -1008,12 +1019,12 @@ namespace RealEstateManagemaentSystem2024.Registers
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tbCustContact;
         private System.Windows.Forms.DateTimePicker dtpBookingDate;
-        private System.Windows.Forms.TextBox txtCustName;
+        private System.Windows.Forms.TextBox tbCustName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbPaymentType;
         private System.Windows.Forms.TextBox tbDownPayment;
-        private System.Windows.Forms.TextBox tbQuatationNo;
+        private System.Windows.Forms.TextBox tbQuotationNumber;
         private System.Windows.Forms.TextBox tbBookingId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

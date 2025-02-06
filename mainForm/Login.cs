@@ -10,7 +10,7 @@ namespace RealStateManagementSystem.mainForm
     {
         private Timer timer; // Timer for blinking
         private bool isVisible = true; // To toggle label visibility
-        private System.Drawing.Color[] colors = { System.Drawing.Color.Red, System.Drawing.Color.Blue, System.Drawing.Color.Green }; // Colors to cycle through
+        private System.Drawing.Color[] colors = { System.Drawing.Color.Black, System.Drawing.Color.White }; // Colors to cycle through
         private int colorIndex = 0; // Index to track current color
 
         public Login()
@@ -36,15 +36,15 @@ namespace RealStateManagementSystem.mainForm
 
         private void Login_Load(object sender, EventArgs e)
         {
-            richTextBox1.Select();
+            textBox1.Select();
             clr_txt();
         }
 
         private void clr_txt()
         {
-            richTextBox1.Clear();
-            richTextBox2.Clear();
-            richTextBox1.Select();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox1.Select();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -65,8 +65,8 @@ namespace RealStateManagementSystem.mainForm
         private void button1_Click(object sender, EventArgs e)
         {
             // Get user inputs from TextBoxes
-            string useremail = richTextBox1.Text.Trim();
-            string password = richTextBox2.Text.Trim();
+            string useremail = textBox1.Text.Trim();
+            string password = textBox2.Text.Trim();
 
             // Check if username or password is empty
             if (string.IsNullOrEmpty(useremail) || string.IsNullOrEmpty(password))
@@ -126,8 +126,8 @@ namespace RealStateManagementSystem.mainForm
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Email", richTextBox1.Text);
-                    command.Parameters.AddWithValue("@Password", richTextBox2.Text);
+                    command.Parameters.AddWithValue("@Email", textBox1.Text);
+                    command.Parameters.AddWithValue("@Password", textBox2.Text);
 
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {

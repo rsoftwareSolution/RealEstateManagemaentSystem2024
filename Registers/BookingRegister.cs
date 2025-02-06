@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using MySql.Data.MySqlClient;
+
 
 namespace RealEstateManagemaentSystem2024.Registers
 {
@@ -81,9 +78,56 @@ namespace RealEstateManagemaentSystem2024.Registers
             }
         }
 
+        private void LoadCustomerContacts()
+        {
+            try
+            {
+                string query = "SELECT cust_contact FROM customer_details";
+                DataTable dt = db.ExecuteQuery(query);
+
+                AutoCompleteStringCollection contactCollection = new AutoCompleteStringCollection();
+                foreach (DataRow row in dt.Rows)
+                {
+                    contactCollection.Add(row["cust_contact"].ToString());
+                }
+
+                tbCustContact.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                tbCustContact.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                tbCustContact.AutoCompleteCustomSource = contactCollection;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading customer contacts: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AutoFillCustomerName(string contactNumber)
+        {
+            try
+            {
+                string query = "SELECT cust_name FROM customer_details WHERE cust_contact = @contact";
+                DataTable dt = db.ExecuteQuery(query, new MySqlParameter("@contact", contactNumber));
+
+                if (dt.Rows.Count > 0)
+                {
+                    tbCustName.Text = dt.Rows[0]["cust_name"].ToString();
+                }
+                else
+                {
+                    tbCustName.Text = string.Empty; // Clear if no match found
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching customer name: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void BookingRegister_Load(object sender, EventArgs e)
         {
             LoadQuotationChart();
+            LoadProjectNames();
+            LoadCustomerContacts();
 
             // Set DataGridView header styles
             bookingDataGrid.EnableHeadersVisualStyles = false;
@@ -94,11 +138,6 @@ namespace RealEstateManagemaentSystem2024.Registers
 
             // Ensure columns are defined
             InitializeBookingGrid();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void InitializeBookingGrid()
@@ -139,14 +178,244 @@ namespace RealEstateManagemaentSystem2024.Registers
             bookingDataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        private void txtCustName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            string bookingId = tbBookingId.Text.Trim();
+            string bookingDate = dtpBookingDate.Value.ToString("yyyy-MM-dd");
+            string paymentType = cbPaymentType.Text.Trim();
+            string quotationNumber = tbQuotationNumber.Text.Trim();
+            double downPayment = Convert.ToDouble(tbDownPayment.Text.Trim());
+            string custContact = tbCustContact.Text.Trim();
+            string custName = tbCustName.Text.Trim();
+            string projectName = cbProjectName.Text.Trim();
+            string flatType = cmbProduct.Text.Trim();
+            string vehicleName = cbVehicle.Text.Trim();
+            double parkingCharges = Convert.ToDouble(Text.Trim());
+            double igst = Convert.ToDouble(tbIGST.Text.Trim());
+            double cgst = Convert.ToDouble(tbCGST.Text.Trim());
+            double sgst = Convert.ToDouble(tbSGST.Text.Trim());
+            double subTotal = Convert.ToDouble(tbSubTotal.Text.Trim());
+            double totalAmount = Convert.ToDouble(tbTotalAmount.Text.Trim());
+            double paidAmount = Convert.ToDouble(tbPaidAmount.Text.Trim());
+            double remainingAmount = Convert.ToDouble(tbRemainingAmount.Text.Trim());
+            double roundOff = Convert.ToDouble(tbRoundOff.Text.Trim());
+            double grandTotal = Convert.ToDouble(tbGrandTotal.Text.Trim());
+
+            string query = "INSERT INTO booking_details VALUES (@id, @date, @payment, @quotation, @downPayment, @contact, @name, @project, @flatType, @vehicle, @parking, @igst, @cgst, @sgst, @subTotal, @totalAmount, @paid, @remaining, @roundOff, @grandTotal)";
+
+            db.ExecuteNonQuery(query,
+                new MySqlParameter("@id", bookingId),
+                new MySqlParameter("@date", bookingDate),
+                new MySqlParameter("@payment", paymentType),
+                new MySqlParameter("@quotation", quotationNumber),
+                new MySqlParameter("@downPayment", downPayment),
+                new MySqlParameter("@contact", custContact),
+                new MySqlParameter("@name", custName),
+                new MySqlParameter("@project", projectName),
+                new MySqlParameter("@flatType", flatType),
+                new MySqlParameter("@vehicle", vehicleName),
+                new MySqlParameter("@parking", parkingCharges),
+                new MySqlParameter("@igst", igst),
+                new MySqlParameter("@cgst", cgst),
+                new MySqlParameter("@sgst", sgst),
+                new MySqlParameter("@subTotal", subTotal),
+                new MySqlParameter("@totalAmount", totalAmount),
+                new MySqlParameter("@paid", paidAmount),
+                new MySqlParameter("@remaining", remainingAmount),
+                new MySqlParameter("@roundOff", roundOff),
+                new MySqlParameter("@grandTotal", grandTotal));
+
+            MessageBox.Show("Booking saved successfully");
+            LoadBookingData();
+            GenerateNewBookingId();
+        }
+
+        private void LoadProjectNames()
+        {
+            try
+            {
+                string query = "SELECT building_or_project_name FROM building_details ORDER BY building_or_project_name ASC";
+                DataTable dt = db.ExecuteQuery(query);
+
+                cbProjectName.DataSource = dt;
+                cbProjectName.DisplayMember = "building_or_project_name"; // Display building names
+                cbProjectName.ValueMember = "building_or_project_name";   // Store value as building name
+                cbProjectName.SelectedIndex = -1; // Set default to no selection
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading project names: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GenerateNewBookingId()
+        {
+            try
+            {
+                string query = @"SELECT booking_id FROM booking_details WHERE booking_id LIKE 'BLK%' 
+                                 ORDER BY CONVERT(SUBSTRING(booking_id, 4, CHAR_LENGTH(booking_id) - 3), UNSIGNED) 
+                                 DESC LIMIT 1";
+
+                object maxIdObj = db.ExecuteScalar(query);
+
+                int nextId = 1; // Default if no record exists
+
+                if (maxIdObj != null && maxIdObj != DBNull.Value)
+                {
+                    string lastId = maxIdObj.ToString();  // Example: "BLK0021"
+
+                    if (lastId.StartsWith("BLK") && int.TryParse(lastId.Substring(3), out int numericPart))
+                    {
+                        nextId = numericPart + 1; // Increment ID
+                    }
+                }
+
+                tbBookingId.Text = $"BLK{nextId:D4}"; // Format ID as BLK0001, BLK0002, ...
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating Booking ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbBookingId.Text = string.Empty;
+            }
+        }
+
+        private void LoadBookingData()
+        {
+            try
+            {
+                string query = "SELECT * FROM booking_details";
+                DataTable dataTable = db.ExecuteQuery(query);
+                PopulateDataGridView(dataTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PopulateDataGridView(DataTable dataTable)
+        {
+            bookingDataGrid.Rows.Clear();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                bookingDataGrid.Rows.Add(
+                    row["booking_id"],
+                    row["booking_date"],
+                    row["payment_type"],
+                    row["quotation_number"],
+                    row["down_payment"],
+                    row["cust_contact"],
+                    row["cust_name"],
+                    row["building_or_project_name"],
+                    row["flat_type"],
+                    row["vehicle_name"],
+                    row["parking_charges"],
+                    row["igst"],
+                    row["cgst"],
+                    row["sgst"],
+                    row["sub_total"],
+                    row["total_amount"],
+                    row["paid_amount"],
+                    row["remaining_amount"],
+                    row["round_off"],
+                    row["grand_total"]
+                );
+            }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            string bookingId = tbBookingId.Text.Trim();
+            string bookingDate = dtpBookingDate.Value.ToString("yyyy-MM-dd");
+            string paymentType = cbPaymentType.Text.Trim();
+            string quotationNumber = tbQuotationNumber.Text.Trim();
+            double downPayment = Convert.ToDouble(tbDownPayment.Text.Trim());
+            string custContact = tbCustContact.Text.Trim();
+            string custName = tbCustName.Text.Trim();
+            string projectName = cbProjectName.Text.Trim();
+            string flatType = cmbProduct.Text.Trim();
+            string vehicleName = cbVehicle.Text.Trim();
+            double parkingCharges = Convert.ToDouble(tbParkingCharges.Text.Trim());
+            double igst = Convert.ToDouble(tbIGST.Text.Trim());
+            double cgst = Convert.ToDouble(tbCGST.Text.Trim());
+            double sgst = Convert.ToDouble(tbSGST.Text.Trim());
+            double subTotal = Convert.ToDouble(tbSubTotal.Text.Trim());
+            double totalAmount = Convert.ToDouble(tbTotalAmount.Text.Trim());
+            double paidAmount = Convert.ToDouble(tbPaidAmount.Text.Trim());
+            double remainingAmount = Convert.ToDouble(tbRemainingAmount.Text.Trim());
+            double roundOff = Convert.ToDouble(tbRoundOff.Text.Trim());
+            double grandTotal = Convert.ToDouble(tbGrandTotal.Text.Trim());
+
+            string query = "UPDATE booking_details SET booking_date=@date, payment_type=@payment, quotation_number=@quotation, down_payment=@downPayment, cust_contact=@contact, cust_name=@name, building_or_project_name=@project, flat_type=@flatType, vehicle_name=@vehicle, parking_charges=@parking, igst=@igst, cgst=@cgst, sgst=@sgst, sub_total=@subTotal, total_amount=@totalAmount, paid_amount=@paid, remaining_amount=@remaining, round_off=@roundOff, grand_total=@grandTotal WHERE booking_id=@id";
+
+            db.ExecuteNonQuery(query,
+                new MySqlParameter("@id", bookingId),
+                new MySqlParameter("@date", bookingDate),
+                new MySqlParameter("@payment", paymentType),
+                new MySqlParameter("@quotation", quotationNumber),
+                new MySqlParameter("@downPayment", downPayment),
+                new MySqlParameter("@contact", custContact),
+                new MySqlParameter("@name", custName),
+                new MySqlParameter("@project", projectName),
+                new MySqlParameter("@flatType", flatType),
+                new MySqlParameter("@vehicle", vehicleName),
+                new MySqlParameter("@parking", parkingCharges),
+                new MySqlParameter("@igst", igst),
+                new MySqlParameter("@cgst", cgst),
+                new MySqlParameter("@sgst", sgst),
+                new MySqlParameter("@subTotal", subTotal),
+                new MySqlParameter("@totalAmount", totalAmount),
+                new MySqlParameter("@paid", paidAmount),
+                new MySqlParameter("@remaining", remainingAmount),
+                new MySqlParameter("@roundOff", roundOff),
+                new MySqlParameter("@grandTotal", grandTotal));
+
+            MessageBox.Show("Booking updated successfully");
+            LoadBookingData();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Unable to process delete function for booking master data. If you want to perform delete/cancel booking go to cancelltion master.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void ClearFields()
+        {
+            tbBookingId.Text = string.Empty;
+            dtpBookingDate.Value = DateTime.Now; // Reset to current date
+            cbPaymentType.SelectedIndex = -1;
+            tbQuotationNumber.Text = string.Empty;
+            tbDownPayment.Text = string.Empty;
+            tbCustContact.Text = string.Empty;
+            tbCustName.Text = string.Empty;
+            cbProjectName.SelectedIndex = -1;
+            tbParkingCharges.Text = string.Empty;
+            tbIGST.Text = string.Empty;
+            tbCGST.Text = string.Empty;
+            tbSGST.Text = string.Empty;
+            tbSubTotal.Text = string.Empty;
+            tbTotalAmount.Text = string.Empty;
+            tbPaidAmount.Text = string.Empty;
+            tbRemainingAmount.Text = string.Empty;
+            tbRoundOff.Text = string.Empty;
+            tbGrandTotal.Text = string.Empty;
+
+            GenerateNewBookingId();
+            tbCustContact.Focus(); // Set focus to contact number field
+        }
+
+        private void tbCustContact_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCustContact.Text.Length == 10) // Check for full 10-digit number
+            {
+                AutoFillCustomerName(tbCustContact.Text);
+            }
         }
     }
 }

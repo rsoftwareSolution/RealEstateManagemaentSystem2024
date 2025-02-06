@@ -1,5 +1,5 @@
 ﻿
-namespace RealStateManagementSystem.config
+namespace RealEstateManagemaentSystem2024.MasterForm
 {
     partial class BuildingMaster
     {
@@ -45,15 +45,15 @@ namespace RealStateManagementSystem.config
             this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tbTaluka = new System.Windows.Forms.TextBox();
+            this.tbBuildingVillage = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbDist = new System.Windows.Forms.TextBox();
+            this.tbBuildingDistrict = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbState = new System.Windows.Forms.TextBox();
+            this.tbBuildingState = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbPinCode = new System.Windows.Forms.TextBox();
-            this.tbBuildName = new System.Windows.Forms.TextBox();
-            this.tbBuildId = new System.Windows.Forms.TextBox();
+            this.tbBuildingPincode = new System.Windows.Forms.TextBox();
+            this.tbBuildingName = new System.Windows.Forms.TextBox();
+            this.tbBuildingId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -138,6 +138,7 @@ namespace RealStateManagementSystem.config
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -154,6 +155,7 @@ namespace RealStateManagementSystem.config
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnEdit
             // 
@@ -170,6 +172,7 @@ namespace RealStateManagementSystem.config
             this.btnEdit.TabIndex = 7;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -202,15 +205,15 @@ namespace RealStateManagementSystem.config
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.tbTaluka);
+            this.tabPage1.Controls.Add(this.tbBuildingVillage);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.tbDist);
+            this.tabPage1.Controls.Add(this.tbBuildingDistrict);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.tbState);
+            this.tabPage1.Controls.Add(this.tbBuildingState);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.tbPinCode);
-            this.tabPage1.Controls.Add(this.tbBuildName);
-            this.tabPage1.Controls.Add(this.tbBuildId);
+            this.tabPage1.Controls.Add(this.tbBuildingPincode);
+            this.tabPage1.Controls.Add(this.tbBuildingName);
+            this.tabPage1.Controls.Add(this.tbBuildingId);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
@@ -221,16 +224,16 @@ namespace RealStateManagementSystem.config
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Building Form";
             // 
-            // tbTaluka
+            // tbBuildingVillage
             // 
-            this.tbTaluka.BackColor = System.Drawing.Color.White;
-            this.tbTaluka.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTaluka.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTaluka.Location = new System.Drawing.Point(360, 336);
-            this.tbTaluka.Name = "tbTaluka";
-            this.tbTaluka.ReadOnly = true;
-            this.tbTaluka.Size = new System.Drawing.Size(424, 30);
-            this.tbTaluka.TabIndex = 5;
+            this.tbBuildingVillage.BackColor = System.Drawing.Color.White;
+            this.tbBuildingVillage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBuildingVillage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuildingVillage.Location = new System.Drawing.Point(360, 336);
+            this.tbBuildingVillage.Name = "tbBuildingVillage";
+            this.tbBuildingVillage.ReadOnly = true;
+            this.tbBuildingVillage.Size = new System.Drawing.Size(424, 30);
+            this.tbBuildingVillage.TabIndex = 5;
             // 
             // label8
             // 
@@ -244,16 +247,16 @@ namespace RealStateManagementSystem.config
             this.label8.TabIndex = 8;
             this.label8.Text = "Taluka/Village :";
             // 
-            // tbDist
+            // tbBuildingDistrict
             // 
-            this.tbDist.BackColor = System.Drawing.Color.White;
-            this.tbDist.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbDist.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDist.Location = new System.Drawing.Point(360, 286);
-            this.tbDist.Name = "tbDist";
-            this.tbDist.ReadOnly = true;
-            this.tbDist.Size = new System.Drawing.Size(424, 30);
-            this.tbDist.TabIndex = 4;
+            this.tbBuildingDistrict.BackColor = System.Drawing.Color.White;
+            this.tbBuildingDistrict.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBuildingDistrict.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuildingDistrict.Location = new System.Drawing.Point(360, 286);
+            this.tbBuildingDistrict.Name = "tbBuildingDistrict";
+            this.tbBuildingDistrict.ReadOnly = true;
+            this.tbBuildingDistrict.Size = new System.Drawing.Size(424, 30);
+            this.tbBuildingDistrict.TabIndex = 4;
             // 
             // label7
             // 
@@ -267,16 +270,16 @@ namespace RealStateManagementSystem.config
             this.label7.TabIndex = 6;
             this.label7.Text = "Dist :";
             // 
-            // tbState
+            // tbBuildingState
             // 
-            this.tbState.BackColor = System.Drawing.Color.White;
-            this.tbState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbState.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbState.Location = new System.Drawing.Point(360, 235);
-            this.tbState.Name = "tbState";
-            this.tbState.ReadOnly = true;
-            this.tbState.Size = new System.Drawing.Size(424, 30);
-            this.tbState.TabIndex = 3;
+            this.tbBuildingState.BackColor = System.Drawing.Color.White;
+            this.tbBuildingState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBuildingState.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuildingState.Location = new System.Drawing.Point(360, 235);
+            this.tbBuildingState.Name = "tbBuildingState";
+            this.tbBuildingState.ReadOnly = true;
+            this.tbBuildingState.Size = new System.Drawing.Size(424, 30);
+            this.tbBuildingState.TabIndex = 3;
             // 
             // label5
             // 
@@ -290,37 +293,36 @@ namespace RealStateManagementSystem.config
             this.label5.TabIndex = 4;
             this.label5.Text = "State :";
             // 
-            // tbPinCode
+            // tbBuildingPincode
             // 
-            this.tbPinCode.BackColor = System.Drawing.Color.White;
-            this.tbPinCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbPinCode.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPinCode.Location = new System.Drawing.Point(360, 180);
-            this.tbPinCode.Name = "tbPinCode";
-            this.tbPinCode.Size = new System.Drawing.Size(424, 34);
-            this.tbPinCode.TabIndex = 2;
-            this.tbPinCode.Leave += new System.EventHandler(this.tbPinCode_Leave);
+            this.tbBuildingPincode.BackColor = System.Drawing.Color.White;
+            this.tbBuildingPincode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBuildingPincode.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuildingPincode.Location = new System.Drawing.Point(360, 180);
+            this.tbBuildingPincode.Name = "tbBuildingPincode";
+            this.tbBuildingPincode.Size = new System.Drawing.Size(424, 34);
+            this.tbBuildingPincode.TabIndex = 2;
             // 
-            // tbBuildName
+            // tbBuildingName
             // 
-            this.tbBuildName.BackColor = System.Drawing.Color.White;
-            this.tbBuildName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbBuildName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuildName.Location = new System.Drawing.Point(360, 127);
-            this.tbBuildName.Name = "tbBuildName";
-            this.tbBuildName.Size = new System.Drawing.Size(424, 30);
-            this.tbBuildName.TabIndex = 1;
+            this.tbBuildingName.BackColor = System.Drawing.Color.White;
+            this.tbBuildingName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBuildingName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuildingName.Location = new System.Drawing.Point(360, 127);
+            this.tbBuildingName.Name = "tbBuildingName";
+            this.tbBuildingName.Size = new System.Drawing.Size(424, 30);
+            this.tbBuildingName.TabIndex = 1;
             // 
-            // tbBuildId
+            // tbBuildingId
             // 
-            this.tbBuildId.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbBuildId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbBuildId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuildId.Location = new System.Drawing.Point(360, 73);
-            this.tbBuildId.Name = "tbBuildId";
-            this.tbBuildId.ReadOnly = true;
-            this.tbBuildId.Size = new System.Drawing.Size(424, 30);
-            this.tbBuildId.TabIndex = 0;
+            this.tbBuildingId.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tbBuildingId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBuildingId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuildingId.Location = new System.Drawing.Point(360, 73);
+            this.tbBuildingId.Name = "tbBuildingId";
+            this.tbBuildingId.ReadOnly = true;
+            this.tbBuildingId.Size = new System.Drawing.Size(424, 30);
+            this.tbBuildingId.TabIndex = 0;
             // 
             // label4
             // 
@@ -485,20 +487,20 @@ namespace RealStateManagementSystem.config
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbPinCode;
-        private System.Windows.Forms.TextBox tbBuildName;
-        private System.Windows.Forms.TextBox tbBuildId;
+        private System.Windows.Forms.TextBox tbBuildingPincode;
+        private System.Windows.Forms.TextBox tbBuildingName;
+        private System.Windows.Forms.TextBox tbBuildingId;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.DataGridView buildingDataGrid;
-        private System.Windows.Forms.TextBox tbTaluka;
+        private System.Windows.Forms.TextBox tbBuildingVillage;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbDist;
+        private System.Windows.Forms.TextBox tbBuildingDistrict;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbState;
+        private System.Windows.Forms.TextBox tbBuildingState;
         private System.Windows.Forms.Label label5;
     }
 }

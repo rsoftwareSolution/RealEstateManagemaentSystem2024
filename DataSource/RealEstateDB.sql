@@ -188,6 +188,18 @@ flat_desc nvarchar(255));
 select * from flat_type_description;
 
 
+create table parking_details (
+parking_id int auto_increment ,
+available_parking int,
+total_parking double ,
+vehicle_name varchar (50),
+primary key(parking_id));
+
+select * from parking_details;
+drop table parking_details;
+
+
+
 
 
 
