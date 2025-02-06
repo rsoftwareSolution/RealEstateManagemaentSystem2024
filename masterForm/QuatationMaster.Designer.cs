@@ -36,13 +36,15 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.quotationPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cbCard = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,12 +71,13 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tbSearchQuotation = new System.Windows.Forms.TextBox();
             this.quotationDataGrid = new System.Windows.Forms.DataGridView();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.quotationPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cbPrint = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quotationPieChart)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -82,20 +85,18 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quotationDataGrid)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quotationPieChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1340, 64);
+            this.panel1.Size = new System.Drawing.Size(1339, 64);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -105,7 +106,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(516, 8);
+            this.label1.Location = new System.Drawing.Point(10, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(314, 46);
             this.label1.TabIndex = 0;
@@ -116,68 +117,71 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.cbPrint);
+            this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(1, 581);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1342, 75);
+            this.panel2.Size = new System.Drawing.Size(1341, 75);
             this.panel2.TabIndex = 5;
             // 
-            // button1
+            // btnExit
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(898, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 48);
-            this.button1.TabIndex = 115;
-            this.button1.Text = "EXIT";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnExit.Location = new System.Drawing.Point(898, 14);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(148, 48);
+            this.btnExit.TabIndex = 115;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(744, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 48);
-            this.button3.TabIndex = 114;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDelete.Location = new System.Drawing.Point(744, 14);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(148, 48);
+            this.btnDelete.TabIndex = 114;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(590, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 48);
-            this.button2.TabIndex = 113;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnUpdate.Location = new System.Drawing.Point(590, 14);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(148, 48);
+            this.btnUpdate.TabIndex = 113;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnEdit
             // 
@@ -242,6 +246,39 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Quatation";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.quotationPieChart);
+            this.groupBox6.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(797, 17);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(530, 446);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Available flat and count";
+            // 
+            // quotationPieChart
+            // 
+            this.quotationPieChart.BorderlineColor = System.Drawing.Color.LavenderBlush;
+            chartArea4.Name = "ChartArea1";
+            this.quotationPieChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.quotationPieChart.Legends.Add(legend4);
+            this.quotationPieChart.Location = new System.Drawing.Point(22, 38);
+            this.quotationPieChart.Name = "quotationPieChart";
+            this.quotationPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Quatation";
+            series4.YValuesPerPoint = 2;
+            this.quotationPieChart.Series.Add(series4);
+            this.quotationPieChart.Size = new System.Drawing.Size(494, 390);
+            this.quotationPieChart.SuppressExceptions = true;
+            this.quotationPieChart.TabIndex = 11;
+            this.quotationPieChart.TabStop = false;
+            this.quotationPieChart.Text = "chart1";
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.cbCard);
@@ -260,7 +297,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // cbCard
             // 
             this.cbCard.AutoSize = true;
-            this.cbCard.Location = new System.Drawing.Point(506, 38);
+            this.cbCard.Location = new System.Drawing.Point(503, 38);
             this.cbCard.Name = "cbCard";
             this.cbCard.Size = new System.Drawing.Size(69, 25);
             this.cbCard.TabIndex = 17;
@@ -270,7 +307,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(156, 39);
+            this.label2.Location = new System.Drawing.Point(159, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 21);
             this.label2.TabIndex = 16;
@@ -279,7 +316,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // cbOnline
             // 
             this.cbOnline.AutoSize = true;
-            this.cbOnline.Location = new System.Drawing.Point(377, 37);
+            this.cbOnline.Location = new System.Drawing.Point(374, 37);
             this.cbOnline.Name = "cbOnline";
             this.cbOnline.Size = new System.Drawing.Size(123, 25);
             this.cbOnline.TabIndex = 15;
@@ -289,7 +326,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // cbCash
             // 
             this.cbCash.AutoSize = true;
-            this.cbCash.Location = new System.Drawing.Point(301, 37);
+            this.cbCash.Location = new System.Drawing.Point(298, 37);
             this.cbCash.Name = "cbCash";
             this.cbCash.Size = new System.Drawing.Size(70, 25);
             this.cbCash.TabIndex = 14;
@@ -496,6 +533,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tbDescription.Size = new System.Drawing.Size(419, 27);
             this.tbDescription.TabIndex = 2;
             this.tbDescription.Text = "Discription";
+            this.tbDescription.TextChanged += new System.EventHandler(this.tbDescription_TextChanged);
             // 
             // dtpDate
             // 
@@ -557,38 +595,15 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.quotationDataGrid.Size = new System.Drawing.Size(1312, 420);
             this.quotationDataGrid.TabIndex = 0;
             // 
-            // groupBox6
+            // cbPrint
             // 
-            this.groupBox6.Controls.Add(this.quotationPieChart);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(797, 17);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(530, 446);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Available flat and count";
-            // 
-            // quotationPieChart
-            // 
-            this.quotationPieChart.BorderlineColor = System.Drawing.Color.LavenderBlush;
-            chartArea4.Name = "ChartArea1";
-            this.quotationPieChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.quotationPieChart.Legends.Add(legend4);
-            this.quotationPieChart.Location = new System.Drawing.Point(22, 38);
-            this.quotationPieChart.Name = "quotationPieChart";
-            this.quotationPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Quatation";
-            series4.YValuesPerPoint = 2;
-            this.quotationPieChart.Series.Add(series4);
-            this.quotationPieChart.Size = new System.Drawing.Size(494, 390);
-            this.quotationPieChart.SuppressExceptions = true;
-            this.quotationPieChart.TabIndex = 11;
-            this.quotationPieChart.TabStop = false;
-            this.quotationPieChart.Text = "chart1";
+            this.cbPrint.AutoSize = true;
+            this.cbPrint.Location = new System.Drawing.Point(10, 14);
+            this.cbPrint.Name = "cbPrint";
+            this.cbPrint.Size = new System.Drawing.Size(67, 25);
+            this.cbPrint.TabIndex = 18;
+            this.cbPrint.Text = "Print";
+            this.cbPrint.UseVisualStyleBackColor = true;
             // 
             // QuatationMaster
             // 
@@ -602,12 +617,14 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.Controls.Add(this.panel1);
             this.Name = "QuatationMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuatationMaster";
             this.Load += new System.EventHandler(this.QuatationMaster_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.quotationPieChart)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -621,8 +638,6 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quotationDataGrid)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.quotationPieChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -632,9 +647,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TabControl tabControl1;
@@ -667,5 +682,6 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private System.Windows.Forms.DataGridView quotationDataGrid;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataVisualization.Charting.Chart quotationPieChart;
+        private System.Windows.Forms.CheckBox cbPrint;
     }
 }

@@ -53,6 +53,12 @@ namespace RealStateManagementSystem.masterForm
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cancelationDataGrid = new System.Windows.Forms.DataGridView();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,12 +72,6 @@ namespace RealStateManagementSystem.masterForm
             this.Refund = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -107,10 +107,10 @@ namespace RealStateManagementSystem.masterForm
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(29, 108);
+            this.tabControl1.Location = new System.Drawing.Point(1, 108);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1031, 582);
+            this.tabControl1.Size = new System.Drawing.Size(1059, 582);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -131,7 +131,7 @@ namespace RealStateManagementSystem.masterForm
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1023, 549);
+            this.tabPage1.Size = new System.Drawing.Size(1051, 549);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cancellation Form";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -338,6 +338,54 @@ namespace RealStateManagementSystem.masterForm
             this.cancelationDataGrid.Size = new System.Drawing.Size(992, 448);
             this.cancelationDataGrid.TabIndex = 25;
             // 
+            // Email
+            // 
+            this.Email.HeaderText = "ID";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Customer Contact";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Cancel date";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 130;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Total Amount";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 130;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Total Paid";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Refund";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
+            // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.White;
@@ -500,65 +548,16 @@ namespace RealStateManagementSystem.masterForm
             this.Status.ReadOnly = true;
             this.Status.Width = 190;
             // 
-            // Email
-            // 
-            this.Email.HeaderText = "ID";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Customer Contact";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Cancel date";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 130;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Total Amount";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 130;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total Paid";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Refund";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
-            // 
             // CancellationMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1321, 702);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CancellationMaster";
-            this.Text = "CancellationMaster";
             this.Load += new System.EventHandler(this.CancellationMaster_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

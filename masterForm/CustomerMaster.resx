@@ -123,13 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Book Antiqua, 25.8pt, style=Bold, Italic</value>
+    <value>Times New Roman, 19.8000011pt, style=Italic</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>451, 19</value>
+    <value>516, 10</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 53</value>
+    <value>277, 42</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
@@ -151,10 +151,10 @@
     <value>0</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 1</value>
+    <value>1, 1</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1317, 89</value>
+    <value>1271, 70</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -169,520 +169,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tbCustAddress.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="tbCustAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 199</value>
-  </data>
-  <data name="tbCustAddress.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbCustAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 76</value>
-  </data>
-  <data name="tbCustAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tbCustAddress.Name" xml:space="preserve">
-    <value>tbCustAddress</value>
-  </data>
-  <data name="&gt;&gt;tbCustAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbCustAddress.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tbCustAddress.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 202</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Customer Address :</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="dtpCustomerBirthDate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="dtpCustomerBirthDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>792, 91</value>
-  </data>
-  <data name="dtpCustomerBirthDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 30</value>
-  </data>
-  <data name="dtpCustomerBirthDate.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;dtpCustomerBirthDate.Name" xml:space="preserve">
-    <value>dtpCustomerBirthDate</value>
-  </data>
-  <data name="&gt;&gt;dtpCustomerBirthDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpCustomerBirthDate.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;dtpCustomerBirthDate.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tbEmail.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="tbEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>792, 142</value>
-  </data>
-  <data name="tbEmail.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 37</value>
-  </data>
-  <data name="tbEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tbEmail.Name" xml:space="preserve">
-    <value>tbEmail</value>
-  </data>
-  <data name="&gt;&gt;tbEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbEmail.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tbEmail.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tbCustCont.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="tbCustCont.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 297</value>
-  </data>
-  <data name="tbCustCont.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbCustCont.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 37</value>
-  </data>
-  <data name="tbCustCont.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tbCustCont.Name" xml:space="preserve">
-    <value>tbCustCont</value>
-  </data>
-  <data name="&gt;&gt;tbCustCont.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbCustCont.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tbCustCont.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tbCustName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="tbCustName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 142</value>
-  </data>
-  <data name="tbCustName.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbCustName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 37</value>
-  </data>
-  <data name="tbCustName.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tbCustName.Name" xml:space="preserve">
-    <value>tbCustName</value>
-  </data>
-  <data name="&gt;&gt;tbCustName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbCustName.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tbCustName.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tbCustId.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="tbCustId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 88</value>
-  </data>
-  <data name="tbCustId.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbCustId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 37</value>
-  </data>
-  <data name="tbCustId.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbCustId.Name" xml:space="preserve">
-    <value>tbCustId</value>
-  </data>
-  <data name="&gt;&gt;tbCustId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbCustId.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tbCustId.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>718, 147</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 22</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Email :</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>683, 96</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 22</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Birth Date :</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 300</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Customer Contact :</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 147</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Customer Name :</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 96</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Customer ID :</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1311, 488</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Customer Form</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="customerDataGrid.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="customerDataGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="customerDataGrid.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="ID.HeaderText" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="ID.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="ID.Width" type="System.Int32, mscorlib">
-    <value>120</value>
-  </data>
-  <metadata name="Name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Name.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="Name.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Name.Width" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
-  <metadata name="Address.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Address.HeaderText" xml:space="preserve">
-    <value>Address</value>
-  </data>
-  <data name="Address.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Address.Width" type="System.Int32, mscorlib">
-    <value>170</value>
-  </data>
-  <metadata name="Email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Email.HeaderText" xml:space="preserve">
-    <value>Contact</value>
-  </data>
-  <data name="Email.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Email.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
-  <metadata name="Contact.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Contact.HeaderText" xml:space="preserve">
-    <value>Birth Date</value>
-  </data>
-  <data name="Contact.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Contact.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <metadata name="BirthDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="BirthDate.HeaderText" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="BirthDate.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="BirthDate.Width" type="System.Int32, mscorlib">
-    <value>135</value>
-  </data>
-  <data name="customerDataGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Alpha</value>
-  </data>
-  <data name="customerDataGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 71</value>
-  </data>
-  <data name="customerDataGrid.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="customerDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1270, 405</value>
-  </data>
-  <data name="customerDataGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;customerDataGrid.Name" xml:space="preserve">
-    <value>customerDataGrid</value>
-  </data>
-  <data name="&gt;&gt;customerDataGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;customerDataGrid.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;customerDataGrid.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 13.8pt</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 20</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 27</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Customer Name :</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="textBox5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
   </data>
   <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 16</value>
-  </data>
-  <data name="textBox5.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>184, 238</value>
   </data>
   <data name="textBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 37</value>
+    <value>432, 30</value>
   </data>
   <data name="textBox5.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -694,64 +190,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBox5.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;textBox5.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabPage2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 13.8pt, style=Bold</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1311, 488</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Customer Details List</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.8pt</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 92</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1319, 521</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;textBox5.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="button1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -783,10 +225,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>929, 644</value>
+    <value>1085, 597</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 48</value>
+    <value>155, 41</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -804,7 +246,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>15</value>
   </data>
   <data name="button3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -831,10 +273,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 644</value>
+    <value>924, 597</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 48</value>
+    <value>155, 41</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -852,7 +294,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>16</value>
   </data>
   <data name="button2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -880,10 +322,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 644</value>
+    <value>763, 597</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 48</value>
+    <value>155, 41</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -901,7 +343,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>17</value>
   </data>
   <data name="btnEdit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -950,10 +392,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 644</value>
+    <value>602, 597</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 48</value>
+    <value>155, 41</value>
   </data>
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -971,7 +413,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>18</value>
   </data>
   <data name="btnSave.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -998,10 +440,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 644</value>
+    <value>441, 597</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 48</value>
+    <value>155, 41</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1019,12 +461,417 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="tbCustAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="tbCustAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 192</value>
+  </data>
+  <data name="tbCustAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 27</value>
+  </data>
+  <data name="tbCustAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;tbCustAddress.Name" xml:space="preserve">
+    <value>tbCustAddress</value>
+  </data>
+  <data name="&gt;&gt;tbCustAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbCustAddress.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbCustAddress.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 193</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 19</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Customer Address :</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dtpCustomerBirthDate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="dtpCustomerBirthDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>816, 150</value>
+  </data>
+  <data name="dtpCustomerBirthDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 27</value>
+  </data>
+  <data name="dtpCustomerBirthDate.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;dtpCustomerBirthDate.Name" xml:space="preserve">
+    <value>dtpCustomerBirthDate</value>
+  </data>
+  <data name="&gt;&gt;dtpCustomerBirthDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpCustomerBirthDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dtpCustomerBirthDate.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tbEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="tbEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>816, 193</value>
+  </data>
+  <data name="tbEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 27</value>
+  </data>
+  <data name="tbEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;tbEmail.Name" xml:space="preserve">
+    <value>tbEmail</value>
+  </data>
+  <data name="&gt;&gt;tbEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbEmail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbEmail.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tbCustCont.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="tbCustCont.Location" type="System.Drawing.Point, System.Drawing">
+    <value>816, 108</value>
+  </data>
+  <data name="tbCustCont.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 27</value>
+  </data>
+  <data name="tbCustCont.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;tbCustCont.Name" xml:space="preserve">
+    <value>tbCustCont</value>
+  </data>
+  <data name="&gt;&gt;tbCustCont.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbCustCont.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbCustCont.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tbCustName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="tbCustName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 149</value>
+  </data>
+  <data name="tbCustName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 27</value>
+  </data>
+  <data name="tbCustName.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;tbCustName.Name" xml:space="preserve">
+    <value>tbCustName</value>
+  </data>
+  <data name="&gt;&gt;tbCustName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbCustName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbCustName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tbCustId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="tbCustId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 108</value>
+  </data>
+  <data name="tbCustId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 27</value>
+  </data>
+  <data name="tbCustId.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;tbCustId.Name" xml:space="preserve">
+    <value>tbCustId</value>
+  </data>
+  <data name="&gt;&gt;tbCustId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbCustId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbCustId.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>737, 196</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 19</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Email :</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>706, 156</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 19</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Birth Date :</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>653, 111</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 19</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Customer Contact :</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 150</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 19</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Customer Name :</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>55, 109</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 19</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Customer ID :</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="customerDataGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="customerDataGrid.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="customerDataGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Alpha</value>
+  </data>
+  <data name="customerDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 295</value>
+  </data>
+  <data name="customerDataGrid.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="customerDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1238, 273</value>
+  </data>
+  <data name="customerDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;customerDataGrid.Name" xml:space="preserve">
+    <value>customerDataGrid</value>
+  </data>
+  <data name="&gt;&gt;customerDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;customerDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;customerDataGrid.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 242</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 19</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Search here :</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -1034,49 +881,10 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1321, 702</value>
+    <value>1274, 644</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Customer Master</value>
-  </data>
-  <data name="&gt;&gt;ID.Name" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="&gt;&gt;ID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Name.Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="&gt;&gt;Name.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Address.Name" xml:space="preserve">
-    <value>Address</value>
-  </data>
-  <data name="&gt;&gt;Address.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Email.Name" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="&gt;&gt;Email.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Contact.Name" xml:space="preserve">
-    <value>Contact</value>
-  </data>
-  <data name="&gt;&gt;Contact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BirthDate.Name" xml:space="preserve">
-    <value>BirthDate</value>
-  </data>
-  <data name="&gt;&gt;BirthDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CustomerMaster</value>

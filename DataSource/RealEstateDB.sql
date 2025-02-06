@@ -2,7 +2,7 @@ use real_state_db;
 
 -- Customer table create query
 create table customer_details(
-cust_id int auto_increment,
+cust_id nvarchar(50),
 cust_name varchar(50),
 cust_address varchar(255),
 cust_contact int(10),
@@ -10,6 +10,7 @@ cust_birth_date nvarchar(30),
 cust_email varchar(50),
 primary key(cust_id));
 
+truncate table customer_details;
 
 Alter Table customer_details modify cust_id nvarchar(50);
 
@@ -19,6 +20,7 @@ select * from user;
 SELECT @@hostname AS Hostname, @@port AS Port;
 
 -- User table create query
+
 create table user(
 user_id int auto_increment,
 user_name varchar(50),
@@ -39,6 +41,8 @@ building_village varchar(125),
 primary key(building_id));
 
 Alter Table building_details modify building_id nvarchar(50);
+
+Alter Table building_details add column building_description nvarchar(50);
 
 select * from building_details;
 drop table building_details;
@@ -148,12 +152,51 @@ FROM flat_details f
 JOIN flat_type_details ft ON f.flat_type_id = ft.flat_type_id
 JOIN building_details b ON f.building_id = b.building_id;
 
+select * from vw_flat_details;
+
+-- Booking table create query 
+
+CREATE TABLE booking_details (
+    booking_id VARCHAR(20) PRIMARY KEY,        
+    booking_date DATE,                               
+    payment_type VARCHAR(50),                         
+    quotation_number VARCHAR(20),                     
+    down_payment DOUBLE,                              
+    cust_contact VARCHAR(15),                         
+    cust_name VARCHAR(100),                          
+    building_or_project_name VARCHAR(125),            
+    flat_type VARCHAR(50),                           
+    vehicle_name VARCHAR(100),                       
+    parking_charges DOUBLE,                          
+    igst DOUBLE,                                     
+    cgst DOUBLE,                                      
+    sgst DOUBLE,                                      
+    sub_total DOUBLE,                                
+    total_amount DOUBLE,                             
+    paid_amount DOUBLE,                               
+    remaining_amount DOUBLE,                          
+    round_off DOUBLE,                              
+    grand_total DOUBLE );
+
+select * from booking_details;
 
 
+create table flat_type_description (
+flat_desc_id nvarchar(50) primary key,
+flat_desc nvarchar(255));
+
+select * from flat_type_description;
 
 
+create table parking_details (
+parking_id int auto_increment ,
+available_parking int,
+total_parking double ,
+vehicle_name varchar (50),
+primary key(parking_id));
 
-
+select * from parking_details;
+drop table parking_details;
 
 
 
