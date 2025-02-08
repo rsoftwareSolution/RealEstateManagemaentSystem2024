@@ -18,52 +18,28 @@ namespace RealEstateManagemaentSystem2024.masterForm
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            // Get the username entered by the user
             string userName = tbName.Text;
             string userContact = tbContact.Text;
 
-            // Define the SELECT query
-            string query = "SELECT user_id, user_email, user_contact, user_password FROM user WHERE user_name = @userName OR user_contact = @userContact";
+            string query = "SELECT user_id, user_email, user_contact, user_password, user_dob FROM user WHERE user_name = @userName OR user_contact = @userContact";
 
             try
             {
-                // Execute the SELECT query
                 DataTable result = db.ExecuteQuery(query, new MySqlParameter[]
                 {
                     new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = userName },
                     new MySqlParameter("@userContact", MySqlDbType.VarChar) { Value = userContact }
                 });
 
-                // Check if the record exists
                 if (result.Rows.Count > 0)
                 {
-                    // Populate text boxes with the fetched data
                     tbUserID.Text = result.Rows[0]["user_id"].ToString();
                     tbEmail.Text = result.Rows[0]["user_email"].ToString();
                     tbContact.Text = result.Rows[0]["user_contact"].ToString();
                     tbPassword.Text = result.Rows[0]["user_password"].ToString();
+                    dtpBirthDate.Value = DateTime.TryParse(result.Rows[0]["user_dob"].ToString(), out DateTime birthDate) ? birthDate : DateTime.Now;
 
                     MessageBox.Show("Record fetched successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -76,7 +52,6 @@ namespace RealEstateManagemaentSystem2024.masterForm
             {
                 MessageBox.Show("Error fetching record: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void UserMaster_Load(object sender, EventArgs e)
@@ -120,7 +95,8 @@ namespace RealEstateManagemaentSystem2024.masterForm
                     row["user_name"],
                     row["user_email"],
                     row["user_contact"],
-                    maskedPassword // Add the masked password instead of the actual value
+                    maskedPassword, // Add the masked password instead of the actual value
+                    row["user_dob"]
                 );
             }
 
@@ -129,46 +105,40 @@ namespace RealEstateManagemaentSystem2024.masterForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Get user inputs from TextBoxes
             string userName = tbName.Text.Trim();
             string email = tbEmail.Text.Trim();
             string contact = tbContact.Text.Trim();
             string password = tbPassword.Text.Trim();
+            string birthDate = dtpBirthDate.Value.ToString("yyyy-MM-dd");
 
-            // Query to check if user_name or user_email already exists
             string checkQuery = "SELECT COUNT(*) FROM user WHERE user_name = @userName OR user_email = @userEmail";
 
             try
             {
-                // Check for existing record
                 object result = db.ExecuteScalar(checkQuery, new MySqlParameter[]
                 {
-            new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = userName },
-            new MySqlParameter("@userEmail", MySqlDbType.VarChar) { Value = email }
+                    new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = userName },
+                    new MySqlParameter("@userEmail", MySqlDbType.VarChar) { Value = email }
                 });
 
-                // If the count is greater than 0, a record already exists
                 if (Convert.ToInt32(result) > 0)
                 {
                     MessageBox.Show("User with the same username or email already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Exit the method without saving
+                    return;
                 }
 
-                // Query to save the new user
-                string saveQuery = "INSERT INTO user (user_name, user_email, user_contact, user_password) VALUES (@userName, @userEmail, @userContact, @userPassword)";
+                string saveQuery = "INSERT INTO user (user_name, user_email, user_contact, user_password, user_dob) VALUES (@userName, @userEmail, @userContact, @userPassword, @userDob)";
 
-                // Execute the save query
                 db.ExecuteNonQuery(saveQuery, new MySqlParameter[]
                 {
-            new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = userName },
-            new MySqlParameter("@userEmail", MySqlDbType.VarChar) { Value = email },
-            new MySqlParameter("@userContact", MySqlDbType.VarChar) { Value = contact },
-            new MySqlParameter("@userPassword", MySqlDbType.VarChar) { Value = password }
+                    new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = userName },
+                    new MySqlParameter("@userEmail", MySqlDbType.VarChar) { Value = email },
+                    new MySqlParameter("@userContact", MySqlDbType.VarChar) { Value = contact },
+                    new MySqlParameter("@userPassword", MySqlDbType.VarChar) { Value = password },
+                    new MySqlParameter("@userDob", MySqlDbType.VarChar) { Value = birthDate }
                 });
 
                 MessageBox.Show("User saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Clear the input fields
                 clr_text();
             }
             catch (Exception ex)
@@ -191,7 +161,6 @@ namespace RealEstateManagemaentSystem2024.masterForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Show the custom popup to ask for the old password
             using (OldPasswordPopup popup = new OldPasswordPopup())
             {
                 if (popup.ShowDialog() == DialogResult.OK)
@@ -200,28 +169,24 @@ namespace RealEstateManagemaentSystem2024.masterForm
 
                     try
                     {
-                        // Initialize the database helper
-                        Database db = new Database();
-
-                        // Verify the old password
                         string verifyPasswordQuery = "SELECT user_password FROM user WHERE user_id = @userId";
                         object result = db.ExecuteScalar(verifyPasswordQuery, new MySqlParameter[]
                         {
-                    new MySqlParameter("@userId", MySqlDbType.VarChar) { Value = tbUserID.Text }
+                            new MySqlParameter("@userId", MySqlDbType.VarChar) { Value = tbUserID.Text }
                         });
 
                         if (result != null && result.ToString() == enteredOldPassword)
                         {
-                            // Old password matches, proceed with the update
-                            string updateQuery = "UPDATE user SET user_name = @userName, user_email = @userEmail, user_contact = @userContact, user_password = @userPassword WHERE user_id = @userId";
+                            string updateQuery = "UPDATE user SET user_name = @userName, user_email = @userEmail, user_contact = @userContact, user_password = @userPassword, user_dob = @userDob WHERE user_id = @userId";
 
                             db.ExecuteNonQuery(updateQuery, new MySqlParameter[]
                             {
-                        new MySqlParameter("@userId", MySqlDbType.VarChar) { Value = tbUserID.Text },
-                        new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = tbName.Text },
-                        new MySqlParameter("@userEmail", MySqlDbType.VarChar) { Value = tbEmail.Text },
-                        new MySqlParameter("@userContact", MySqlDbType.VarChar) { Value = tbContact.Text },
-                        new MySqlParameter("@userPassword", MySqlDbType.VarChar) { Value = tbPassword.Text }
+                                new MySqlParameter("@userId", MySqlDbType.VarChar) { Value = tbUserID.Text },
+                                new MySqlParameter("@userName", MySqlDbType.VarChar) { Value = tbName.Text },
+                                new MySqlParameter("@userEmail", MySqlDbType.VarChar) { Value = tbEmail.Text },
+                                new MySqlParameter("@userContact", MySqlDbType.VarChar) { Value = tbContact.Text },
+                                new MySqlParameter("@userPassword", MySqlDbType.VarChar) { Value = tbPassword.Text },
+                                new MySqlParameter("@userDob", MySqlDbType.VarChar) { Value = dtpBirthDate.Value.ToString("yyyy-MM-dd") }
                             });
 
                             MessageBox.Show("Record updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -288,7 +253,7 @@ namespace RealEstateManagemaentSystem2024.masterForm
                 Database db = new Database();
 
                 // Define the query to search by buildname
-                string query = "SELECT user_id, user_name, user_email, user_contact, user_password FROM user WHERE user_name LIKE @userName";
+                string query = "SELECT user_id, user_name, user_email, user_contact, user_password, user_dob FROM user WHERE user_name LIKE @userName";
 
                 // Execute the query with a parameter
                 DataTable dataTable = db.ExecuteQuery(query, new MySqlParameter[]
@@ -305,25 +270,10 @@ namespace RealEstateManagemaentSystem2024.masterForm
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-          
+            this.Close();
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
 

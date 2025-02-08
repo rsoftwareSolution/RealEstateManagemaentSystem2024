@@ -30,12 +30,13 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuatationMaster));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbPrint = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -71,7 +72,6 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tbSearchQuotation = new System.Windows.Forms.TextBox();
             this.quotationDataGrid = new System.Windows.Forms.DataGridView();
-            this.cbPrint = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -98,6 +98,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1339, 64);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -128,6 +129,16 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1341, 75);
             this.panel2.TabIndex = 5;
+            // 
+            // cbPrint
+            // 
+            this.cbPrint.AutoSize = true;
+            this.cbPrint.Location = new System.Drawing.Point(10, 14);
+            this.cbPrint.Name = "cbPrint";
+            this.cbPrint.Size = new System.Drawing.Size(67, 25);
+            this.cbPrint.TabIndex = 18;
+            this.cbPrint.Text = "Print";
+            this.cbPrint.UseVisualStyleBackColor = true;
             // 
             // btnExit
             // 
@@ -260,19 +271,19 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // quotationPieChart
             // 
             this.quotationPieChart.BorderlineColor = System.Drawing.Color.LavenderBlush;
-            chartArea4.Name = "ChartArea1";
-            this.quotationPieChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.quotationPieChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.quotationPieChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.quotationPieChart.Legends.Add(legend1);
             this.quotationPieChart.Location = new System.Drawing.Point(22, 38);
             this.quotationPieChart.Name = "quotationPieChart";
             this.quotationPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Quatation";
-            series4.YValuesPerPoint = 2;
-            this.quotationPieChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Quatation";
+            series1.YValuesPerPoint = 2;
+            this.quotationPieChart.Series.Add(series1);
             this.quotationPieChart.Size = new System.Drawing.Size(494, 390);
             this.quotationPieChart.SuppressExceptions = true;
             this.quotationPieChart.TabIndex = 11;
@@ -594,16 +605,6 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.quotationDataGrid.RowTemplate.Height = 24;
             this.quotationDataGrid.Size = new System.Drawing.Size(1312, 420);
             this.quotationDataGrid.TabIndex = 0;
-            // 
-            // cbPrint
-            // 
-            this.cbPrint.AutoSize = true;
-            this.cbPrint.Location = new System.Drawing.Point(10, 14);
-            this.cbPrint.Name = "cbPrint";
-            this.cbPrint.Size = new System.Drawing.Size(67, 25);
-            this.cbPrint.TabIndex = 18;
-            this.cbPrint.Text = "Print";
-            this.cbPrint.UseVisualStyleBackColor = true;
             // 
             // QuatationMaster
             // 

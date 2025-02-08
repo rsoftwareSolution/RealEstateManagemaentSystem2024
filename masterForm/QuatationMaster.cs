@@ -589,5 +589,10 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private void tbDescription_TextChanged(object sender, EventArgs e)
         {
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

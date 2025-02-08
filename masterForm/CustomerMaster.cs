@@ -290,7 +290,7 @@ namespace RealStateManagementSystem.config
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)

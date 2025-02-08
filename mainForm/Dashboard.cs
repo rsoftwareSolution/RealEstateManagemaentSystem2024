@@ -5,6 +5,7 @@ using RealEstateManagemaentSystem2024.masterForm;
 using RealEstateManagemaentSystem2024.MasterForm;
 using RealEstateManagemaentSystem2024.Registers;
 using RealEstateManagemaentSystem2024.reports;
+using RealEstateManagemaentSystem2024.Settings;
 using RealEstateManagemaentSystem2024.Statements;
 using RealStateManagementSystem.config;
 using RealStateManagementSystem.mainForm;
@@ -124,10 +125,9 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                             accountStatementsForm.Show();
                                             break;
 
-                                        case "Settings":
-                                            var settingsForm = new Settings();
-                                            MessageBox.Show($"The form '{formName}' is not implemented.", "Form Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                                        case "PasswordSetting":
+                                            var resetPassword = new ResetPassword();
+                                            resetPassword.Show();
                                             break;
 
                                         case "Exit":
@@ -164,6 +164,11 @@ namespace RealEstateManagemaentSystem2024.mainForm
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void webView21_Click(object sender, EventArgs e)
         {
 
         }

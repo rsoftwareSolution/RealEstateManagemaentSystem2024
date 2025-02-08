@@ -36,7 +36,7 @@ namespace RealEstateManagemaentSystem2024.Settings
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
             this.tbNewPassword = new System.Windows.Forms.TextBox();
-            this.tbCOntactNumber = new System.Windows.Forms.TextBox();
+            this.tbContact = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@ namespace RealEstateManagemaentSystem2024.Settings
             this.groupBox1.Controls.Add(this.dtpBirthDate);
             this.groupBox1.Controls.Add(this.tbConfirmPassword);
             this.groupBox1.Controls.Add(this.tbNewPassword);
-            this.groupBox1.Controls.Add(this.tbCOntactNumber);
+            this.groupBox1.Controls.Add(this.tbContact);
             this.groupBox1.Controls.Add(this.tbEmail);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -91,6 +91,7 @@ namespace RealEstateManagemaentSystem2024.Settings
             // 
             // dtpBirthDate
             // 
+            this.dtpBirthDate.CalendarMonthBackground = System.Drawing.Color.MintCream;
             this.dtpBirthDate.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBirthDate.Location = new System.Drawing.Point(163, 113);
             this.dtpBirthDate.Name = "dtpBirthDate";
@@ -117,15 +118,15 @@ namespace RealEstateManagemaentSystem2024.Settings
             this.tbNewPassword.Size = new System.Drawing.Size(311, 28);
             this.tbNewPassword.TabIndex = 4;
             // 
-            // tbCOntactNumber
+            // tbContact
             // 
-            this.tbCOntactNumber.BackColor = System.Drawing.Color.MintCream;
-            this.tbCOntactNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCOntactNumber.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCOntactNumber.Location = new System.Drawing.Point(163, 69);
-            this.tbCOntactNumber.Name = "tbCOntactNumber";
-            this.tbCOntactNumber.Size = new System.Drawing.Size(311, 28);
-            this.tbCOntactNumber.TabIndex = 2;
+            this.tbContact.BackColor = System.Drawing.Color.MintCream;
+            this.tbContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbContact.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContact.Location = new System.Drawing.Point(163, 69);
+            this.tbContact.Name = "tbContact";
+            this.tbContact.Size = new System.Drawing.Size(311, 28);
+            this.tbContact.TabIndex = 2;
             // 
             // tbEmail
             // 
@@ -140,7 +141,7 @@ namespace RealEstateManagemaentSystem2024.Settings
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 118);
+            this.label6.Location = new System.Drawing.Point(68, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 19);
             this.label6.TabIndex = 19;
@@ -221,6 +222,7 @@ namespace RealEstateManagemaentSystem2024.Settings
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnReset
             // 
@@ -235,6 +237,7 @@ namespace RealEstateManagemaentSystem2024.Settings
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // pictureBox1
             // 
@@ -260,7 +263,7 @@ namespace RealEstateManagemaentSystem2024.Settings
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.ForgetPassword_Load);
+            this.Load += new System.EventHandler(this.ResetPassword_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -278,7 +281,7 @@ namespace RealEstateManagemaentSystem2024.Settings
         private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private System.Windows.Forms.TextBox tbConfirmPassword;
         private System.Windows.Forms.TextBox tbNewPassword;
-        private System.Windows.Forms.TextBox tbCOntactNumber;
+        private System.Windows.Forms.TextBox tbContact;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
