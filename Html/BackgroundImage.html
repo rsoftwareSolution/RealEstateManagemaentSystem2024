@@ -42,6 +42,33 @@
                 transition: .4s;
             }
 
+        /* Submenu for Settings - appears on the right side */
+        .submenu {
+            position: absolute;
+            left: 250px; /* Moves it to the right of the sidebar */
+            top: -50px;
+            width: 200px; /* Adjust width as needed */
+            background: #055a7a;
+            display: none;
+            padding: 10px 0;
+        }
+
+            .submenu li a {
+                padding-left: 20px;
+                color: white;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .submenu li a:hover {
+                    background: #033047;
+                }
+
+        /* Ensure Settings position is relative for submenu alignment */
+        .settings-container {
+            position: relative;
+        }
+
         ul li:hover a {
             padding-left: 50px;
         }
@@ -168,7 +195,13 @@
             <li><a href="#" onclick="openForm('SaleInvoice')">Sale Invoice</a></li>
             <li><a href="#" onclick="openForm('DownloadReports')">Download Reports</a></li>
             <li><a href="#" onclick="openForm('AccountStatements')">Account Statements</a></li>
-            <li><a href="#" onclick="openForm('Settings')">Settings</a></li>
+            <li class="settings-container">
+                <a href="#" onclick="toggleSubmenu(event)">Settings</a>
+                <ul class="submenu">
+                    <li><a href="#" onclick="openForm('NotificationSetting')">Notification Setting</a></li>
+                    <li><a href="#" onclick="openForm('PasswordSetting')">Password Setting</a></li>
+                </ul>
+            </li>
             <li><a href="#" onclick="openForm('Exit')">Exit</a></li>
         </ul>
     </div>
@@ -195,6 +228,13 @@
                 console.log('WebView2 is not available. Running in a browser environment.');
             }
         }
+
+        function toggleSubmenu(event) {
+            event.preventDefault(); // Prevent default link action
+            var submenu = document.querySelector('.submenu');
+            submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+        }
+
     </script>
 
 </body>

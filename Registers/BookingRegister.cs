@@ -180,7 +180,7 @@ namespace RealEstateManagemaentSystem2024.Registers
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void btn_Save_Click(object sender, EventArgs e)

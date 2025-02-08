@@ -79,7 +79,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

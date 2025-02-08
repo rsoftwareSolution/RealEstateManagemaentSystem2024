@@ -215,10 +215,10 @@
       <DependentUpon>QuatationReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport\UserReport1.cs">
+    <Compile Include="CrystalReport\UserReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserReport1.rpt</DependentUpon>
+      <DependentUpon>UserReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSource\Database.cs" />
@@ -358,9 +358,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuatationReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport\UserReport1.rpt">
+    <EmbeddedResource Include="CrystalReport\UserReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>UserReport1.cs</LastGenOutput>
+      <LastGenOutput>UserReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Helper\BookingSelectionPopup.resx">
       <DependentUpon>BookingSelectionPopup.cs</DependentUpon>
