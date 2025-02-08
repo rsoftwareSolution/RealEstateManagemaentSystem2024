@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using RealEstateManagemaentSystem2024.mainForm;
 using RealEstateManagemaentSystem2024.masterForm;
+using RealEstateManagemaentSystem2024.Settings;
 using System;
 using System.Windows.Forms;
 
@@ -165,6 +166,12 @@ namespace RealStateManagementSystem.mainForm
         private void button2_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            ResetPassword resetPassword = new ResetPassword();
+            resetPassword.Show();
         }
     }
 }

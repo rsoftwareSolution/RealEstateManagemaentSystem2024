@@ -107,6 +107,7 @@ namespace RealStateManagementSystem.mainForm
             this.label4.Size = new System.Drawing.Size(166, 23);
             this.label4.TabIndex = 10;
             this.label4.Text = "Forget Password ?";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Label6
             // 

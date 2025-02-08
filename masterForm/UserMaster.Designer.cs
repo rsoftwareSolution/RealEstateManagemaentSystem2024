@@ -30,11 +30,11 @@ namespace RealEstateManagemaentSystem2024.masterForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserMaster));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -224,7 +224,7 @@ namespace RealEstateManagemaentSystem2024.masterForm
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Location = new System.Drawing.Point(1082, 105);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(258, 582);
+            this.panel2.Size = new System.Drawing.Size(258, 575);
             this.panel2.TabIndex = 9;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -247,23 +247,23 @@ namespace RealEstateManagemaentSystem2024.masterForm
             // 
             // userDataGrid
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.userDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.userDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.userDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.userDataGrid.ColumnHeadersHeight = 36;
             this.userDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.userDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -272,14 +272,14 @@ namespace RealEstateManagemaentSystem2024.masterForm
             this.Email,
             this.Contact,
             this.Password});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.userDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.userDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.userDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.userDataGrid.EnableHeadersVisualStyles = false;
             this.userDataGrid.GridColor = System.Drawing.Color.Black;
@@ -287,18 +287,18 @@ namespace RealEstateManagemaentSystem2024.masterForm
             this.userDataGrid.Location = new System.Drawing.Point(6, 114);
             this.userDataGrid.MultiSelect = false;
             this.userDataGrid.Name = "userDataGrid";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.userDataGrid.RowHeadersWidth = 4;
             this.userDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.userDataGrid.RowTemplate.Height = 24;
             this.userDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.userDataGrid.Size = new System.Drawing.Size(1011, 429);
@@ -412,7 +412,7 @@ namespace RealEstateManagemaentSystem2024.masterForm
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1023, 549);
+            this.tabPage1.Size = new System.Drawing.Size(1050, 542);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User Form";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -422,10 +422,10 @@ namespace RealEstateManagemaentSystem2024.masterForm
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(26, 105);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 105);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1031, 582);
+            this.tabControl1.Size = new System.Drawing.Size(1058, 575);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage2

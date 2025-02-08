@@ -153,15 +153,19 @@ namespace RealEstateManagemaentSystem2024.mainForm
                 }
 
                 // Load the HTML page inside WebView2
-                webView21.Source = new Uri(@"file:///E:/appu bcs/RealEstateManagemaentSystem2024/Html/BackgroundImage.html");
+                webView21.Source = new Uri(@"file:///C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Html/BackgroundImage.html");
                 Console.WriteLine("WebView2 page loaded");
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error initializing WebView2: " + ex.Message);
                 Console.WriteLine("Error initializing WebView2: " + ex.Message);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

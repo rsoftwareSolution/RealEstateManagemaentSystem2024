@@ -322,6 +322,12 @@
     <Compile Include="Reports\DownloadReports.Designer.cs">
       <DependentUpon>DownloadReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Statements\AccountStatements.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     </Compile>
     <EmbeddedResource Include="Reports\DownloadReports.resx">
       <DependentUpon>DownloadReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
