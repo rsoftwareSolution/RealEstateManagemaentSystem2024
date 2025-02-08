@@ -59,17 +59,17 @@ namespace RealStateManagementSystem.mainForm
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(65, 212);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(366, 4);
+            this.panel1.Size = new System.Drawing.Size(366, 3);
             this.panel1.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 238);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(65, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 23);
+            this.label2.Size = new System.Drawing.Size(88, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Username";
             // 
@@ -77,10 +77,10 @@ namespace RealStateManagementSystem.mainForm
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(61, 315);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 304);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 23);
+            this.label3.Size = new System.Drawing.Size(88, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
             // 
@@ -89,7 +89,7 @@ namespace RealStateManagementSystem.mainForm
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(65, 457);
+            this.button1.Location = new System.Drawing.Point(65, 440);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(366, 46);
             this.button1.TabIndex = 8;
@@ -101,12 +101,12 @@ namespace RealStateManagementSystem.mainForm
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(265, 428);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(278, 412);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 23);
+            this.label4.Size = new System.Drawing.Size(151, 22);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Forget Password ?";
+            this.label4.Text = "Reset Password ?";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Label6
@@ -116,22 +116,22 @@ namespace RealStateManagementSystem.mainForm
             this.Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Label6.Image = ((System.Drawing.Image)(resources.GetObject("Label6.Image")));
             this.Label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Label6.Location = new System.Drawing.Point(39, 389);
+            this.Label6.Location = new System.Drawing.Point(65, 374);
             this.Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(182, 65);
+            this.Label6.Size = new System.Drawing.Size(156, 59);
             this.Label6.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(265, 405);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(147, 623);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 23);
+            this.label5.Size = new System.Drawing.Size(174, 22);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Resister Now";
+            this.label5.Text = "Create New Account";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // button2
@@ -153,7 +153,7 @@ namespace RealStateManagementSystem.mainForm
             this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(65, 268);
+            this.textBox1.Location = new System.Drawing.Point(65, 262);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(366, 31);
             this.textBox1.TabIndex = 14;
@@ -163,7 +163,7 @@ namespace RealStateManagementSystem.mainForm
             this.textBox2.BackColor = System.Drawing.Color.AliceBlue;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(65, 348);
+            this.textBox2.Location = new System.Drawing.Point(65, 338);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(366, 31);
