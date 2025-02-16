@@ -16,14 +16,14 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CancellationReport1 : ReportClass {
+    public class QuatationReport1 : ReportClass {
         
-        public CancellationReport1() {
+        public QuatationReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "CancellationReport1.rpt";
+                return "QuatationReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
         
         public override string FullResourceName {
             get {
-                return "RealEstateManagemaentSystem2024.CrystalReport.CancellationReport1.rpt";
+                return "RealEstateManagemaentSystem2024.CrystalReport.QuatationReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCancellationReport1 : Component, ICachedReport {
+    public class CachedQuatationReport1 : Component, ICachedReport {
         
-        public CachedCancellationReport1() {
+        public CachedQuatationReport1() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CancellationReport1 rpt = new CancellationReport1();
+            QuatationReport1 rpt = new QuatationReport1();
             rpt.Site = this.Site;
             return rpt;
         }

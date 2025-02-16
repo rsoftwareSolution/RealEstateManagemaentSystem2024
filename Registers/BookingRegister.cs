@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using MySql.Data.MySqlClient;
-
+using RealStateManagementSystem.config;
 
 namespace RealEstateManagemaentSystem2024.Registers
 {
@@ -12,6 +12,7 @@ namespace RealEstateManagemaentSystem2024.Registers
     {
 
         Database db = new Database();
+        private bool isCustomerValid = false; // Flag to track customer existence
 
         public BookingRegister()
         {
@@ -111,10 +112,29 @@ namespace RealEstateManagemaentSystem2024.Registers
                 if (dt.Rows.Count > 0)
                 {
                     tbCustName.Text = dt.Rows[0]["cust_name"].ToString();
+                    isCustomerValid = true; // Mark customer as valid
                 }
                 else
                 {
-                    tbCustName.Text = string.Empty; // Clear if no match found
+                    tbCustName.Text = string.Empty;
+                    isCustomerValid = false;
+
+                    DialogResult result = MessageBox.Show(
+                        "Customer not found. Would you like to add a new customer?",
+                        "Customer Not Found",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (result == DialogResult.Yes)
+                    {
+                        OpenCustomerMasterForm(contactNumber);
+                    }
+                    else
+                    {
+                        tbCustContact.Text = string.Empty; // Clear contact number
+                        tbCustContact.Focus(); // Refocus the textbox for user to enter a valid number
+                    }
                 }
             }
             catch (Exception ex)
@@ -123,8 +143,39 @@ namespace RealEstateManagemaentSystem2024.Registers
             }
         }
 
+        private void OpenCustomerMasterForm(string contactNumber)
+        {
+            var customerMasterForm = new CustomerMaster();
+            customerMasterForm.PreFillContactNumber(contactNumber);
+            customerMasterForm.ShowDialog();
+        }
+
+        private void SearchByCustomerName(string custName)
+        {
+            try
+            {
+                // Define the query to search by customer name
+                string query = "SELECT * FROM booking_details WHERE cust_name LIKE @custName";
+
+                // Execute the query with a parameter
+                DataTable dataTable = db.ExecuteQuery(query, new MySqlParameter[]
+                {
+            new MySqlParameter("@custName", MySqlDbType.VarChar) { Value = $"%{custName}%" } // Supports partial search
+                });
+
+                // Bind only the data to the pre-defined columns
+                PopulateDataGridView(dataTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void BookingRegister_Load(object sender, EventArgs e)
         {
+            ClearBookingForm();
+            GenerateNewBookingId();
             LoadQuotationChart();
             LoadProjectNames();
             LoadCustomerContacts();
@@ -149,17 +200,20 @@ namespace RealEstateManagemaentSystem2024.Registers
             bookingDataGrid.AutoGenerateColumns = false;
 
             // Set DataGridView Header Height
-            bookingDataGrid.ColumnHeadersHeight = 35; // Set header row height
+            bookingDataGrid.ColumnHeadersHeight = 35;
             bookingDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
             // Set DataGridView row height
-            bookingDataGrid.RowTemplate.Height = 25; // Adjust row height for better visibility
+            bookingDataGrid.RowTemplate.Height = 25;
 
-            // Define columns with custom widths
+            // Define columns with matching DataPropertyName values
             bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "BookingID", HeaderText = "Booking ID", DataPropertyName = "booking_id", Width = 80 });
             bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "BookingDate", HeaderText = "Booking Date", DataPropertyName = "booking_date", Width = 100 });
-            bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerName", HeaderText = "Customer Name", DataPropertyName = "cust_name", Width = 150 });
+            bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "PaymentType", HeaderText = "Payment Type", DataPropertyName = "payment_type", Width = 120 });
+            bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "QuotationNumber", HeaderText = "Quotation Number", DataPropertyName = "quotation_number", Width = 120 });
+            bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "DownPayment", HeaderText = "Down Payment", DataPropertyName = "down_payment", Width = 120 });
             bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerContact", HeaderText = "Customer Contact", DataPropertyName = "cust_contact", Width = 120 });
+            bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "CustomerName", HeaderText = "Customer Name", DataPropertyName = "cust_name", Width = 150 });
             bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "BuildingName", HeaderText = "Building/Project Name", DataPropertyName = "building_or_project_name", Width = 180 });
             bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "FlatType", HeaderText = "Flat Type", DataPropertyName = "flat_type", Width = 100 });
             bookingDataGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "VehicleName", HeaderText = "Vehicle Name", DataPropertyName = "vehicle_name", Width = 120 });
@@ -185,26 +239,34 @@ namespace RealEstateManagemaentSystem2024.Registers
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            string bookingId = tbBookingId.Text.Trim();
+            if (!isCustomerValid)
+            {
+                MessageBox.Show("Customer not found or not added. Please enter a valid customer before saving.",
+                                "Invalid Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbCustContact.Focus();
+                return; // Stop execution
+            }
+
+            string bookingId = string.IsNullOrWhiteSpace(tbBookingId.Text) ? "BLK0001" : tbBookingId.Text.Trim();
             string bookingDate = dtpBookingDate.Value.ToString("yyyy-MM-dd");
-            string paymentType = cbPaymentType.Text.Trim();
-            string quotationNumber = tbQuotationNumber.Text.Trim();
-            double downPayment = Convert.ToDouble(tbDownPayment.Text.Trim());
-            string custContact = tbCustContact.Text.Trim();
-            string custName = tbCustName.Text.Trim();
-            string projectName = cbProjectName.Text.Trim();
-            string flatType = cmbProduct.Text.Trim();
-            string vehicleName = cbVehicle.Text.Trim();
-            double parkingCharges = Convert.ToDouble(Text.Trim());
-            double igst = Convert.ToDouble(tbIGST.Text.Trim());
-            double cgst = Convert.ToDouble(tbCGST.Text.Trim());
-            double sgst = Convert.ToDouble(tbSGST.Text.Trim());
-            double subTotal = Convert.ToDouble(tbSubTotal.Text.Trim());
-            double totalAmount = Convert.ToDouble(tbTotalAmount.Text.Trim());
-            double paidAmount = Convert.ToDouble(tbPaidAmount.Text.Trim());
-            double remainingAmount = Convert.ToDouble(tbRemainingAmount.Text.Trim());
-            double roundOff = Convert.ToDouble(tbRoundOff.Text.Trim());
-            double grandTotal = Convert.ToDouble(tbGrandTotal.Text.Trim());
+            string paymentType = string.IsNullOrWhiteSpace(cbPaymentType.Text) ? "N/A" : cbPaymentType.Text.Trim();
+            string quotationNumber = string.IsNullOrWhiteSpace(tbQuotationNumber.Text) ? "N/A" : tbQuotationNumber.Text.Trim();
+            double downPayment = double.TryParse(tbDownPayment.Text, out double dp) ? dp : 0.0;
+            string custContact = string.IsNullOrWhiteSpace(tbCustContact.Text) ? "N/A" : tbCustContact.Text.Trim();
+            string custName = string.IsNullOrWhiteSpace(tbCustName.Text) ? "N/A" : tbCustName.Text.Trim();
+            string projectName = string.IsNullOrWhiteSpace(cbProjectName.Text) ? "Not Selected" : cbProjectName.Text.Trim();
+            string flatType = string.IsNullOrWhiteSpace(cmbProduct.Text) ? "N/A" : cmbProduct.Text.Trim();
+            string vehicleName = string.IsNullOrWhiteSpace(cbVehicle.Text) ? "N/A" : cbVehicle.Text.Trim();
+            double parkingCharges = double.TryParse(tbParkingCharges.Text, out double pc) ? pc : 0.0;
+            double igst = double.TryParse(tbIGST.Text, out double i) ? i : 0.0;
+            double cgst = double.TryParse(tbCGST.Text, out double c) ? c : 0.0;
+            double sgst = double.TryParse(tbSGST.Text, out double s) ? s : 0.0;
+            double subTotal = double.TryParse(tbSubTotal.Text, out double st) ? st : 0.0;
+            double totalAmount = double.TryParse(tbTotalAmount.Text, out double ta) ? ta : 0.0;
+            double paidAmount = double.TryParse(tbPaidAmount.Text, out double pa) ? pa : 0.0;
+            double remainingAmount = double.TryParse(tbRemainingAmount.Text, out double ra) ? ra : 0.0;
+            double roundOff = double.TryParse(tbRoundOff.Text, out double ro) ? ro : 0.0;
+            double grandTotal = double.TryParse(tbGrandTotal.Text, out double gt) ? gt : 0.0;
 
             string query = "INSERT INTO booking_details VALUES (@id, @date, @payment, @quotation, @downPayment, @contact, @name, @project, @flatType, @vehicle, @parking, @igst, @cgst, @sgst, @subTotal, @totalAmount, @paid, @remaining, @roundOff, @grandTotal)";
 
@@ -232,6 +294,7 @@ namespace RealEstateManagemaentSystem2024.Registers
 
             MessageBox.Show("Booking saved successfully");
             LoadBookingData();
+            ClearBookingForm();
             GenerateNewBookingId();
         }
 
@@ -331,26 +394,26 @@ namespace RealEstateManagemaentSystem2024.Registers
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            string bookingId = tbBookingId.Text.Trim();
+            string bookingId = string.IsNullOrWhiteSpace(tbBookingId.Text) ? "BLK0001" : tbBookingId.Text.Trim();
             string bookingDate = dtpBookingDate.Value.ToString("yyyy-MM-dd");
-            string paymentType = cbPaymentType.Text.Trim();
-            string quotationNumber = tbQuotationNumber.Text.Trim();
-            double downPayment = Convert.ToDouble(tbDownPayment.Text.Trim());
-            string custContact = tbCustContact.Text.Trim();
-            string custName = tbCustName.Text.Trim();
-            string projectName = cbProjectName.Text.Trim();
-            string flatType = cmbProduct.Text.Trim();
-            string vehicleName = cbVehicle.Text.Trim();
-            double parkingCharges = Convert.ToDouble(tbParkingCharges.Text.Trim());
-            double igst = Convert.ToDouble(tbIGST.Text.Trim());
-            double cgst = Convert.ToDouble(tbCGST.Text.Trim());
-            double sgst = Convert.ToDouble(tbSGST.Text.Trim());
-            double subTotal = Convert.ToDouble(tbSubTotal.Text.Trim());
-            double totalAmount = Convert.ToDouble(tbTotalAmount.Text.Trim());
-            double paidAmount = Convert.ToDouble(tbPaidAmount.Text.Trim());
-            double remainingAmount = Convert.ToDouble(tbRemainingAmount.Text.Trim());
-            double roundOff = Convert.ToDouble(tbRoundOff.Text.Trim());
-            double grandTotal = Convert.ToDouble(tbGrandTotal.Text.Trim());
+            string paymentType = string.IsNullOrWhiteSpace(cbPaymentType.Text) ? "N/A" : cbPaymentType.Text.Trim();
+            string quotationNumber = string.IsNullOrWhiteSpace(tbQuotationNumber.Text) ? "N/A" : tbQuotationNumber.Text.Trim();
+            double downPayment = double.TryParse(tbDownPayment.Text, out double dp) ? dp : 0.0;
+            string custContact = string.IsNullOrWhiteSpace(tbCustContact.Text) ? "N/A" : tbCustContact.Text.Trim();
+            string custName = string.IsNullOrWhiteSpace(tbCustName.Text) ? "N/A" : tbCustName.Text.Trim();
+            string projectName = string.IsNullOrWhiteSpace(cbProjectName.Text) ? "Not Selected" : cbProjectName.Text.Trim();
+            string flatType = string.IsNullOrWhiteSpace(cmbProduct.Text) ? "N/A" : cmbProduct.Text.Trim();
+            string vehicleName = string.IsNullOrWhiteSpace(cbVehicle.Text) ? "N/A" : cbVehicle.Text.Trim();
+            double parkingCharges = double.TryParse(tbParkingCharges.Text, out double pc) ? pc : 0.0;
+            double igst = double.TryParse(tbIGST.Text, out double i) ? i : 0.0;
+            double cgst = double.TryParse(tbCGST.Text, out double c) ? c : 0.0;
+            double sgst = double.TryParse(tbSGST.Text, out double s) ? s : 0.0;
+            double subTotal = double.TryParse(tbSubTotal.Text, out double st) ? st : 0.0;
+            double totalAmount = double.TryParse(tbTotalAmount.Text, out double ta) ? ta : 0.0;
+            double paidAmount = double.TryParse(tbPaidAmount.Text, out double pa) ? pa : 0.0;
+            double remainingAmount = double.TryParse(tbRemainingAmount.Text, out double ra) ? ra : 0.0;
+            double roundOff = double.TryParse(tbRoundOff.Text, out double ro) ? ro : 0.0;
+            double grandTotal = double.TryParse(tbGrandTotal.Text, out double gt) ? gt : 0.0;
 
             string query = "UPDATE booking_details SET booking_date=@date, payment_type=@payment, quotation_number=@quotation, down_payment=@downPayment, cust_contact=@contact, cust_name=@name, building_or_project_name=@project, flat_type=@flatType, vehicle_name=@vehicle, parking_charges=@parking, igst=@igst, cgst=@cgst, sgst=@sgst, sub_total=@subTotal, total_amount=@totalAmount, paid_amount=@paid, remaining_amount=@remaining, round_off=@roundOff, grand_total=@grandTotal WHERE booking_id=@id";
 
@@ -378,6 +441,8 @@ namespace RealEstateManagemaentSystem2024.Registers
 
             MessageBox.Show("Booking updated successfully");
             LoadBookingData();
+            ClearBookingForm();
+            GenerateNewBookingId();
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -416,6 +481,58 @@ namespace RealEstateManagemaentSystem2024.Registers
             {
                 AutoFillCustomerName(tbCustContact.Text);
             }
+        }
+
+        private void ClearBookingForm()
+        {
+            tbBookingId.Clear();
+            dtpBookingDate.Value = DateTime.Now; // Reset date picker to current date
+            cbPaymentType.SelectedIndex = -1; // Clear Payment Type dropdown
+            tbQuotationNumber.Clear();
+            tbDownPayment.Clear();
+            tbCustContact.Clear();
+            tbCustName.Clear();
+            cbProjectName.SelectedIndex = -1;
+            cmbProduct.SelectedIndex = -1;
+            cbVehicle.SelectedIndex = -1;
+            tbParkingCharges.Clear();
+            tbIGST.Clear();
+            tbCGST.Clear();
+            tbSGST.Clear();
+            tbSubTotal.Clear();
+            tbTotalAmount.Clear();
+            tbPaidAmount.Clear();
+            tbRemainingAmount.Clear();
+            tbRoundOff.Clear();
+            tbGrandTotal.Clear();
+            cbA4.Checked = true;
+
+            cbPaymentType.Select();
+        }
+
+        private void tbDownPayment_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbGrandTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbCustNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchByCustomerName(tbCustNameSearch.Text);
         }
     }
 }

@@ -19,8 +19,7 @@ select * from user;
 
 SELECT @@hostname AS Hostname, @@port AS Port;
 
--- User table create query
-
+-- User table create query 
 create table user(
 user_id int auto_increment,
 user_name varchar(50),
@@ -29,6 +28,10 @@ user_contact varchar(50),
 user_password varchar(50),
 primary key(user_id));
 
+select * from user;
+
+truncate table user;
+alter table user add column user_dob nvarchar(50);
 -- Building table create query
 
 create table building_details(
@@ -88,17 +91,6 @@ select * from cancellation_details;
 
 drop table cancellation_details;
 
--- Payment table details select query
-create table payment_details (
-payment_id int auto_increment,
-transaction_date varchar(10),
-booking_id int,
-amount_paid double,
-total_amount double,
-primary key(payment_id));
-
--- Payment table details select query
-select * from payment_details;
 
 -- Enquiry table details select query
 create table enquiry_details (
@@ -199,10 +191,28 @@ select * from parking_details;
 drop table parking_details;
 
 
+create table saleinvoice_details (
+sale_id int auto_increment,
+sale_date date,
+quatation_number varchar(20),
+already_booked varchar(50),
+cust_contact varchar(15),
+cust_name varchar(15),
+project_name varchar(125),
+flat_type varchar(50),
+flat_number varchar(20),
+vehicle_name varchar(100),
+parking_charges Double,
+igst Double,
+cgst Double,
+sgst Double,
+sub_total Double,
+total_amount Double,
+booking_amount Double,
+round_off Double,
+grand_total Double,
+primary key(sale_id));
 
-
-
-
-
+select * from saleinvoice_details;
 
 

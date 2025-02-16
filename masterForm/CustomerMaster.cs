@@ -16,6 +16,12 @@ namespace RealStateManagementSystem.config
             InitializeComponent();
         }
 
+        public void PreFillContactNumber(string contactNumber)
+        {
+            tbCustCont.Text = contactNumber;
+        }
+
+
         private void InitializeCustomerGrid()
         {
             // Clear existing columns to avoid duplication

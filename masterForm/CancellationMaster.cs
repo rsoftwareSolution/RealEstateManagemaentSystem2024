@@ -145,7 +145,7 @@ namespace RealStateManagementSystem.masterForm
         new MySqlParameter("@custContact", MySqlDbType.Int64) { Value = customerContact }
             });
 
-            MessageBox.Show("Booking deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Booking canceled successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SearchByContact(long bookingCustContact)
@@ -304,6 +304,11 @@ namespace RealStateManagementSystem.masterForm
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Microsoft.Web.WebView2.WinForms;
-using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RealEstateManagemaentSystem2024.masterForm;
 using RealEstateManagemaentSystem2024.MasterForm;
 using RealEstateManagemaentSystem2024.Registers;
@@ -8,17 +6,10 @@ using RealEstateManagemaentSystem2024.reports;
 using RealEstateManagemaentSystem2024.Settings;
 using RealEstateManagemaentSystem2024.Statements;
 using RealStateManagementSystem.config;
-using RealStateManagementSystem.mainForm;
 using RealStateManagementSystem.masterForm;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RealEstateManagemaentSystem2024.mainForm
@@ -100,6 +91,11 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                             userMasterForm.Show();
                                             break;
 
+                                        case "ParkingMaster":
+                                            var parkingMasterForm = new ParkingMaster();
+                                            parkingMasterForm.Show();
+                                            break;
+
                                         case "QuatationMaster":
                                             var quatationMasterForm = new QuatationMaster();
                                             quatationMasterForm.Show();
@@ -131,7 +127,7 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                             break;
 
                                         case "Exit":
-                                            Application.Exit();
+                                            ShowProgressBarAndExit();
                                             break;
 
                                         default:
@@ -163,8 +159,62 @@ namespace RealEstateManagemaentSystem2024.mainForm
             }
         }
 
+        private void ShowProgressBarAndExit()
+        {
+            // Create a new form to display the progress bar
+            Form progressForm = new Form
+            {
+                Width = 300,
+                Height = 100,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                StartPosition = FormStartPosition.CenterScreen,
+                BackColor = Color.White,
+                ControlBox = false // Remove close button
+            };
+
+            // Create a label for "Exiting..."
+            Label label = new Label
+            {
+                Text = "Exiting, please wait...",
+                Dock = DockStyle.Top,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Times New Roman", 11, FontStyle.Regular)
+            };
+
+            // Create a ProgressBar control
+            ProgressBar progressBar = new ProgressBar
+            {
+                Dock = DockStyle.Bottom,
+                Style = ProgressBarStyle.Marquee, // Indeterminate progress
+                MarqueeAnimationSpeed = 50
+            };
+
+            // Add label and progress bar to the form
+            progressForm.Controls.Add(label);
+            progressForm.Controls.Add(progressBar);
+
+            // Show the progress form
+            progressForm.Show();
+
+            // Use a Timer to delay exit
+            Timer timer = new Timer
+            {
+                Interval = 500 // 3 seconds delay
+            };
+
+            timer.Tick += (s, args) =>
+            {
+                timer.Stop();
+                progressForm.Close(); // Close the progress bar
+                Application.Exit(); // Exit the application
+            };
+
+            timer.Start();
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
 
         }
 

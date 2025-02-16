@@ -101,9 +101,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Location = new System.Drawing.Point(1064, 83);
+            this.panel2.Location = new System.Drawing.Point(1064, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 571);
+            this.panel2.Size = new System.Drawing.Size(254, 568);
             this.panel2.TabIndex = 1;
             // 
             // btnExit
@@ -427,6 +427,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.buildingDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.buildingDataGrid.Size = new System.Drawing.Size(990, 426);
             this.buildingDataGrid.TabIndex = 23;
+            this.buildingDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.buildingDataGrid_CellContentClick);
             // 
             // label6
             // 
@@ -442,7 +443,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // 
             this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(170, 23);
+            this.textBox5.Location = new System.Drawing.Point(177, 23);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(528, 34);
             this.textBox5.TabIndex = 19;

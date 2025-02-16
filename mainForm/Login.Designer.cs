@@ -46,7 +46,7 @@ namespace RealStateManagementSystem.mainForm
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(136, 634);
+            this.label5.Location = new System.Drawing.Point(155, 634);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 22);
             this.label5.TabIndex = 12;
@@ -91,7 +91,7 @@ namespace RealStateManagementSystem.mainForm
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(65, 375);
             this.button1.Name = "button1";
@@ -112,6 +112,8 @@ namespace RealStateManagementSystem.mainForm
             this.label4.TabIndex = 10;
             this.label4.Text = "Reset Password ?";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
+            this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
             // 
             // Label6
             // 
@@ -119,7 +121,7 @@ namespace RealStateManagementSystem.mainForm
             this.Label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Label6.Image = ((System.Drawing.Image)(resources.GetObject("Label6.Image")));
-            this.Label6.Location = new System.Drawing.Point(43, 547);
+            this.Label6.Location = new System.Drawing.Point(62, 547);
             this.Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(269, 101);

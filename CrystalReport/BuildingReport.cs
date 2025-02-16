@@ -16,14 +16,14 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class BookingReport1 : ReportClass {
+    public class BuildingReport : ReportClass {
         
-        public BookingReport1() {
+        public BuildingReport() {
         }
         
         public override string ResourceName {
             get {
-                return "BookingReport1.rpt";
+                return "BuildingReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
         
         public override string FullResourceName {
             get {
-                return "RealEstateManagemaentSystem2024.CrystalReport.BookingReport1.rpt";
+                return "RealEstateManagemaentSystem2024.CrystalReport.BuildingReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBookingReport1 : Component, ICachedReport {
+    public class CachedBuildingReport : Component, ICachedReport {
         
-        public CachedBookingReport1() {
+        public CachedBuildingReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            BookingReport1 rpt = new BookingReport1();
+            BuildingReport rpt = new BuildingReport();
             rpt.Site = this.Site;
             return rpt;
         }

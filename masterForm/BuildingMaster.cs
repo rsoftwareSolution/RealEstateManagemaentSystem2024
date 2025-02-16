@@ -225,5 +225,10 @@ namespace RealEstateManagemaentSystem2024.MasterForm
                 tbBuildingId.Text = string.Empty;  // Reset textbox on error
             }
         }
+
+        private void buildingDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
