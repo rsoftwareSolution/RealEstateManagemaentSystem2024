@@ -194,7 +194,7 @@ drop table parking_details;
 create table saleinvoice_details (
 sale_id int auto_increment,
 sale_date date,
-quatation_number varchar(20),
+booking_number varchar(20),
 already_booked varchar(50),
 cust_contact varchar(15),
 cust_name varchar(15),
@@ -210,9 +210,12 @@ sub_total Double,
 total_amount Double,
 booking_amount Double,
 round_off Double,
+flat_price double,
 grand_total Double,
 primary key(sale_id));
 
 select * from saleinvoice_details;
+drop table saleinvoice_details; 
+
 
 

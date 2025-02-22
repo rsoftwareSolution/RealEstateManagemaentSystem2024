@@ -1,9 +1,9 @@
-﻿using System;
-using MySql.Data.MySqlClient;
-using System.Data;
-using System.Windows.Forms;
-using System.Drawing;
+﻿using MySql.Data.MySqlClient;
 using RealEstateManagemaentSystem2024.Helper;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace RealStateManagementSystem.masterForm
 {
@@ -24,6 +24,7 @@ namespace RealStateManagementSystem.masterForm
 
         private void CancellationMaster_Load(object sender, EventArgs e)
         {
+            ClearForm();
             cancelationDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 11, FontStyle.Regular);
 
         }
@@ -71,17 +72,33 @@ namespace RealStateManagementSystem.masterForm
             tbTotalAmount.Clear();
             tbTotalPaid.Clear();
             tbRefund.Clear();
+
+            tbBookingCustContact.Select();
         }
 
         private string GenerateCancelId()
         {
             try
             {
-                string query = "SELECT MAX(cancel_id) FROM cancellation_details";
-                object result = db.ExecuteScalar(query);
+                string query = @"SELECT cancel_id FROM cancellation_details WHERE cancel_id LIKE 'CANCEL%' 
+                         ORDER BY CONVERT(SUBSTRING(cancel_id, 7, CHAR_LENGTH(cancel_id) - 6), UNSIGNED) 
+                         DESC LIMIT 1";
 
-                int maxId = result != DBNull.Value ? Convert.ToInt32(result) : 0;
-                return $"CANCEL{(maxId + 1).ToString().PadLeft(4, '0')}";
+                object maxIdObj = db.ExecuteScalar(query);
+
+                int nextId = 1; // Default if no record exists
+
+                if (maxIdObj != null && maxIdObj != DBNull.Value)
+                {
+                    string lastId = maxIdObj.ToString();  // Example: "CANCEL0021"
+
+                    if (lastId.StartsWith("CAN") && int.TryParse(lastId.Substring(6), out int numericPart))
+                    {
+                        nextId = numericPart + 1; // Increment ID
+                    }
+                }
+
+                return $"CANCEL{nextId:D4}"; // Format ID as CANCEL0001, CANCEL0002, ...
             }
             catch (Exception ex)
             {
@@ -89,6 +106,7 @@ namespace RealStateManagementSystem.masterForm
                 return null;
             }
         }
+
 
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -306,9 +324,48 @@ namespace RealStateManagementSystem.masterForm
             this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void tbBookingCustContact_TextChanged(object sender, EventArgs e)
         {
-
+            if (tbBookingCustContact.Text.Length == 10) // Check for full 10-digit number
+            {
+                AutoFillBookingDetails(tbBookingCustContact.Text);
+            }
         }
+
+        private void AutoFillBookingDetails(string contactNumber)
+        {
+            try
+            {
+                string query = "SELECT grand_total, paid_amount FROM booking_details WHERE cust_contact = @contact";
+                DataTable dt = db.ExecuteQuery(query, new MySqlParameter("@contact", contactNumber));
+
+                if (dt.Rows.Count > 0) // Ensure there's at least one row in the result
+                {
+                    // Safe conversion of database values
+                    double totalAmount = Convert.ToDouble(dt.Rows[0]["grand_total"] ?? 0);
+                    double paidAmount = Convert.ToDouble(dt.Rows[0]["paid_amount"] ?? 0);
+
+                    // Set values in textboxes
+                    tbTotalAmount.Text = totalAmount.ToString("0.00");
+                    tbTotalPaid.Text = paidAmount.ToString("0.00");
+
+                    // Calculate Refund Amount: Total Amount - Paid Amount
+                    double refundAmount = totalAmount - paidAmount;
+                    tbRefund.Text = refundAmount.ToString("0.00");
+                }
+                else
+                {
+                    // Default values when no booking details are found
+                    tbTotalAmount.Text = "0.00";
+                    tbTotalPaid.Text = "0.00";
+                    tbRefund.Text = "0.00";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching booking details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

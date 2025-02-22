@@ -390,14 +390,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealEstateManagemaentSystem2024.exe" size="621056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealEstateManagemaentSystem2024.exe" size="671232">
       <assemblyIdentity name="RealEstateManagemaentSystem2024" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JTcK2lVHMqSecowTyJjqbVQmn/DCIEuZOUNvizWY1YM=</dsig:DigestValue>
+        <dsig:DigestValue>zvXswrKuK7xxTUSU0vhYApTWRMQ9vSEbu71EKPVX9sw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -551,13 +551,13 @@
       <dsig:DigestValue>V/PAasxokDfWUiVO4mumgXvoBD6g9pG367cqsN1j7jE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RealEstateManagemaentSystem2024.exe.config" size="1057">
+  <file name="RealEstateManagemaentSystem2024.exe.config" size="1325">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>yUSEbXbZUqjkR3O8iHVSTKLgUXrfTQ9K30X/dplI3GE=</dsig:DigestValue>
+      <dsig:DigestValue>9crMCrRoja+PFcLu0eac3Rh8qTWfMbDEXAt1Cis8vkc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="runtimes\win-arm64\native\WebView2Loader.dll" size="139856">

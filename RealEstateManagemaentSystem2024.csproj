@@ -180,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\AutoIdGenerator.cs" />
+    <Compile Include="CrystalReportcust.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportcust.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport\BookingReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,11 +234,22 @@
       <DependentUpon>QuatationReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport\SaleInvoiceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleInvoiceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport\UserReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetcust.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetcust.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSource\Database.cs" />
     <Compile Include="Helper\BookingSelectionPopup.cs">
@@ -315,10 +332,10 @@
     <Compile Include="MasterForm\FlatMaster.Designer.cs">
       <DependentUpon>FlatMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterForm\SaleInvoice.cs">
+    <Compile Include="Registers\SaleInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterForm\SaleInvoice.Designer.cs">
+    <Compile Include="Registers\SaleInvoice.Designer.cs">
       <DependentUpon>SaleInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="MasterForm\UserMaster.cs">
@@ -347,6 +364,10 @@
     <Compile Include="Statements\AccountStatements.Designer.cs">
       <DependentUpon>AccountStatements.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CrystalReportcust.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportcust.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport\BookingReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BookingReport.cs</LastGenOutput>
@@ -378,6 +399,10 @@
     <EmbeddedResource Include="CrystalReport\QuatationReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuatationReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\SaleInvoiceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleInvoiceReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport\UserReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -419,7 +444,7 @@
     <EmbeddedResource Include="MasterForm\ParkingMaster.resx">
       <DependentUpon>ParkingMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterForm\SaleInvoice.resx">
+    <EmbeddedResource Include="Registers\SaleInvoice.resx">
       <DependentUpon>SaleInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\UserMaster.resx">
@@ -440,6 +465,17 @@
     <EmbeddedResource Include="Settings\ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetcust.xsc">
+      <DependentUpon>DataSetcust.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetcust.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetcust.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetcust.xss">
+      <DependentUpon>DataSetcust.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

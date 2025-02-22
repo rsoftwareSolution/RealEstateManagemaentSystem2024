@@ -134,6 +134,7 @@ namespace RealEstateManagemaentSystem2024.Registers
                     {
                         tbCustContact.Text = string.Empty; // Clear contact number
                         tbCustContact.Focus(); // Refocus the textbox for user to enter a valid number
+                        LoadCustomerContacts();
                     }
                 }
             }
@@ -174,7 +175,45 @@ namespace RealEstateManagemaentSystem2024.Registers
 
         private void BookingRegister_Load(object sender, EventArgs e)
         {
+            // Attach events
+            tbDownPayment.Enter += TextBox_Enter;
+            tbDownPayment.Leave += TextBox_Leave;
+
+            tbCustNameSearch.Enter += TextBox_Enter;
+            tbCustNameSearch.Leave += TextBox_Leave;
+
+            tbParkingCharges.Enter += TextBox_Enter;
+            tbParkingCharges.Leave += TextBox_Leave;
+
+            tbIGST.Enter += TextBox_Enter;
+            tbIGST.Leave += TextBox_Leave;
+
+            tbCGST.Enter += TextBox_Enter;
+            tbCGST.Leave += TextBox_Leave;
+
+            tbSGST.Enter += TextBox_Enter;
+            tbSGST.Leave += TextBox_Leave;
+
+            tbSubTotal.Enter += TextBox_Enter;
+            tbSubTotal.Leave += TextBox_Leave;
+
+            tbTotalAmount.Enter += TextBox_Enter;
+            tbTotalAmount.Leave += TextBox_Leave;
+
+            tbPaidAmount.Enter += TextBox_Enter;
+            tbPaidAmount.Leave += TextBox_Leave;
+
+            tbRemainingAmount.Enter += TextBox_Enter;
+            tbRemainingAmount.Leave += TextBox_Leave;
+
+            tbRoundOff.Enter += TextBox_Enter;
+            tbRoundOff.Leave += TextBox_Leave;
+
+            tbGrandTotal.Enter += TextBox_Enter;
+            tbGrandTotal.Leave += TextBox_Leave;
+
             ClearBookingForm();
+            LoadAvailableVehicles();
             GenerateNewBookingId();
             LoadQuotationChart();
             LoadProjectNames();
@@ -230,6 +269,43 @@ namespace RealEstateManagemaentSystem2024.Registers
 
             // Ensure column headers are displayed properly
             bookingDataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                if (textBox.Text == "0.00" || textBox.Text == "Search here")
+                {
+                    textBox.Text = "";
+                }
+            }
+        }
+
+        private void TextBox_Leave(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    if (textBox == tbDownPayment || textBox == tbParkingCharges ||
+                        textBox == tbIGST || textBox == tbCGST || textBox == tbSGST ||
+                        textBox == tbSubTotal || textBox == tbTotalAmount ||
+                        textBox == tbPaidAmount || textBox == tbRemainingAmount ||
+                        textBox == tbRoundOff || textBox == tbGrandTotal)
+                    {
+                        textBox.Text = "0.00"; // Default numeric fields to "0.00"
+                    }
+                    else if (textBox == tbCustNameSearch) textBox.Text = "Search here"; // Search box placeholder
+                }
+                // If customer contact is empty, clear the customer name as well
+                if (textBox == tbCustContact && string.IsNullOrWhiteSpace(tbCustContact.Text))
+                {
+                    tbCustName.Text = ""; // Clear customer name if contact is empty
+                }
+            }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -313,6 +389,25 @@ namespace RealEstateManagemaentSystem2024.Registers
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading project names: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadAvailableVehicles()
+        {
+            try
+            {
+                string query = "SELECT vehicle_name FROM parking_details WHERE available_parking > 0";
+                DataTable dt = db.ExecuteQuery(query);
+
+                cbVehicle.Items.Clear(); // Clear existing items
+                foreach (DataRow row in dt.Rows)
+                {
+                    cbVehicle.Items.Add(row["vehicle_name"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading vehicle names: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -485,54 +580,148 @@ namespace RealEstateManagemaentSystem2024.Registers
 
         private void ClearBookingForm()
         {
-            tbBookingId.Clear();
-            dtpBookingDate.Value = DateTime.Now; // Reset date picker to current date
-            cbPaymentType.SelectedIndex = -1; // Clear Payment Type dropdown
-            tbQuotationNumber.Clear();
-            tbDownPayment.Clear();
-            tbCustContact.Clear();
-            tbCustName.Clear();
-            cbProjectName.SelectedIndex = -1;
-            cmbProduct.SelectedIndex = -1;
-            cbVehicle.SelectedIndex = -1;
-            tbParkingCharges.Clear();
-            tbIGST.Clear();
-            tbCGST.Clear();
-            tbSGST.Clear();
-            tbSubTotal.Clear();
-            tbTotalAmount.Clear();
-            tbPaidAmount.Clear();
-            tbRemainingAmount.Clear();
-            tbRoundOff.Clear();
-            tbGrandTotal.Clear();
+            dtpBookingDate.Value = DateTime.Now;
+            cbPaymentType.SelectedIndex = -1; // Reset selection
+            tbQuotationNumber.Text = "N/A";
+            tbDownPayment.Text = "0.00";
+            cbProjectName.SelectedIndex = -1; // Reset selection
+            cmbProduct.SelectedIndex = -1; // Reset selection
+            cbVehicle.SelectedIndex = -1; // Reset selection
+            tbParkingCharges.Text = "0.00";
+            tbIGST.Text = "0.00";
+            tbCGST.Text = "0.00";
+            tbSGST.Text = "0.00";
+            tbSubTotal.Text = "0.00";
+            tbTotalAmount.Text = "0.00";
+            tbPaidAmount.Text = "0.00";
+            tbRemainingAmount.Text = "0.00";
+            tbRoundOff.Text = "0.00";
+            tbGrandTotal.Text = "0.00";
+
             cbA4.Checked = true;
 
             cbPaymentType.Select();
-        }
-
-        private void tbDownPayment_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbGrandTotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void tbCustNameSearch_TextChanged(object sender, EventArgs e)
         {
             SearchByCustomerName(tbCustNameSearch.Text);
         }
+
+        private void AutoCalculateBookingAmounts()
+        {
+            try
+            {
+                // Always IGST and CGST are 0
+                tbIGST.Text = "0.00";
+                tbCGST.Text = "0.00";
+
+                // Get Parking Charges (ensure it's a valid number)
+                double parkingCharges = string.IsNullOrWhiteSpace(tbParkingCharges.Text) ? 0.00 : Convert.ToDouble(tbParkingCharges.Text);
+
+                // Fetch Flat Rate based on selected Flat Type
+                double flatRate = GetFlatRate(cmbProduct.SelectedValue?.ToString());
+
+                // Only show the error if the user has selected something
+                if (cmbProduct.SelectedValue != null && flatRate == 0)
+                {
+                    MessageBox.Show("Flat rate not found. Please select a valid flat type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Calculate SGST (18% of Flat Rate)
+                double sgst = flatRate * 0.18;
+                tbSGST.Text = sgst.ToString("0.00");
+
+                // Calculate Sub Total
+                double subTotal = parkingCharges + sgst + flatRate;
+                tbSubTotal.Text = subTotal.ToString("0.00");
+
+                // Total Amount
+                double totalAmount = subTotal;
+                tbTotalAmount.Text = totalAmount.ToString("0.00");
+
+                // Paid Amount = Down Payment
+                double paidAmount = string.IsNullOrWhiteSpace(tbDownPayment.Text) ? 0.00 : Convert.ToDouble(tbDownPayment.Text);
+                tbPaidAmount.Text = paidAmount.ToString("0.00");
+
+                // Validate Down Payment
+                if (paidAmount > totalAmount)
+                {
+                    MessageBox.Show("Down Payment is not valid. Please re-enter Paid Amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbDownPayment.Text = "0.00"; // Reset Down Payment
+                    tbPaidAmount.Text = "0.00";
+                    return;
+                }
+
+                // Remaining Amount
+                double remainingAmount = totalAmount - paidAmount;
+                tbRemainingAmount.Text = remainingAmount.ToString("0.00");
+
+                // Round Off Remaining Amount
+                double roundOff = Math.Round(remainingAmount, 0); // Round to nearest integer
+                tbRoundOff.Text = roundOff.ToString("0.00");
+
+                // Grand Total
+                tbGrandTotal.Text = roundOff.ToString("0.00");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in Auto Calculation: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Fetch Flat Rate from Database
+        private double GetFlatRate(string flatTypeId)
+        {
+            if (string.IsNullOrEmpty(flatTypeId)) return 0.00; // Return 0 if no flat type is selected
+
+            double flatRate = 0.00;
+            string query = $"SELECT rate FROM flat_details WHERE flat_type_id = '{flatTypeId}' LIMIT 1;";
+            DataTable dt = db.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                flatRate = Convert.ToDouble(dt.Rows[0]["rate"]);
+            }
+
+            return flatRate;
+        }
+
+        // Validate Down Payment
+        private void ValidateDownPayment()
+        {
+            if (!double.TryParse(tbDownPayment.Text, out double paidAmount))
+            {
+                MessageBox.Show("Invalid input. Please enter a valid amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbDownPayment.Text = "0.00";
+                tbPaidAmount.Text = "0.00";
+                tbDownPayment.Focus();
+                return;
+            }
+
+            double totalAmount = string.IsNullOrWhiteSpace(tbTotalAmount.Text) ? 0.00 : Convert.ToDouble(tbTotalAmount.Text);
+
+            if (paidAmount > totalAmount)
+            {
+                MessageBox.Show("Down Payment is not valid. Please re-enter Paid Amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbDownPayment.Text = "0.00";
+                tbPaidAmount.Text = "0.00";
+                tbDownPayment.Focus();
+            }
+            else
+            {
+                tbPaidAmount.Text = paidAmount.ToString("0.00");
+                AutoCalculateBookingAmounts(); // Recalculate amounts
+            }
+        }
+
+        // Event Handlers (Trigger Calculation When Values Change)
+        private void tbParkingCharges_TextChanged(object sender, EventArgs e) => AutoCalculateBookingAmounts();
+        private void cmbProduct_SelectedIndexChanged_1(object sender, EventArgs e) => AutoCalculateBookingAmounts();
+
+        // 🛠️ Validate Down Payment only when user leaves
+        private void tbDownPayment_Leave(object sender, EventArgs e) => ValidateDownPayment();
+
     }
 }

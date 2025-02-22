@@ -594,5 +594,15 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         {
 
         }
+
+        private void quotationPieChart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -90,7 +90,6 @@ namespace RealStateManagementSystem.masterForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1318, 102);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -191,6 +190,7 @@ namespace RealStateManagementSystem.masterForm
             this.tbBookingCustContact.Name = "tbBookingCustContact";
             this.tbBookingCustContact.Size = new System.Drawing.Size(424, 30);
             this.tbBookingCustContact.TabIndex = 2;
+            this.tbBookingCustContact.TextChanged += new System.EventHandler(this.tbBookingCustContact_TextChanged);
             this.tbBookingCustContact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbBookingCustContact_KeyDown);
             // 
             // tbCancelId

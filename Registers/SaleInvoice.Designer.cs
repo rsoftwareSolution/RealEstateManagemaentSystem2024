@@ -32,6 +32,8 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel5 = new System.Windows.Forms.Panel();
             this.Label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbFlatPrice = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.cbFlatType = new System.Windows.Forms.ComboBox();
             this.cbProjectName = new System.Windows.Forms.ComboBox();
             this.tbFlatNo = new System.Windows.Forms.TextBox();
@@ -84,8 +86,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbCustContact = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbAlreadyBooked = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tbFlatPrice = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbParkingAllotment.SuspendLayout();
@@ -98,7 +98,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.SlateGray;
+            this.panel5.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.Label1);
             this.panel5.Location = new System.Drawing.Point(1, 0);
@@ -150,6 +150,32 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel2.Size = new System.Drawing.Size(1340, 334);
             this.panel2.TabIndex = 9;
             this.panel2.TabStop = true;
+            // 
+            // tbFlatPrice
+            // 
+            this.tbFlatPrice.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tbFlatPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFlatPrice.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFlatPrice.ForeColor = System.Drawing.Color.DarkGray;
+            this.tbFlatPrice.Location = new System.Drawing.Point(1132, 27);
+            this.tbFlatPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.tbFlatPrice.Name = "tbFlatPrice";
+            this.tbFlatPrice.ReadOnly = true;
+            this.tbFlatPrice.Size = new System.Drawing.Size(156, 27);
+            this.tbFlatPrice.TabIndex = 211;
+            this.tbFlatPrice.TabStop = false;
+            this.tbFlatPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(1029, 33);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 19);
+            this.label11.TabIndex = 210;
+            this.label11.Text = "Flat Price :";
             // 
             // cbFlatType
             // 
@@ -421,7 +447,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel3.BackColor = System.Drawing.Color.Thistle;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.pictureBox2);
@@ -486,7 +512,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Exit.TabStop = false;
             this.btn_Exit.Text = " EXIT";
             this.btn_Exit.UseVisualStyleBackColor = false;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_Delete
             // 
@@ -504,7 +529,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "DELETE";
             this.btn_Delete.UseVisualStyleBackColor = false;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Save
             // 
@@ -521,7 +545,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Save.TabIndex = 16;
             this.btn_Save.Text = "SAVE";
             this.btn_Save.UseVisualStyleBackColor = false;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Update
             // 
@@ -539,7 +562,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Update.TabStop = false;
             this.btn_Update.Text = "UPDATE";
             this.btn_Update.UseVisualStyleBackColor = false;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // tbGrandTotal
             // 
@@ -795,11 +817,10 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbCustContact.Size = new System.Drawing.Size(373, 27);
             this.tbCustContact.TabIndex = 3;
             this.tbCustContact.TabStop = false;
-            this.tbCustContact.TextChanged += new System.EventHandler(this.tbCustContact_TextChanged);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel1.BackColor = System.Drawing.Color.Thistle;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cbAlreadyBooked);
             this.panel1.Controls.Add(this.tbCustContact);
@@ -835,32 +856,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.cbAlreadyBooked.TabIndex = 2;
             this.cbAlreadyBooked.Text = "None";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(1029, 33);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 19);
-            this.label11.TabIndex = 210;
-            this.label11.Text = "Flat Price :";
-            // 
-            // tbFlatPrice
-            // 
-            this.tbFlatPrice.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbFlatPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFlatPrice.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFlatPrice.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbFlatPrice.Location = new System.Drawing.Point(1132, 27);
-            this.tbFlatPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.tbFlatPrice.Name = "tbFlatPrice";
-            this.tbFlatPrice.ReadOnly = true;
-            this.tbFlatPrice.Size = new System.Drawing.Size(156, 27);
-            this.tbFlatPrice.TabIndex = 211;
-            this.tbFlatPrice.TabStop = false;
-            this.tbFlatPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // SaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -874,7 +869,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.Name = "SaleInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SaleInvoice";
-            this.Load += new System.EventHandler(this.SaleInvoice_Load);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

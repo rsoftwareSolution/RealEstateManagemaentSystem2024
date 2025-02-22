@@ -30,9 +30,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuatationMaster));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -260,35 +260,37 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.quotationPieChart);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(797, 17);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(530, 446);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Available flat and count";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // quotationPieChart
             // 
             this.quotationPieChart.BorderlineColor = System.Drawing.Color.LavenderBlush;
-            chartArea1.Name = "ChartArea1";
-            this.quotationPieChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.quotationPieChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.quotationPieChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.quotationPieChart.Legends.Add(legend3);
             this.quotationPieChart.Location = new System.Drawing.Point(22, 38);
             this.quotationPieChart.Name = "quotationPieChart";
             this.quotationPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "Quatation";
-            series1.YValuesPerPoint = 2;
-            this.quotationPieChart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Legend = "Legend1";
+            series3.Name = "Quatation";
+            series3.YValuesPerPoint = 2;
+            this.quotationPieChart.Series.Add(series3);
             this.quotationPieChart.Size = new System.Drawing.Size(494, 390);
             this.quotationPieChart.SuppressExceptions = true;
             this.quotationPieChart.TabIndex = 11;
             this.quotationPieChart.TabStop = false;
             this.quotationPieChart.Text = "chart1";
+            this.quotationPieChart.Click += new System.EventHandler(this.quotationPieChart_Click);
             // 
             // groupBox5
             // 
@@ -465,7 +467,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tbPricePerSqFt.Name = "tbPricePerSqFt";
             this.tbPricePerSqFt.Size = new System.Drawing.Size(216, 27);
             this.tbPricePerSqFt.TabIndex = 8;
-            this.tbPricePerSqFt.Text = "Price Per Sq.ft";
+            this.tbPricePerSqFt.Text = "Price";
             // 
             // groupBox2
             // 
