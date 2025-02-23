@@ -30,9 +30,9 @@ namespace RealEstateManagemaentSystem2024.Registers
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInvoice));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tbTotalAmount = new System.Windows.Forms.TextBox();
             this.cbFlatType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -94,6 +94,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbSGST = new System.Windows.Forms.TextBox();
             this.tbGSTGroup = new System.Windows.Forms.TextBox();
             this.Label17 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -456,6 +457,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbCustContact.Name = "tbCustContact";
             this.tbCustContact.Size = new System.Drawing.Size(373, 27);
             this.tbCustContact.TabIndex = 3;
+            this.tbCustContact.TextChanged += new System.EventHandler(this.tbCustContact_TextChanged);
             // 
             // dtpSaleDate
             // 
@@ -595,7 +597,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(138, 76);
+            this.label3.Location = new System.Drawing.Point(135, 75);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 19);
@@ -642,19 +644,19 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.salePieChart.BorderlineColor = System.Drawing.Color.Black;
             this.salePieChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.Name = "ChartArea1";
-            this.salePieChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.salePieChart.Legends.Add(legend4);
+            chartArea7.Name = "ChartArea1";
+            this.salePieChart.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.salePieChart.Legends.Add(legend7);
             this.salePieChart.Location = new System.Drawing.Point(707, 14);
             this.salePieChart.Name = "salePieChart";
             this.salePieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.YValuesPerPoint = 2;
-            this.salePieChart.Series.Add(series4);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            series7.YValuesPerPoint = 2;
+            this.salePieChart.Series.Add(series7);
             this.salePieChart.Size = new System.Drawing.Size(621, 253);
             this.salePieChart.TabIndex = 0;
             this.salePieChart.Text = "Booked Flat Data";
@@ -663,6 +665,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.cbProjectName);
@@ -706,7 +709,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(1132, 417);
+            this.label1.Location = new System.Drawing.Point(1099, 420);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 19);
@@ -739,6 +742,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbCustNameSearch.TabStop = false;
             this.tbCustNameSearch.Text = "Search here";
             this.tbCustNameSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCustNameSearch.TextChanged += new System.EventHandler(this.tbCustNameSearch_TextChanged);
             // 
             // gbParkingAllotment
             // 
@@ -936,6 +940,17 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.Label17.TabIndex = 190;
             this.Label17.Text = "Total Amount";
             // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(1096, 238);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(189, 19);
+            this.label13.TabIndex = 208;
+            this.label13.Text = "Presents Booked Flats";
+            // 
             // SaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1029,5 +1044,6 @@ namespace RealEstateManagemaentSystem2024.Registers
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
     }
 }

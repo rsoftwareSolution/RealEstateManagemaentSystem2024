@@ -142,8 +142,40 @@ namespace RealEstateManagemaentSystem2024.Registers
             }
         }
 
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                if (textBox.Text == "0.00" || textBox.Text == "Search here")
+                {
+                    textBox.Text = "";
+                }
+            }
+        }
+
+        private void TextBox_Leave(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    if (textBox == tbCustNameSearch) textBox.Text = "Search here"; // Search box placeholder
+                }
+                // If customer contact is empty, clear the customer name as well
+                if (textBox == tbCustContact && string.IsNullOrWhiteSpace(tbCustContact.Text))
+                {
+                    tbCustName.Text = ""; // Clear customer name if contact is empty
+                }
+            }
+        }
+
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
+            tbCustNameSearch.Enter += TextBox_Enter;
+            tbCustNameSearch.Leave += TextBox_Leave;
+
             ClearSaleForm();
             LoadAvailableVehicles();
             GenerateNewSaleId();
@@ -310,11 +342,23 @@ namespace RealEstateManagemaentSystem2024.Registers
                 // Execute the query with a parameter
                 DataTable dataTable = db.ExecuteQuery(query, new MySqlParameter[]
                 {
-                new MySqlParameter("@custName", MySqlDbType.VarChar) { Value = $"%{custName}%" } // Supports partial search
+            new MySqlParameter("@custName", MySqlDbType.VarChar) { Value = $"%{custName}%" } // Supports partial search
                 });
 
-                // Bind only the data to the pre-defined columns
-                PopulateDataGridView(dataTable);
+                if (dataTable.Rows.Count > 0)
+                {
+                    // Bind the new data
+                    dgvSaleDetails.DataSource = dataTable;
+                }
+                else
+                {
+                    // Instead of setting DataSource to null, create an empty DataTable with same structure
+                    DataTable emptyTable = ((DataTable)dgvSaleDetails.DataSource)?.Clone();
+                    if (emptyTable != null)
+                    {
+                        dgvSaleDetails.DataSource = emptyTable; // Assign empty DataTable to prevent errors
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -345,19 +389,28 @@ namespace RealEstateManagemaentSystem2024.Registers
 
         private void LoadBookingId(string customerContact)
         {
-            // Query to fetch booking ID based on customer contact
-            string query = $"SELECT booking_id FROM booking_details WHERE customer_contact = '{customerContact}' LIMIT 1;";
-
+            string query = $"SELECT * FROM booking_details WHERE cust_contact = '{customerContact}' LIMIT 1;";
             DataTable dt = db.ExecuteQuery(query);
 
             if (dt.Rows.Count > 0)
             {
-                // If a booking ID is found, fill it in the textbox
-                tbBookingNumber.Text = dt.Rows[0]["booking_id"].ToString();
+                DataRow row = dt.Rows[0];
+                tbBookingNumber.Text = row["booking_id"].ToString();
+                tbCustName.Text = row["cust_name"].ToString();
+                tbCustContact.Text = row["cust_contact"].ToString();
+                cbProjectName.Text = row["building_or_project_name"].ToString();
+                cbFlatType.Text = row["flat_type"].ToString();
+                tbFlatRate.Text = row["flat_rate"].ToString();
+                tbParkingCharges.Text = row["parking_charges"].ToString();
+                tbTotalAmount.Text = row["total_amount"].ToString();
+                tbDownPayment.Text = row["paid_amount"].ToString();
+                tbBookingAmount.Text = row["paid_amount"].ToString();
+                tbGSTGroup.Text = row["gst_group"].ToString();
+                tbSGST.Text = row["sgst"].ToString();
+                tbSubTotal.Text = row["sub_total"].ToString();
             }
             else
             {
-                // If no booking ID is found, set it to "N/A"
                 tbBookingNumber.Text = "N/A";
             }
         }
@@ -490,6 +543,7 @@ namespace RealEstateManagemaentSystem2024.Registers
                 new MySqlParameter("@grandTotal", grandTotal));
 
             MessageBox.Show("Sale invoice saved successfully.");
+            ClearSaleForm();
         }
 
         private void tbBookingAmount_Leave(object sender, EventArgs e)
@@ -510,7 +564,7 @@ namespace RealEstateManagemaentSystem2024.Registers
                     tbBookingAmount.Text = finalPaidAmount.ToString("0.00");
 
                     // 🔹 FIX: Remaining Amount should consider Total Amount - (Paid + Down Payment)
-                    double remainingAmount = totalAmount - (finalPaidAmount + downPayment);
+                    double remainingAmount = totalAmount - (finalPaidAmount);
                     tbRemainingAmount.Text = remainingAmount.ToString("0.00");
 
                     // Calculate Grand Total (Remaining Amount + Paid Amount)
@@ -529,6 +583,27 @@ namespace RealEstateManagemaentSystem2024.Registers
                 {
                     isUpdating = false; // Reset flag
                 }
+        }
+
+        private void tbCustContact_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCustContact.Text.Length == 10) // Check for full 10-digit number
+            {
+                AutoFillCustomerName(tbCustContact.Text);
+                LoadBookingId(tbCustContact.Text);
+            }
+        }
+
+        private void tbCustNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbCustNameSearch.Text))
+            {
+                ClearSaleForm();  // Clear form if search box is empty
+            }
+            else
+            {
+                SearchByCustomerName(tbCustNameSearch.Text);
+            }
         }
     }
 }
