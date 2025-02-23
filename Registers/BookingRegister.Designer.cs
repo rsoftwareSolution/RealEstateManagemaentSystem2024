@@ -29,9 +29,9 @@ namespace RealEstateManagemaentSystem2024.Registers
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingRegister));
             this.gbParkingAllotment = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -183,7 +183,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.SlateGray;
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.Label1);
             this.panel5.Location = new System.Drawing.Point(2, -1);
@@ -196,8 +196,8 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.Label1.BackColor = System.Drawing.Color.Transparent;
             this.Label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(554, -1);
+            this.Label1.ForeColor = System.Drawing.Color.White;
+            this.Label1.Location = new System.Drawing.Point(564, 4);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(309, 43);
@@ -244,6 +244,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.cbProjectName.Margin = new System.Windows.Forms.Padding(4);
             this.cbProjectName.Name = "cbProjectName";
             this.cbProjectName.Size = new System.Drawing.Size(251, 27);
+            this.cbProjectName.Sorted = true;
             this.cbProjectName.TabIndex = 4;
             this.cbProjectName.Text = "None";
             // 
@@ -262,19 +263,19 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.bookingPieChart.BorderlineColor = System.Drawing.Color.Black;
             this.bookingPieChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea3.Name = "ChartArea1";
-            this.bookingPieChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.bookingPieChart.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.bookingPieChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.bookingPieChart.Legends.Add(legend2);
             this.bookingPieChart.Location = new System.Drawing.Point(707, 14);
             this.bookingPieChart.Name = "bookingPieChart";
             this.bookingPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 2;
-            this.bookingPieChart.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 2;
+            this.bookingPieChart.Series.Add(series2);
             this.bookingPieChart.Size = new System.Drawing.Size(609, 253);
             this.bookingPieChart.TabIndex = 0;
             this.bookingPieChart.Text = "chart1";
@@ -304,10 +305,11 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.bookingDataGrid.Name = "bookingDataGrid";
             this.bookingDataGrid.RowHeadersWidth = 4;
             this.bookingDataGrid.RowTemplate.Height = 24;
+            this.bookingDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bookingDataGrid.Size = new System.Drawing.Size(1298, 148);
             this.bookingDataGrid.TabIndex = 200;
             this.bookingDataGrid.TabStop = false;
-            this.bookingDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookingDataGrid_CellDoubleClick);
+            this.bookingDataGrid.SelectionChanged += new System.EventHandler(this.bookingDataGrid_SelectionChanged_1);
             // 
             // pictureBox4
             // 
@@ -687,6 +689,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbPaidAmount.Size = new System.Drawing.Size(145, 27);
             this.tbPaidAmount.TabIndex = 8;
             this.tbPaidAmount.TextChanged += new System.EventHandler(this.tbPaidAmount_TextChanged);
+            this.tbPaidAmount.Leave += new System.EventHandler(this.tbPaidAmount_Leave);
             // 
             // label20
             // 

@@ -88,7 +88,7 @@ primary key(cancel_id));
 
 -- Cancellation table details select query
 select * from cancellation_details;
-
+truncate table cancellation_details;
 drop table cancellation_details;
 
 
@@ -171,6 +171,8 @@ CREATE TABLE booking_details (
     grand_total DOUBLE );
 
 select * from booking_details;
+ALTER TABLE booking_details CHANGE COLUMN igst flat_rate DOUBLE;
+ALTER TABLE booking_details CHANGE COLUMN cgst gst_group varchar(10);
 
 
 create table flat_type_description (
@@ -192,10 +194,11 @@ drop table parking_details;
 
 
 create table saleinvoice_details (
-sale_id int auto_increment,
+sale_id varchar(50),
 sale_date date,
+payment_type varchar(50),
 booking_number varchar(20),
-already_booked varchar(50),
+down_payment varchar(50),
 cust_contact varchar(15),
 cust_name varchar(15),
 project_name varchar(125),
@@ -203,14 +206,13 @@ flat_type varchar(50),
 flat_number varchar(20),
 vehicle_name varchar(100),
 parking_charges Double,
-igst Double,
-cgst Double,
-sgst Double,
+flat_rate Double,
+gst_group Double,
+gst_amount Double,
 sub_total Double,
 total_amount Double,
 booking_amount Double,
 round_off Double,
-flat_price double,
 grand_total Double,
 primary key(sale_id));
 
