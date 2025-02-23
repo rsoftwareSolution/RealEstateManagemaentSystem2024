@@ -29,9 +29,9 @@ namespace RealEstateManagemaentSystem2024.Registers
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingRegister));
             this.gbParkingAllotment = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -140,8 +140,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbParkingCharges.Margin = new System.Windows.Forms.Padding(4);
             this.tbParkingCharges.Name = "tbParkingCharges";
             this.tbParkingCharges.Size = new System.Drawing.Size(219, 27);
-            this.tbParkingCharges.TabIndex = 0;
-            this.tbParkingCharges.TabStop = false;
+            this.tbParkingCharges.TabIndex = 7;
             this.tbParkingCharges.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbParkingCharges.TextChanged += new System.EventHandler(this.tbParkingCharges_TextChanged);
             // 
@@ -158,6 +157,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.cbVehicle.Sorted = true;
             this.cbVehicle.TabIndex = 6;
             this.cbVehicle.Text = "None";
+            this.cbVehicle.SelectedIndexChanged += new System.EventHandler(this.cbVehicle_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -233,7 +233,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1339, 434);
-            this.panel2.TabIndex = 7;
+            this.panel2.TabIndex = 1;
             this.panel2.TabStop = true;
             // 
             // cbProjectName
@@ -262,19 +262,19 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.bookingPieChart.BorderlineColor = System.Drawing.Color.Black;
             this.bookingPieChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.Name = "ChartArea1";
-            this.bookingPieChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.bookingPieChart.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.bookingPieChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.bookingPieChart.Legends.Add(legend3);
             this.bookingPieChart.Location = new System.Drawing.Point(707, 14);
             this.bookingPieChart.Name = "bookingPieChart";
             this.bookingPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 2;
-            this.bookingPieChart.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.YValuesPerPoint = 2;
+            this.bookingPieChart.Series.Add(series3);
             this.bookingPieChart.Size = new System.Drawing.Size(609, 253);
             this.bookingPieChart.TabIndex = 0;
             this.bookingPieChart.Text = "chart1";
@@ -307,6 +307,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.bookingDataGrid.Size = new System.Drawing.Size(1298, 148);
             this.bookingDataGrid.TabIndex = 200;
             this.bookingDataGrid.TabStop = false;
+            this.bookingDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookingDataGrid_CellDoubleClick);
             // 
             // pictureBox4
             // 
@@ -338,12 +339,12 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.Label41.BackColor = System.Drawing.SystemColors.Control;
             this.Label41.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label41.ForeColor = System.Drawing.Color.Black;
-            this.Label41.Location = new System.Drawing.Point(267, 144);
+            this.Label41.Location = new System.Drawing.Point(238, 144);
             this.Label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label41.Name = "Label41";
-            this.Label41.Size = new System.Drawing.Size(48, 19);
+            this.Label41.Size = new System.Drawing.Size(96, 19);
             this.Label41.TabIndex = 197;
-            this.Label41.Text = "SGST";
+            this.Label41.Text = "GST Amount";
             // 
             // Label40
             // 
@@ -351,12 +352,12 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.Label40.BackColor = System.Drawing.SystemColors.Control;
             this.Label40.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label40.ForeColor = System.Drawing.Color.Black;
-            this.Label40.Location = new System.Drawing.Point(158, 144);
+            this.Label40.Location = new System.Drawing.Point(126, 144);
             this.Label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label40.Name = "Label40";
-            this.Label40.Size = new System.Drawing.Size(50, 19);
+            this.Label40.Size = new System.Drawing.Size(86, 19);
             this.Label40.TabIndex = 195;
-            this.Label40.Text = "CGST";
+            this.Label40.Text = "GST Group";
             // 
             // Label39
             // 
@@ -364,12 +365,12 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.Label39.BackColor = System.Drawing.SystemColors.Control;
             this.Label39.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label39.ForeColor = System.Drawing.Color.Black;
-            this.Label39.Location = new System.Drawing.Point(50, 144);
+            this.Label39.Location = new System.Drawing.Point(35, 144);
             this.Label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label39.Name = "Label39";
-            this.Label39.Size = new System.Drawing.Size(44, 19);
+            this.Label39.Size = new System.Drawing.Size(70, 19);
             this.Label39.TabIndex = 193;
-            this.Label39.Text = "IGST";
+            this.Label39.Text = "Flat Rate";
             // 
             // tbSubTotal
             // 
@@ -389,13 +390,13 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.tbSGST.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbSGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbSGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSGST.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbSGST.Location = new System.Drawing.Point(238, 167);
+            this.tbSGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSGST.ForeColor = System.Drawing.Color.Black;
+            this.tbSGST.Location = new System.Drawing.Point(208, 167);
             this.tbSGST.Margin = new System.Windows.Forms.Padding(4);
             this.tbSGST.Name = "tbSGST";
             this.tbSGST.ReadOnly = true;
-            this.tbSGST.Size = new System.Drawing.Size(102, 27);
+            this.tbSGST.Size = new System.Drawing.Size(132, 27);
             this.tbSGST.TabIndex = 196;
             this.tbSGST.TabStop = false;
             this.tbSGST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -404,16 +405,17 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.tbCGST.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbCGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbCGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCGST.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbCGST.Location = new System.Drawing.Point(128, 167);
+            this.tbCGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCGST.ForeColor = System.Drawing.Color.Black;
+            this.tbCGST.Location = new System.Drawing.Point(130, 167);
             this.tbCGST.Margin = new System.Windows.Forms.Padding(4);
             this.tbCGST.Name = "tbCGST";
             this.tbCGST.ReadOnly = true;
-            this.tbCGST.Size = new System.Drawing.Size(102, 27);
+            this.tbCGST.Size = new System.Drawing.Size(69, 27);
             this.tbCGST.TabIndex = 194;
             this.tbCGST.TabStop = false;
-            this.tbCGST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbCGST.Text = "18 %";
+            this.tbCGST.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label17
             // 
@@ -446,8 +448,8 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.tbIGST.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbIGST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbIGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIGST.ForeColor = System.Drawing.Color.DarkGray;
+            this.tbIGST.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIGST.ForeColor = System.Drawing.Color.Black;
             this.tbIGST.Location = new System.Drawing.Point(18, 167);
             this.tbIGST.Margin = new System.Windows.Forms.Padding(4);
             this.tbIGST.Name = "tbIGST";
@@ -468,7 +470,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.cmbProduct.Sorted = true;
             this.cmbProduct.TabIndex = 5;
             this.cmbProduct.Text = "None";
-            this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged_1);
+            this.cmbProduct.Leave += new System.EventHandler(this.cmbProduct_Leave);
             // 
             // label12
             // 
@@ -509,7 +511,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1341, 72);
-            this.panel3.TabIndex = 3;
+            this.panel3.TabIndex = 2;
             this.panel3.TabStop = true;
             // 
             // pictureBox3
@@ -683,7 +685,8 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbPaidAmount.Margin = new System.Windows.Forms.Padding(4);
             this.tbPaidAmount.Name = "tbPaidAmount";
             this.tbPaidAmount.Size = new System.Drawing.Size(145, 27);
-            this.tbPaidAmount.TabIndex = 7;
+            this.tbPaidAmount.TabIndex = 8;
+            this.tbPaidAmount.TextChanged += new System.EventHandler(this.tbPaidAmount_TextChanged);
             // 
             // label20
             // 
@@ -717,7 +720,8 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.cbA4.Margin = new System.Windows.Forms.Padding(4);
             this.cbA4.Name = "cbA4";
             this.cbA4.Size = new System.Drawing.Size(48, 23);
-            this.cbA4.TabIndex = 8;
+            this.cbA4.TabIndex = 0;
+            this.cbA4.TabStop = false;
             this.cbA4.Text = "A4";
             this.cbA4.UseVisualStyleBackColor = true;
             // 
@@ -769,7 +773,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1339, 109);
-            this.panel1.TabIndex = 5;
+            this.panel1.TabIndex = 0;
             this.panel1.TabStop = true;
             // 
             // tbCustContact
@@ -812,7 +816,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbCustName.Name = "tbCustName";
             this.tbCustName.ReadOnly = true;
             this.tbCustName.Size = new System.Drawing.Size(372, 27);
-            this.tbCustName.TabIndex = 4;
+            this.tbCustName.TabIndex = 0;
             this.tbCustName.TabStop = false;
             // 
             // label9

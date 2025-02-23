@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using RealStateManagementSystem.config;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -86,63 +87,77 @@ namespace RealEstateManagemaentSystem2024.MasterForm
                 // Query to fetch all flat descriptions
                 string query = "SELECT flat_desc FROM flat_type_description";
 
-                // Assuming db.ExecuteQuery runs the SQL and returns a DataTable
+                // Fetch data from the database
                 DataTable dt = db.ExecuteQuery(query);
 
-                // If DataTable is empty
+                // Check if data is retrieved
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("No descriptions found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No descriptions found in database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Create a list to hold the flat descriptions
-                List<string> descriptions = new List<string>();
+                // Debugging: Print fetched descriptions
+                string debugData = "Fetched Descriptions:\n";
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    descriptions.Add(row["flat_desc"].ToString()); // Add descriptions to the list
+                    string desc = row["flat_desc"].ToString();
+                    debugData += desc + "\n";  // Collect data for debugging
+                    autoCompleteCollection.Add(desc);
                 }
 
-                // Create a custom AutoCompleteStringCollection
-                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-
-                // Clear any existing data in the collection before adding new data
-                autoCompleteCollection.Clear();
-
-                // Add all descriptions to the AutoComplete collection
-                autoCompleteCollection.AddRange(descriptions.ToArray());
-
-                // Print the data in the AutoComplete collection for debugging
-                Console.WriteLine("Auto-complete collection data:");
-                foreach (var item in autoCompleteCollection)
-                {
-                    Console.WriteLine(item);  // Check if data is correctly added
-                }
-
-                // Setup AutoComplete properties for the TextBox
-                tbDescription.AutoCompleteMode = AutoCompleteMode.SuggestAppend; // Suggest and append
-                tbDescription.AutoCompleteSource = AutoCompleteSource.CustomSource; // Custom source for suggestions
-                tbDescription.AutoCompleteCustomSource = autoCompleteCollection; // Set the custom source
-
-                Console.WriteLine("Auto-complete setup complete.");
+                // Apply AutoComplete settings
+                tbDescription.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                tbDescription.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                tbDescription.AutoCompleteCustomSource = autoCompleteCollection;
             }
             catch (Exception ex)
             {
-                // Handle any exceptions
+                // Handle and display errors
                 MessageBox.Show($"Error setting up auto-complete: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void QuatationMaster_Load(object sender, EventArgs e)
+        private void SetupAutoCompleteForBuilding()
         {
+            try
+            {
+                // Query to fetch all building names
+                string query = "SELECT building_or_project_name FROM building_details";
+                DataTable dt = db.ExecuteQuery(query);
 
-            SetupAutoCompleteForTextBox();
+                // If no data is found
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No buildings found in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // AutoComplete collection
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    autoCompleteCollection.Add(row["building_or_project_name"].ToString());
+                }
+
+                // Apply AutoComplete to tbBuildingName
+                tbBuildName.AutoCompleteCustomSource.Clear();
+                tbBuildName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                tbBuildName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                tbBuildName.AutoCompleteCustomSource = autoCompleteCollection;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error setting up building auto-complete: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void QuatationMaster_Load(object sender, EventArgs e)
+        { 
             LoadQuotationChart();
-
-            tbDescription.Enter += TextBox_Enter;
-            tbDescription.Leave += TextBox_Leave;
 
             tbCustCont.Enter += TextBox_Enter;
             tbCustCont.Leave += TextBox_Leave;
@@ -341,6 +356,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             cbCard.Checked = false;
             cbOnline.Checked = false;
             GenerateQuotationId();
+            SetupAutoCompleteForTextBox();
+            SetupAutoCompleteForBuilding(); // Call the method
+
         }
 
         private void GenerateQuotationId()
@@ -383,7 +401,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             TextBox textBox = sender as TextBox;
             if (textBox != null)
             {
-                if (textBox.Text == "Description" || textBox.Text == "Contact" ||
+                if (textBox.Text == "Contact" ||
                     textBox.Text == "Building Name" || textBox.Text == "Flat Type" ||
                     textBox.Text == "Price/Sq.ft" || textBox.Text == "Best Price" ||
                     textBox.Text == "Additional Charges" || textBox.Text == "Discount" ||
@@ -401,8 +419,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             {
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    if (textBox == tbDescription) textBox.Text = "Description";
-                    else if (textBox == tbCustCont) textBox.Text = "Contact";
+                    if (textBox == tbCustCont) textBox.Text = "Contact";
                     else if (textBox == tbBuildName) textBox.Text = "Building Name";
                     else if (textBox == tbFlatType) textBox.Text = "Flat Type";
                     else if (textBox == tbPricePerSqFt) textBox.Text = "Price/Sq.ft";
@@ -437,7 +454,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
                 // Execute the query with a parameter
                 DataTable dataTable = db.ExecuteQuery(query, new MySqlParameter[]
                 {
-            new MySqlParameter("@quotationId", MySqlDbType.VarChar) { Value = $"%{quotationId}%" } // Supports partial search
+                    new MySqlParameter("@quotationId", MySqlDbType.VarChar) { Value = $"%{quotationId}%" } // Supports partial search
                 });
 
                 // Bind the results to the DataGridView
@@ -586,21 +603,97 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             }
         }
 
+        private void AutoFillCustomerName(string contactNumber)
+        {
+            try
+            {
+                string query = "SELECT cust_name, cust_id FROM customer_details WHERE cust_contact = @contact";
+                DataTable dt = db.ExecuteQuery(query, new MySqlParameter("@contact", contactNumber));
+
+                if (dt.Rows.Count > 0)
+                {
+                    tbCustName.Text = dt.Rows[0]["cust_name"].ToString();
+                    tbCustId.Text = dt.Rows[0]["cust_id"].ToString();
+                }
+                else
+                {
+                    tbCustName.Text = string.Empty;
+                    DialogResult result = MessageBox.Show(
+                        "Customer not found. Would you like to add a new customer?",
+                        "Customer Not Found",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (result == DialogResult.Yes)
+                    {
+                        OpenCustomerMasterForm(contactNumber);
+                    }
+                    else
+                    {
+                        tbCustCont.Text = string.Empty; // Clear contact number
+                        tbCustCont.Focus(); // Refocus the textbox for user to enter a valid number
+                        LoadCustomerContacts();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching customer name: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void OpenCustomerMasterForm(string contactNumber)
+        {
+            var customerMasterForm = new CustomerMaster();
+            customerMasterForm.PreFillContactNumber(contactNumber);
+            customerMasterForm.ShowDialog();
+        }
+
+        private void LoadCustomerContacts()
+        {
+            try
+            {
+                string query = "SELECT cust_contact FROM customer_details";
+                DataTable dt = db.ExecuteQuery(query);
+
+                AutoCompleteStringCollection contactCollection = new AutoCompleteStringCollection();
+                foreach (DataRow row in dt.Rows)
+                {
+                    contactCollection.Add(row["cust_contact"].ToString());
+                }
+
+                tbCustCont.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                tbCustCont.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                tbCustCont.AutoCompleteCustomSource = contactCollection;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading customer contacts: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbCustCont_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCustCont.Text.Length == 10) // Check for full 10-digit number
+            {
+                AutoFillCustomerName(tbCustCont.Text);
+            }
+        }
+
         private void tbDescription_TextChanged(object sender, EventArgs e)
         {
+            /*string query = "SELECT flat_desc FROM flat_type_description";
+            DataTable dt = db.ExecuteQuery(query, new MySqlParameter("@flat_desc", tbDescription.Text));
+
+            if (dt.Rows.Count > 0)
+            {
+                tbDescription.Text = dt.Rows[0]["flat_desc"].ToString();
+            }*/
+            //SetupAutoCompleteForTextBox();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void quotationPieChart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox6_Enter(object sender, EventArgs e)
         {
 
         }
