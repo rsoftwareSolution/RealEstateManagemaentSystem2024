@@ -183,3 +183,4 @@ C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\R
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.pdb
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Settings.ResetPassword.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Registers.SaleInvoice.resources
+C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Statements.AccountStatements.resources

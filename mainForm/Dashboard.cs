@@ -111,11 +111,6 @@ namespace RealEstateManagemaentSystem2024.mainForm
                                             bookingRegisterForm.Show();
                                             break;
 
-                                        case "DownloadReports":
-                                            var downloadReportsForm = new DownloadReports();
-                                            downloadReportsForm.Show();
-                                            break;
-
                                         case "AccountStatements":
                                             var accountStatementsForm = new AccountStatements();
                                             accountStatementsForm.Show();

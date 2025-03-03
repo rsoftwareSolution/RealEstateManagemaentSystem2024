@@ -16,14 +16,14 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class BookingReport : ReportClass {
+    public class Quatation_form : ReportClass {
         
-        public BookingReport() {
+        public Quatation_form() {
         }
         
         public override string ResourceName {
             get {
-                return "BookingReport.rpt";
+                return "Quatation form.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
         
         public override string FullResourceName {
             get {
-                return "RealEstateManagemaentSystem2024.CrystalReport.BookingReport.rpt";
+                return "RealEstateManagemaentSystem2024.CrystalReport.Quatation form.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBookingReport : Component, ICachedReport {
+    public class CachedQuatation_form : Component, ICachedReport {
         
-        public CachedBookingReport() {
+        public CachedQuatation_form() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace RealEstateManagemaentSystem2024.CrystalReport {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            BookingReport rpt = new BookingReport();
+            Quatation_form rpt = new Quatation_form();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -302,6 +302,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tbBuildingPincode.Name = "tbBuildingPincode";
             this.tbBuildingPincode.Size = new System.Drawing.Size(424, 34);
             this.tbBuildingPincode.TabIndex = 2;
+            this.tbBuildingPincode.TextChanged += new System.EventHandler(this.tbBuildingPincode_TextChanged);
             // 
             // tbBuildingName
             // 

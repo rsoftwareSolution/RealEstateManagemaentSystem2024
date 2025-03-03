@@ -390,14 +390,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealEstateManagemaentSystem2024.exe" size="708096">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealEstateManagemaentSystem2024.exe" size="797184">
       <assemblyIdentity name="RealEstateManagemaentSystem2024" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>z5xeOlgyhldGhIjWhvyCqhhEGwIivDjoaa2p/ozuet0=</dsig:DigestValue>
+        <dsig:DigestValue>bosD7zjQPb8zp5o5aby7IbrYP+Yw78vvCezaUtMB6xI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -533,13 +533,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Html\BackgroundImage.html" size="8236">
+  <file name="Html\BackgroundImage.html" size="8235">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>AqJ9Fhqi4Uw+C8Ia9saIwk4LnBaem4v7nYR2yI64/iU=</dsig:DigestValue>
+      <dsig:DigestValue>IBLrEwTTv3ulAottlMO8hklX395eo5cSUaN7p2mvI00=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Html\SlideMenu.html" size="171">

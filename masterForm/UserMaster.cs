@@ -274,6 +274,11 @@ namespace RealEstateManagemaentSystem2024.masterForm
         {
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

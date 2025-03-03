@@ -193,6 +193,7 @@ namespace RealStateManagementSystem.mainForm
 
         private void label5_Click(object sender, EventArgs e)
         {
+            
             UserMaster userMaster = new UserMaster();
             userMaster.Show();
         }

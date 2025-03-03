@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using MySql.Data.MySqlClient;
+using RealEstateManagemaentSystem2024.reports;
 using RealStateManagementSystem.config;
 
 namespace RealEstateManagemaentSystem2024.Registers
@@ -106,8 +107,9 @@ namespace RealEstateManagemaentSystem2024.Registers
             tbCustName.Clear();
             tbCustContact.Clear();
             tbParkingCharges.Text = "0.00";
-            tbGSTGroup.Text = "0.00";
+            tbGSTGroup.Text = "18%";
             tbSGST.Text = "0.00";
+            tbRemainingAmount.Text = "0.00";
             tbSubTotal.Text = "0.00";
             tbTotalAmount.Text = "0.00";
             tbBookingAmount.Text = "0.00";
@@ -543,6 +545,12 @@ namespace RealEstateManagemaentSystem2024.Registers
                 new MySqlParameter("@grandTotal", grandTotal));
 
             MessageBox.Show("Sale invoice saved successfully.");
+            if (cbA4.Checked)
+            {
+                DownloadReports downloadReports = new DownloadReports(saleId);
+                downloadReports.Show();
+            }
+
             ClearSaleForm();
         }
 
@@ -604,6 +612,16 @@ namespace RealEstateManagemaentSystem2024.Registers
             {
                 SearchByCustomerName(tbCustNameSearch.Text);
             }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Unable to process update/delete function for sale invoice data. If you want to perform update/delete sale data please contact to admin.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Unable to process update/delete function for sale invoice data. If you want to perform update/delete sale data please contact to admin.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

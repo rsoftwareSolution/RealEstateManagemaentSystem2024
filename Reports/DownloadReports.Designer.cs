@@ -67,6 +67,7 @@ namespace RealEstateManagemaentSystem2024.reports
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(1313, 571);
             this.crystalReportViewer1.TabIndex = 3;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // DownloadReports
             // 
@@ -77,7 +78,7 @@ namespace RealEstateManagemaentSystem2024.reports
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DownloadReports";
-            this.Text = "DownloadReports";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.DownloadReports_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

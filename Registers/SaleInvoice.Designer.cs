@@ -30,9 +30,11 @@ namespace RealEstateManagemaentSystem2024.Registers
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInvoice));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbTotalAmount = new System.Windows.Forms.TextBox();
             this.cbFlatType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -75,6 +77,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.cbProjectName = new System.Windows.Forms.ComboBox();
             this.salePieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -94,7 +97,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.tbSGST = new System.Windows.Forms.TextBox();
             this.tbGSTGroup = new System.Windows.Forms.TextBox();
             this.Label17 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -171,7 +173,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel3.Location = new System.Drawing.Point(1, 588);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1341, 74);
+            this.panel3.Size = new System.Drawing.Size(1340, 74);
             this.panel3.TabIndex = 9;
             this.panel3.TabStop = true;
             // 
@@ -229,6 +231,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Delete.TabIndex = 11;
             this.btn_Delete.Text = "DELETE";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Save
             // 
@@ -262,6 +265,7 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.btn_Update.TabIndex = 10;
             this.btn_Update.Text = "UPDATE";
             this.btn_Update.UseVisualStyleBackColor = false;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // tbGrandTotal
             // 
@@ -644,19 +648,19 @@ namespace RealEstateManagemaentSystem2024.Registers
             // 
             this.salePieChart.BorderlineColor = System.Drawing.Color.Black;
             this.salePieChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea7.Name = "ChartArea1";
-            this.salePieChart.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.salePieChart.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.salePieChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.salePieChart.Legends.Add(legend1);
             this.salePieChart.Location = new System.Drawing.Point(707, 14);
             this.salePieChart.Name = "salePieChart";
             this.salePieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            series7.YValuesPerPoint = 2;
-            this.salePieChart.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.salePieChart.Series.Add(series1);
             this.salePieChart.Size = new System.Drawing.Size(621, 253);
             this.salePieChart.TabIndex = 0;
             this.salePieChart.Text = "Booked Flat Data";
@@ -696,25 +700,41 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.panel2.TabIndex = 8;
             this.panel2.TabStop = true;
             // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(1127, 236);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(189, 19);
+            this.label13.TabIndex = 208;
+            this.label13.Text = "Presents Booked Flats";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label11
             // 
-            this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(1011, 440);
+            this.label11.Font = new System.Drawing.Font("Microsoft Uighur", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(966, 440);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(311, 19);
+            this.label11.Size = new System.Drawing.Size(287, 19);
             this.label11.TabIndex = 207;
             this.label11.Text = "Software developed by Apoorva and Nirmala";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(1099, 420);
+            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(1052, 418);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 19);
+            this.label1.Size = new System.Drawing.Size(168, 22);
             this.label1.TabIndex = 16;
             this.label1.Text = "@copyrights are reserved.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
@@ -809,9 +829,26 @@ namespace RealEstateManagemaentSystem2024.Registers
             // dgvSaleDetails
             // 
             this.dgvSaleDetails.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSaleDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSaleDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSaleDetails.Location = new System.Drawing.Point(18, 277);
             this.dgvSaleDetails.Name = "dgvSaleDetails";
+            this.dgvSaleDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSaleDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSaleDetails.RowHeadersWidth = 4;
             this.dgvSaleDetails.RowTemplate.Height = 24;
             this.dgvSaleDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -939,17 +976,6 @@ namespace RealEstateManagemaentSystem2024.Registers
             this.Label17.Size = new System.Drawing.Size(100, 19);
             this.Label17.TabIndex = 190;
             this.Label17.Text = "Total Amount";
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(1096, 238);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(189, 19);
-            this.label13.TabIndex = 208;
-            this.label13.Text = "Presents Booked Flats";
             // 
             // SaleInvoice
             // 
