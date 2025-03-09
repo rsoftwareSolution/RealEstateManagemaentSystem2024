@@ -171,9 +171,12 @@ C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\R
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.EnquiryMaster.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.FlatMaster.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.ParkingMaster.resources
+C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Registers.SaleInvoice.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.masterForm.UserMaster.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Properties.Resources.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.reports.DownloadReports.resources
+C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Settings.ResetPassword.resources
+C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Statements.AccountStatements.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.GenerateResource.cache
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.CoreCompileInputs.cache
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.exe.manifest
@@ -181,6 +184,4 @@ C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\R
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.CopyComplete
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.exe
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.pdb
-C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Settings.ResetPassword.resources
-C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Registers.SaleInvoice.resources
-C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Statements.AccountStatements.resources
+C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.ParameterReport.SaleInvoiceSearchReport.resources

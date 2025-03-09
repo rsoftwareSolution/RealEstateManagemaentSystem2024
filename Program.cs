@@ -1,6 +1,7 @@
 ﻿using RealEstateManagemaentSystem2024.mainForm;
 using RealEstateManagemaentSystem2024.masterForm;
 using RealEstateManagemaentSystem2024.MasterForm;
+using RealEstateManagemaentSystem2024.ParameterReport;
 using RealStateManagementSystem.config;
 using RealStateManagementSystem.mainForm;
 using RealStateManagementSystem.masterForm;

@@ -186,10 +186,10 @@
       <DependentUpon>CrystalReportcust.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport\Booking.cs">
+    <Compile Include="CrystalReport\BookingReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Booking.rpt</DependentUpon>
+      <DependentUpon>BookingReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CrystalReport\BuildingReport.cs">
@@ -202,6 +202,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CancellationReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CrystalReport\CustomerReport1.cs">
@@ -252,6 +258,9 @@
       <DependentUpon>UserReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport\WebCustomControl1.cs" />
+    <Compile Include="CrystalReport\WebCustomControl2.cs" />
+    <Compile Include="CrystalReport\WebCustomControl3.cs" />
     <Compile Include="DataSetcust.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -289,6 +298,12 @@
     </Compile>
     <Compile Include="MasterForm\QuatationMaster.Designer.cs">
       <DependentUpon>QuatationMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterReport\SaleInvoiceSearchReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParameterReport\SaleInvoiceSearchReport.Designer.cs">
+      <DependentUpon>SaleInvoiceSearchReport.cs</DependentUpon>
     </Compile>
     <Compile Include="RealStateDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -370,13 +385,14 @@
     <Compile Include="Statements\AccountStatements.Designer.cs">
       <DependentUpon>AccountStatements.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\Customer.cs" />
     <EmbeddedResource Include="CrystalReportcust.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportcust.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport\Booking.rpt">
+    <EmbeddedResource Include="CrystalReport\BookingReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Booking.cs</LastGenOutput>
+      <LastGenOutput>BookingReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport\BuildingReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -385,6 +401,10 @@
     <EmbeddedResource Include="CrystalReport\CancellationReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CancellationReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport\CustomerReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -432,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\QuatationMaster.resx">
       <DependentUpon>QuatationMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParameterReport\SaleInvoiceSearchReport.resx">
+      <DependentUpon>SaleInvoiceSearchReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registers\BookingRegister.resx">
       <DependentUpon>BookingRegister.cs</DependentUpon>

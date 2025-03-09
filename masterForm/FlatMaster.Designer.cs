@@ -147,6 +147,7 @@ namespace RealStateManagementSystem.masterForm
             this.tbFlatType.Name = "tbFlatType";
             this.tbFlatType.Size = new System.Drawing.Size(1354, 89);
             this.tbFlatType.TabIndex = 5;
+            this.tbFlatType.Paint += new System.Windows.Forms.PaintEventHandler(this.tbFlatType_Paint);
             // 
             // tabControl1
             // 

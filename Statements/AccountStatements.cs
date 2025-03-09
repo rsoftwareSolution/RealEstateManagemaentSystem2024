@@ -37,6 +37,30 @@ namespace RealEstateManagemaentSystem2024.Statements
                         LoadReport(@"C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\CrystalReport\BuildingReport.rpt");
                         break;
 
+                    case "Flat Statement":
+                        LoadReport(@"C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\CrystalReport\FlatReport.rpt");
+                        break;
+
+                    case "Booking Statement":
+                        LoadReport(@"C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\CrystalReport\BookingReport1.rpt");
+                        break;
+
+                    case "Cancellation Statement":
+                        LoadReport(@"C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\CrystalReport\CancellationReport.rpt");
+                        break;
+
+                    case "Quotation Statement":
+                        LoadReport(@"C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\CrystalReport\QuatationReport.rpt");
+                        break;
+
+                    case "SaleInvoice Statement":
+                        LoadReport(@"C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\CrystalReport\SaleInvoiceReport.rpt");
+                        break;
+
+                    case "Enquiry Statement":
+                        LoadReport(@"C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\CrystalReport\EnquiryReport.rpt");
+                        break;
+
                     default:
                         MessageBox.Show("Invalid selection!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         break;
