@@ -150,11 +150,11 @@
         }
 
         section {
-            background: url('C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/1899342.jpg') no-repeat;
-            background-position: center;
-            background-size: cover;
+            background: url('C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/1.jpg') no-repeat;
             height: 100vh;
-            transition: all .5s;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
         }
 
         #check:checked ~ section {
@@ -214,6 +214,50 @@
     <section></section>
 
     <script>
+        // Array of local images for the slideshow
+        const imagePaths = [
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/31.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/2.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/3.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/4.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/5.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/6.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/7.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/8.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/9.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/10.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/11.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/12.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/13.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/14.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/15.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/17.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/18.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/19.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/20.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/21.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/22.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/23.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/24.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/25.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/26.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/27.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/28.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/29.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/30.jpg"
+        ];
+
+        let currentIndex = 0;
+        const section = document.querySelector('section');
+
+        function changeBackground() {
+            section.style.backgroundImage = `url('file:///${imagePaths[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % imagePaths.length;
+        }
+
+        setInterval(changeBackground, 2000);
+        window.onload = changeBackground;
+
         // This function ensures the sidebar is closed on page load by unchecking the checkbox
         window.onload = function () {
             document.getElementById('check').checked = false; // Ensure the checkbox is unchecked
@@ -236,6 +280,5 @@
         }
 
     </script>
-
 </body>
 </html>
