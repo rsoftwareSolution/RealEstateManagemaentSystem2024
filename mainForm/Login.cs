@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using RealEstateManagemaentSystem2024.mainForm;
+using RealEstateManagemaentSystem2024.MainForm;
 using RealEstateManagemaentSystem2024.masterForm;
 using RealEstateManagemaentSystem2024.Settings;
 using System;
@@ -270,6 +271,12 @@ namespace RealStateManagementSystem.mainForm
         private void label4_MouseLeave(object sender, EventArgs e)
         {
             label4.ForeColor = Color.Black;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.Show();
         }
     }
 }

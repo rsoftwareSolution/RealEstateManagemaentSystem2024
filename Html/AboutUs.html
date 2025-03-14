@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Real Estate Management</title>
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 850px;
+            background: white;
+            padding: 30px;
+            margin: 50px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sections {
+            margin-top: 20px;
+        }
+
+        .section {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+
+            .section.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .section h3 {
+                color: #1e3c72;
+                margin-bottom: 5px;
+            }
+
+            .section ul {
+                padding-left: 20px;
+                color: #333;
+            }
+
+        .back-btn {
+            display: block;
+            width: 180px;
+            text-align: center;
+            margin: 20px auto;
+            padding: 12px;
+            background: #ff4b5c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            text-transform: uppercase;
+        }
+
+            .back-btn:hover {
+                background: #e63e50;
+                transform: scale(1.05);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Have You Read About Us?</h1>
+        <p>Welcome to our <strong>Real Estate Management System (REMS)</strong>—your all-in-one solution for managing real estate properties, bookings, payments, and customer records efficiently.</p>
+
+        <div class="sections">
+            <div class="section">
+                <h3>🏠 Property & Building Management</h3>
+                <ul>
+                    <li>Add, edit, and manage buildings and flats.</li>
+                    <li>Auto ID generation for buildings and flats.</li>
+                    <li>Search & filter properties.</li>
+                    <li>Attach property images and details.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>👥 Customer & Booking Management</h3>
+                <ul>
+                    <li>Register new customers and maintain their records.</li>
+                    <li>Seamless booking process with auto-calculated pricing.</li>
+                    <li>Automated tax calculation (SGST @ 18%).</li>
+                    <li>Manage cancellations and refunds.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>💳 Payment & Invoice Management</h3>
+                <ul>
+                    <li>Track payments, down payments, and installments.</li>
+                    <li>Generate sale invoices instantly (Crystal Reports).</li>
+                    <li>View pending payments & reminders.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>📊 Sales & Reports</h3>
+                <ul>
+                    <li>Generate detailed sales reports.</li>
+                    <li>View pending and completed payments.</li>
+                    <li>Download reports for better decision-making.</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>💡 <strong>Have questions?</strong> Contact us today and let’s simplify real estate management together!</p>
+    </div>
+
+    <script>
+        // Function to handle sliding animation for sections
+        document.addEventListener("DOMContentLoaded", function () {
+            let sections = document.querySelectorAll(".section");
+            let index = 0;
+
+            function showNextSection() {
+                if (index < sections.length) {
+                    sections[index].classList.add("visible");
+                    index++;
+                    setTimeout(showNextSection, 300); // Delay for smooth sliding effect
+                }
+            }
+
+            showNextSection();
+        });
+    </script>
+
+</body>
+</html>

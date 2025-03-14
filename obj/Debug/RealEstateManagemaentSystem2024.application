@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RealEstateManagemaentSystem2024.exe.manifest" size="34228">
+    <dependentAssembly dependencyType="install" codebase="RealEstateManagemaentSystem2024.exe.manifest" size="34623">
       <assemblyIdentity name="RealEstateManagemaentSystem2024.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BNY7MK0CgSM/boZ8X8VI7VRhVmdWIY2+PzHaMOZIRRc=</dsig:DigestValue>
+        <dsig:DigestValue>ZtA+zkyt4MpIEaG4A9FZTtLfBiiuErUuUNr8Hm5B788=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

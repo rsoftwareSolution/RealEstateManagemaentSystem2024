@@ -185,3 +185,4 @@ C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\R
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.CopyComplete
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.exe
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.pdb
+C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MainForm.AboutUs.resources
