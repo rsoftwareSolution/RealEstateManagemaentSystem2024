@@ -164,6 +164,7 @@ C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\R
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.mainForm.Dashboard.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.mainForm.Login.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.QuatationMaster.resources
+C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.ParameterReport.SaleInvoiceSearchReport.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.Registers.BookingRegister.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.MasterForm.BuildingMaster.resources
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealStateManagementSystem.masterForm.CancellationMaster.resources
@@ -184,4 +185,3 @@ C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\R
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.csproj.CopyComplete
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.exe
 C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.pdb
-C:\Users\Raghvendra\OneDrive\Desktop\RealEstateManagemaentSystem2024\obj\Debug\RealEstateManagemaentSystem2024.ParameterReport.SaleInvoiceSearchReport.resources
