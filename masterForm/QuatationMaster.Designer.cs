@@ -30,9 +30,9 @@ namespace RealEstateManagemaentSystem2024.MasterForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuatationMaster));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -260,7 +260,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.quotationPieChart);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(797, 17);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(530, 446);
@@ -271,19 +271,19 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // quotationPieChart
             // 
             this.quotationPieChart.BorderlineColor = System.Drawing.Color.LavenderBlush;
-            chartArea1.Name = "ChartArea1";
-            this.quotationPieChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.quotationPieChart.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.quotationPieChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.quotationPieChart.Legends.Add(legend4);
             this.quotationPieChart.Location = new System.Drawing.Point(22, 38);
             this.quotationPieChart.Name = "quotationPieChart";
             this.quotationPieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "Quatation";
-            series1.YValuesPerPoint = 2;
-            this.quotationPieChart.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Quatation";
+            series4.YValuesPerPoint = 2;
+            this.quotationPieChart.Series.Add(series4);
             this.quotationPieChart.Size = new System.Drawing.Size(494, 390);
             this.quotationPieChart.SuppressExceptions = true;
             this.quotationPieChart.TabIndex = 11;
@@ -433,13 +433,14 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // 
             // tbBuildName
             // 
+            this.tbBuildName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbBuildName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbBuildName.BackColor = System.Drawing.SystemColors.Control;
             this.tbBuildName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBuildName.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBuildName.Location = new System.Drawing.Point(12, 34);
-            this.tbBuildName.Multiline = true;
             this.tbBuildName.Name = "tbBuildName";
-            this.tbBuildName.Size = new System.Drawing.Size(329, 27);
+            this.tbBuildName.Size = new System.Drawing.Size(329, 28);
             this.tbBuildName.TabIndex = 6;
             this.tbBuildName.Text = "Building Name";
             // 
@@ -465,7 +466,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tbPricePerSqFt.Name = "tbPricePerSqFt";
             this.tbPricePerSqFt.Size = new System.Drawing.Size(216, 27);
             this.tbPricePerSqFt.TabIndex = 8;
-            this.tbPricePerSqFt.Text = "Price Per Sq.ft";
+            this.tbPricePerSqFt.Text = "Price";
             // 
             // groupBox2
             // 
@@ -519,6 +520,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             this.tbCustCont.Size = new System.Drawing.Size(216, 27);
             this.tbCustCont.TabIndex = 5;
             this.tbCustCont.Text = "Customer Contact";
+            this.tbCustCont.TextChanged += new System.EventHandler(this.tbCustCont_TextChanged);
             // 
             // groupBox1
             // 
@@ -535,13 +537,14 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // 
             // tbDescription
             // 
+            this.tbDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbDescription.BackColor = System.Drawing.SystemColors.Control;
             this.tbDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbDescription.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescription.Location = new System.Drawing.Point(347, 37);
-            this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(419, 27);
+            this.tbDescription.Size = new System.Drawing.Size(419, 28);
             this.tbDescription.TabIndex = 2;
             this.tbDescription.Text = "Discription";
             this.tbDescription.TextChanged += new System.EventHandler(this.tbDescription_TextChanged);
@@ -550,6 +553,7 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             // 
             this.dtpDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtpDate.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(138, 37);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(203, 28);

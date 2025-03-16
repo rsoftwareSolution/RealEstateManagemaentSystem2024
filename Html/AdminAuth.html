@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Authentication</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+
+        .modal {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+            .modal h2 {
+                margin-bottom: 15px;
+                font-size: 20px;
+                color: #333;
+            }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+            .input-group i {
+                color: #555;
+                font-size: 18px;
+                margin-right: 10px;
+            }
+
+            .input-group input {
+                border: none;
+                outline: none;
+                flex: 1;
+                font-size: 16px;
+                background: none;
+            }
+
+        .message-box {
+            display: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .error-message {
+            background: #ffdddd;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 48%;
+        }
+
+            .btn.submit {
+                background: #007bff;
+                color: white;
+            }
+
+            .btn.cancel {
+                background: #d9534f;
+                color: white;
+            }
+
+            .btn:hover {
+                opacity: 0.8;
+            }
+
+    </style>
+</head>
+<body>
+
+    <div class="modal">
+        <h2><i class="fas fa-lock"></i> Admin Authentication</h2>
+
+        <div class="input-group">
+            <i class="fas fa-key"></i>
+            <input type="password" id="adminPassword" placeholder="Enter Admin Password">
+        </div>
+
+        <!-- Error Message -->
+        <div class="message-box error-message" id="errorMessage">
+            <i class="fas fa-exclamation-circle"></i> Incorrect password. Access Denied.
+        </div>
+
+        <!-- Success Message -->
+        <div class="message-box success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i> Access Granted! Opening User Master...
+        </div>
+
+        <div class="buttons">
+            <button class="btn submit" onclick="validatePassword()">
+                <i class="fas fa-check"></i> Submit
+            </button>
+            <button class="btn cancel" onclick="cancelAuthentication()">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function validatePassword() {
+            let password = document.getElementById("adminPassword").value;
+            let errorMessage = document.getElementById("errorMessage");
+            let successMessage = document.getElementById("successMessage");
+
+            if (password === "Admin@123") {
+                errorMessage.style.display = "none"; // Hide error message
+                successMessage.style.display = "block"; // Show success message
+
+                setTimeout(() => {
+                    openUserMaster(); // Send message to C#
+                }, 1000); // Delay for better UI experience
+            } else {
+                successMessage.style.display = "none"; // Hide success message
+                errorMessage.style.display = "block"; // Show error message
+            }
+        }
+
+        function openUserMaster() {
+            // ✅ Send message to C# WebView2 (WinForms)
+            window.chrome.webview.postMessage("openUserMaster");
+        }
+
+        function closeModal() {
+            // ✅ Close the authentication modal (handled in C#)
+            window.chrome.webview.postMessage("closeModal");
+        }
+
+        function cancelAuthentication() {
+            window.chrome.webview.postMessage("closeAuthForm"); // Send message to C#
+        }
+
+    </script>
+
+</body>
+</html>

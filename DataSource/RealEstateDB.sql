@@ -19,8 +19,7 @@ select * from user;
 
 SELECT @@hostname AS Hostname, @@port AS Port;
 
--- User table create query
-
+-- User table create query 
 create table user(
 user_id int auto_increment,
 user_name varchar(50),
@@ -29,6 +28,10 @@ user_contact varchar(50),
 user_password varchar(50),
 primary key(user_id));
 
+select * from user;
+
+truncate table user;
+alter table user add column user_dob nvarchar(50);
 -- Building table create query
 
 create table building_details(
@@ -85,20 +88,9 @@ primary key(cancel_id));
 
 -- Cancellation table details select query
 select * from cancellation_details;
-
+truncate table cancellation_details;
 drop table cancellation_details;
 
--- Payment table details select query
-create table payment_details (
-payment_id int auto_increment,
-transaction_date varchar(10),
-booking_id int,
-amount_paid double,
-total_amount double,
-primary key(payment_id));
-
--- Payment table details select query
-select * from payment_details;
 
 -- Enquiry table details select query
 create table enquiry_details (
@@ -179,6 +171,8 @@ CREATE TABLE booking_details (
     grand_total DOUBLE );
 
 select * from booking_details;
+ALTER TABLE booking_details CHANGE COLUMN igst flat_rate DOUBLE;
+ALTER TABLE booking_details CHANGE COLUMN cgst gst_group varchar(10);
 
 
 create table flat_type_description (
@@ -199,10 +193,31 @@ select * from parking_details;
 drop table parking_details;
 
 
+create table saleinvoice_details (
+sale_id varchar(50),
+sale_date date,
+payment_type varchar(50),
+booking_number varchar(20),
+down_payment varchar(50),
+cust_contact varchar(15),
+cust_name varchar(15),
+project_name varchar(125),
+flat_type varchar(50),
+flat_number varchar(20),
+vehicle_name varchar(100),
+parking_charges Double,
+flat_rate Double,
+gst_group Double,
+gst_amount Double,
+sub_total Double,
+total_amount Double,
+booking_amount Double,
+round_off Double,
+grand_total Double,
+primary key(sale_id));
 
-
-
-
+select * from saleinvoice_details;
+drop table saleinvoice_details; 
 
 
 

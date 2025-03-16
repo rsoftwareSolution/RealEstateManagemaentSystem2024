@@ -1,17 +1,55 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
+using RealEstateManagemaentSystem2024;
 using RealEstateManagemaentSystem2024.mainForm;
+using RealEstateManagemaentSystem2024.MainForm;
 using RealEstateManagemaentSystem2024.masterForm;
 using RealEstateManagemaentSystem2024.Settings;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using Color = System.Drawing.Color;
 
 namespace RealStateManagementSystem.mainForm
 {
     public partial class Login : Form
     {
+
+        private Label lblDateTime;
+        private Timer dateTimeTimer;
+
+
         public Login()
         {
             InitializeComponent();
+
+            // Create a label to display date and time
+            lblDateTime = new Label
+            {
+                AutoSize = true,
+                Font = new Font("Times New Roman", 11, FontStyle.Bold),
+                ForeColor = Color.Black,
+                BackColor = Color.Transparent,
+                Location = new Point(590, 520) // Adjust position as needed
+            };
+
+            // Add Label to the form
+            this.Controls.Add(lblDateTime);
+
+            // Initialize Timer
+            dateTimeTimer = new Timer
+            {
+                Interval = 1000 // Update every second
+            };
+
+            dateTimeTimer.Tick += DateTimeTimer_Tick;
+            dateTimeTimer.Start();
+        }
+
+        // Event handler to update date & time
+        private void DateTimeTimer_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:ss tt");
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -158,8 +196,24 @@ namespace RealStateManagementSystem.mainForm
 
         private void label5_Click(object sender, EventArgs e)
         {
-            UserMaster userMaster = new UserMaster();
-            userMaster.Show();
+            DialogResult result = MessageBox.Show("You need administrative privileges to create a new user. Do you want to proceed with authentication?",
+                                          "Admin Access Required",
+                                          MessageBoxButtons.YesNoCancel,
+                                          MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Open the Admin Authentication form (WebView2-based password input)
+                AdminAuthForm adminAuth = new AdminAuthForm();
+                adminAuth.ShowDialog(); // Open as a modal to wait for input
+            }
+            else if (result == DialogResult.No)
+            {
+                MessageBox.Show("You do not have the necessary permissions to create a new user.\nPlease contact the system administrator for assistance.",
+                                "Access Denied",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -170,7 +224,76 @@ namespace RealStateManagementSystem.mainForm
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            ShowProgressBarAndExit();
+        }
+
+        private void ShowProgressBarAndExit()
+        {
+            // Create a new form to display the progress bar
+            Form progressForm = new Form
+            {
+                Width = 300,
+                Height = 100,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                StartPosition = FormStartPosition.CenterScreen,
+                BackColor = Color.White,
+                ControlBox = false // Remove close button
+            };
+
+            // Create a label for "Exiting..."
+            Label label = new Label
+            {
+                Text = "Exiting, please wait...",
+                Dock = DockStyle.Top,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Times New Roman", 11, FontStyle.Regular)
+            };
+
+            // Create a ProgressBar control
+            ProgressBar progressBar = new ProgressBar
+            {
+                Dock = DockStyle.Bottom,
+                Style = ProgressBarStyle.Marquee, // Indeterminate progress
+                MarqueeAnimationSpeed = 50
+            };
+
+            // Add label and progress bar to the form
+            progressForm.Controls.Add(label);
+            progressForm.Controls.Add(progressBar);
+
+            // Show the progress form
+            progressForm.Show();
+
+            // Use a Timer to delay exit
+            Timer timer = new Timer
+            {
+                Interval = 500 // 3 seconds delay
+            };
+
+            timer.Tick += (s, args) =>
+            {
+                timer.Stop();
+                progressForm.Close(); // Close the progress bar
+                Application.Exit(); // Exit the application
+            };
+
+            timer.Start();
+        }
+
+        private void label4_MouseEnter(object sender, EventArgs e)
+        {
+            label4.ForeColor = Color.DarkRed;
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            label4.ForeColor = Color.Black;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.Show();
         }
     }
 }

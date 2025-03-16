@@ -38,12 +38,12 @@ namespace RealEstateManagemaentSystem2024.Helper
             // 
             this.tbOldPassword.BackColor = System.Drawing.Color.AntiqueWhite;
             this.tbOldPassword.Location = new System.Drawing.Point(13, 7);
-            this.tbOldPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbOldPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbOldPassword.Multiline = true;
             this.tbOldPassword.Name = "tbOldPassword";
             this.tbOldPassword.Size = new System.Drawing.Size(295, 32);
             this.tbOldPassword.TabIndex = 1;
-            this.tbOldPassword.Text = "Please entre your password";
+            this.tbOldPassword.Text = "Please entre admin password";
             // 
             // btnSubmit
             // 
@@ -80,7 +80,7 @@ namespace RealEstateManagemaentSystem2024.Helper
             this.Controls.Add(this.tbOldPassword);
             this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OldPasswordPopup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.OldPasswordPopup_Load);

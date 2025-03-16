@@ -253,6 +253,11 @@ namespace RealStateManagementSystem.masterForm
         {
 
         }
+
+        private void tbFlatType_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
   

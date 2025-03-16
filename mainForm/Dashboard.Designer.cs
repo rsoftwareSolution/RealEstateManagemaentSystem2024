@@ -43,9 +43,9 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.webView21.AllowExternalDrop = true;
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView21.Location = new System.Drawing.Point(0, 60);
+            this.webView21.Location = new System.Drawing.Point(0, 63);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(1402, 704);
+            this.webView21.Size = new System.Drawing.Size(1345, 650);
             this.webView21.TabIndex = 5;
             this.webView21.ZoomFactor = 1D;
             this.webView21.Click += new System.EventHandler(this.webView21_Click);
@@ -55,7 +55,7 @@ namespace RealEstateManagemaentSystem2024.mainForm
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1333, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(1341, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(57, 58);
             this.pictureBox1.TabIndex = 2;
@@ -63,7 +63,7 @@ namespace RealEstateManagemaentSystem2024.mainForm
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -76,6 +76,7 @@ namespace RealEstateManagemaentSystem2024.mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1402, 764);
             this.Controls.Add(this.webView21);
