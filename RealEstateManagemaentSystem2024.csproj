@@ -109,6 +109,7 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
     </Reference>
@@ -267,6 +268,12 @@
       <DependentUpon>DataSetcust.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSource\Database.cs" />
+    <Compile Include="Helper\AdminAuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper\AdminAuthForm.Designer.cs">
+      <DependentUpon>AdminAuthForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\BookingSelectionPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,6 +450,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>UserReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Helper\AdminAuthForm.resx">
+      <DependentUpon>AdminAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Helper\BookingSelectionPopup.resx">
       <DependentUpon>BookingSelectionPopup.cs</DependentUpon>
     </EmbeddedResource>
@@ -549,7 +559,7 @@
   <ItemGroup>
     <Content Include="Html\AboutUs.html" />
     <Content Include="Html\BackgroundImage.html" />
-    <Content Include="Html\SlideMenu.html" />
+    <Content Include="Html\AdminAuth.html" />
     <None Include="RealEstateManagemaentSystem2024_TemporaryKey.pfx" />
     <None Include="RealStateDataSet.xsc">
       <DependentUpon>RealStateDataSet.xsd</DependentUpon>

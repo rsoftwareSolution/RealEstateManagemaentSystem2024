@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
+using RealEstateManagemaentSystem2024;
 using RealEstateManagemaentSystem2024.mainForm;
 using RealEstateManagemaentSystem2024.MainForm;
 using RealEstateManagemaentSystem2024.masterForm;
@@ -194,9 +196,24 @@ namespace RealStateManagementSystem.mainForm
 
         private void label5_Click(object sender, EventArgs e)
         {
-            
-            UserMaster userMaster = new UserMaster();
-            userMaster.Show();
+            DialogResult result = MessageBox.Show("You need administrative privileges to create a new user. Do you want to proceed with authentication?",
+                                          "Admin Access Required",
+                                          MessageBoxButtons.YesNoCancel,
+                                          MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Open the Admin Authentication form (WebView2-based password input)
+                AdminAuthForm adminAuth = new AdminAuthForm();
+                adminAuth.ShowDialog(); // Open as a modal to wait for input
+            }
+            else if (result == DialogResult.No)
+            {
+                MessageBox.Show("You do not have the necessary permissions to create a new user.\nPlease contact the system administrator for assistance.",
+                                "Access Denied",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
