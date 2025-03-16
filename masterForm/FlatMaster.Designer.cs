@@ -147,6 +147,7 @@ namespace RealStateManagementSystem.masterForm
             this.tbFlatType.Name = "tbFlatType";
             this.tbFlatType.Size = new System.Drawing.Size(1354, 89);
             this.tbFlatType.TabIndex = 5;
+            this.tbFlatType.Paint += new System.Windows.Forms.PaintEventHandler(this.tbFlatType_Paint);
             // 
             // tabControl1
             // 
@@ -453,11 +454,11 @@ namespace RealStateManagementSystem.masterForm
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(160, 255);
+            this.label10.Location = new System.Drawing.Point(234, 256);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 22);
+            this.label10.Size = new System.Drawing.Size(57, 22);
             this.label10.TabIndex = 4;
-            this.label10.Text = "Per Sq.ft Rate :";
+            this.label10.Text = "Rate :";
             // 
             // label12
             // 

@@ -150,12 +150,11 @@
         }
 
         section {
-            background: url('C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/resource/1899342.jpg') no-repeat;
-            background-position: center;
-            background-size: cover;
+            background: url('C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/1.jpg') no-repeat;
             height: 100vh;
-            transition: all .5s;
-            margin-left: 0;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
         }
 
         #check:checked ~ section {
@@ -185,14 +184,15 @@
     <div class="sidebar">
         <ul>
             <li><a href="#" onclick="openForm('QuatationMaster')">Quatation Master</a></li>
+            <li><a href="#" onclick="openForm('BookingRegister')">Booking Invoice</a></li>
+            <li><a href="#" onclick="openForm('SaleInvoice')">Sale Invoice</a></li>
             <li><a href="#" onclick="openForm('CustomerMaster')">Customer Master</a></li>
-            <li><a href="#" onclick="openForm('EnquiryMaster')">Enquiry Master</a></li>
             <li><a href="#" onclick="openForm('BuildingMaster')">Building Master</a></li>
             <li><a href="#" onclick="openForm('FlatMaster')">Flat Master</a></li>
             <li><a href="#" onclick="openForm('CancellationMaster')">Cancellation Master</a></li>
+            <li><a href="#" onclick="openForm('EnquiryMaster')">Enquiry Master</a></li>
             <li><a href="#" onclick="openForm('UserMaster')">User Master</a></li>
-            <li><a href="#" onclick="openForm('BookingRegister')">Booking Register</a></li>
-            <li><a href="#" onclick="openForm('SaleInvoice')">Sale Invoice</a></li>
+            <li><a href="#" onclick="openForm('ParkingMaster')">Parking Master</a></li>
             <li><a href="#" onclick="openForm('DownloadReports')">Download Reports</a></li>
             <li><a href="#" onclick="openForm('AccountStatements')">Account Statements</a></li>
             <li class="settings-container">
@@ -214,6 +214,53 @@
     <section></section>
 
     <script>
+        // Array of local images for the slideshow
+        const imagePaths = [
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/a.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/aa.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/aaa.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/i.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/k.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/l.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/m.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/o.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/q.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/r.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/s.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/t.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/1.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/b.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/c.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/d.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/e.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/g.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/h.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/2.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/3.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/4.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/5.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/6.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/7.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/8.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/9.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/10.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/11.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/12.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/13.jpg",
+            "C:/Users/Raghvendra/OneDrive/Desktop/RealEstateManagemaentSystem2024/Resources/14.jpg",
+        ];
+
+        let currentIndex = 0;
+        const section = document.querySelector('section');
+
+        function changeBackground() {
+            section.style.backgroundImage = `url('file:///${imagePaths[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % imagePaths.length;
+        }
+
+        setInterval(changeBackground, 2000);
+        window.onload = changeBackground;
+
         // This function ensures the sidebar is closed on page load by unchecking the checkbox
         window.onload = function () {
             document.getElementById('check').checked = false; // Ensure the checkbox is unchecked
@@ -236,6 +283,5 @@
         }
 
     </script>
-
 </body>
 </html>

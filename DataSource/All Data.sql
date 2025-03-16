@@ -183,3 +183,17 @@ INSERT INTO parking_details (available_parking, total_parking, vehicle_name) VAL
 (19, 190, 'Tata Harrier'),
 (13, 130, 'Toyota Innova Crysta'),
 (17, 170, 'Nissan Magnite');
+
+INSERT INTO booking_details (
+    booking_id, booking_date, payment_type, quotation_number, down_payment,
+    cust_contact, cust_name, building_or_project_name, flat_type, vehicle_name,
+    parking_charges, igst, cgst, sgst, sub_total,
+    total_amount, paid_amount, remaining_amount, round_off, grand_total
+) VALUES
+('BLK0005', '2025-02-24', 'UPI', 'QUOT0012', 500000, '9876543210', 'Rahul Sharma', 'Skyline Towers', '2 BHK', 'None', 15000, 0, 0, 1476000, 8215000, 9691000, 8500000, 1191000, 8491000, 8491000),
+('BLK0006', '2025-02-24', 'Cheque', 'N/A', 750000, '8989898989', 'Sneha Patil', 'Emerald Heights', '3 BHK', 'None', 30000, 0, 0, 1710000, 9530000, 11240000, 10200000, 1040000, 10100000, 10100000),
+('BLK0007', '2025-02-24', 'Cash', 'QUOT0013', 250000, '9191919191', 'Amit Desai', 'Silver Nest', '1 BHK', 'None', 0, 0, 0, 774000, 4300000, 5074000, 4500000, 574000, 4494000, 4494000),
+('BLK0008', '2025-02-24', 'Card', 'N/A', 1500000, '9292929292', 'Pooja Mehta', 'Golden Residency', '3 BHK', 'None', 40000, 0, 0, 1890000, 10540000, 12430000, 11500000, 930000, 11470000, 11470000),
+('BLK0009', '2025-02-25', 'Net Banking', 'N/A', 300000, '9393939393', 'Vikas Verma', 'Blue Horizon', '2 BHK', 'None', 25000, 0, 0, 1548000, 8625000, 10173000, 9200000, 970000, 9193000, 9193000),
+('BLK0010', '2025-02-25', 'Cheque', 'QUOT0014', 600000, '9494949494', 'Neha Joshi', 'Emerald Heights', '1 BHK', 'None', 0, 0, 0, 936000, 5200000, 6136000, 5500000, 636000, 5494000, 5494000);
+

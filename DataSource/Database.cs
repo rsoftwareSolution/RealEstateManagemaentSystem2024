@@ -6,6 +6,8 @@ public class Database
 {
     // Static property for the connection string
     string connectionString = "Server=localhost;Port=3306;Database=real_state_db;User Id=root;Password=root;";
+    private MySqlConnection connection;
+    private MySqlTransaction transaction; // Transaction object
 
     // Method to open a connection
     private MySqlConnection GetConnection()
@@ -13,10 +15,36 @@ public class Database
         return new MySqlConnection(connectionString);
     }
 
+    // 🔹 Start a Transaction
+    public void BeginTransaction()
+    {
+        if (connection.State != ConnectionState.Open)
+        {
+            connection.Open();
+        }
+        transaction = connection.BeginTransaction();
+    }
+
+    // 🔹 Commit the Transaction
+    public void CommitTransaction()
+    {
+        transaction?.Commit();
+        transaction = null;
+        connection.Close();
+    }
+
+    // 🔹 Rollback the Transaction
+    public void RollbackTransaction()
+    {
+        transaction?.Rollback();
+        transaction = null;
+        connection.Close();
+    }
+
     // Method to execute a query (INSERT, UPDATE, DELETE)
     public int ExecuteNonQuery(string query, params MySqlParameter[] parameters)
     {
-        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        using (connection = new MySqlConnection(connectionString))
         {
             connection.Open();
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -33,7 +61,7 @@ public class Database
     // Method to execute a query and return a DataTable (for SELECT)
     public DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
     {
-        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        using (connection = new MySqlConnection(connectionString))
         {
             connection.Open();
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -55,7 +83,7 @@ public class Database
     // Method to execute a scalar query (e.g., get single value)
     public object ExecuteScalar(string query, params MySqlParameter[] parameters)
     {
-        using (MySqlConnection connection = GetConnection())
+        using (connection = GetConnection())
         {
             connection.Open();
             using (MySqlCommand command = new MySqlCommand(query, connection))

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using RealEstateManagemaentSystem2024.Helper;
 
 namespace RealEstateManagemaentSystem2024.MasterForm
 {
@@ -223,6 +225,29 @@ namespace RealEstateManagemaentSystem2024.MasterForm
             {
                 MessageBox.Show($"Error generating building ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbBuildingId.Text = string.Empty;  // Reset textbox on error
+            }
+        }
+
+        private void buildingDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private async void tbBuildingPincode_TextChanged(object sender, EventArgs e)
+        {
+            if (tbBuildingPincode.Text.Length == 6)
+            {
+                var (state, district, village) = await PincodeAPI.GetLocationDetailsFromPincodeAsync(tbBuildingPincode.Text);
+
+                tbBuildingState.Text = state;
+                tbBuildingDistrict.Text = district;
+                tbBuildingVillage.Text = village;
+            }
+            else
+            {
+                tbBuildingState.Text = string.Empty;
+                tbBuildingDistrict.Text = string.Empty;
+                tbBuildingVillage.Text = string.Empty;
             }
         }
     }
